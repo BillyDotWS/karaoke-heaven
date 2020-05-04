@@ -1,3 +1,5 @@
+const config = require('../../settings/config.json');
+
 module.exports = {
 	name: 'eval',
 	description: 'Run a piece of code from Discord',
