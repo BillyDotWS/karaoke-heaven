@@ -11,7 +11,7 @@ File structure break down:
 * Website Events: /events/website
 
 Discord command list:
-* -eval <code> [Runs code entered in the first argument and returns errors]
+* -eval (code) [Runs code entered in the first argument and returns errors]
 
 </p>
 
