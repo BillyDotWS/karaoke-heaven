@@ -1,0 +1,16 @@
+{
+  "name": "KaraokeHeaven",
+  "version": "1.0.0",
+  "description": "Karaoke heaven project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CookieBilly",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*"
+    "discord.js": "*"
+  }
+}
