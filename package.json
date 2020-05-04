@@ -11,6 +11,7 @@
   "dependencies": {
     "express": "*",
     "socket.io": "*",
-    "discord.js": "*"
+    "discord.js": "^12.1.1",
+    "webcord": "^1.0.4"
   }
 }
