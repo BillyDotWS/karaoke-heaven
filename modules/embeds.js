@@ -29,7 +29,7 @@ module.exports.infoEmbed = class {
     async sendEmbed() {
         var infoEmbed = new Discord.MessageEmbed()
             .setColor(this.embedColour)
-            .setDescription(`${this.embedEmoji} » ${this.description}`)
+            .setDescription(`${this.embedEmoji} ${this.description}`)
         if (this.timer === null) {
             if (this.personToTag === null) this.embedPlaceholder = await this.channel.send(infoEmbed)
             else this.embedPlaceholder = await this.channel.send(this.personToTag, infoEmbed)
