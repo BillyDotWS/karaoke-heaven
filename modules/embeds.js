@@ -13,7 +13,7 @@ module.exports.infoEmbed = class {
                 break
             case 'error':
                 this.embedColour = "#ff0000"
-                this.embedEmoji = "❌"
+                this.embedEmoji = "❌ **Error!**"
                 break
             case "warning":
                 this.embedColour = "#f2ff00"
@@ -43,7 +43,7 @@ module.exports.infoEmbed = class {
     editEmbed() {
         var infoEmbed = new Discord.MessageEmbed()
             .setColor(this.embedColour)
-            .setDescription(`${this.embedEmoji} » ${this.description}`)
+            .setDescription(`${this.embedEmoji} ${this.description}`)
         if (this.timer === null) {
             if (this.personToTag === null) this.channel.edit(infoEmbed)
             else this.channel.edit(this.personToTag, infoEmbed)
