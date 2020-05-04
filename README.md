@@ -13,7 +13,6 @@ File structure break down:
 Discord command list:
 * -eval (code) [Runs code entered in the first argument and returns errors]
 
-uwu test
 </p>
 
 
