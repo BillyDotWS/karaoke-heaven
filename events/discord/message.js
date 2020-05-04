@@ -40,5 +40,5 @@ module.exports = async (client, message) => {
 		if (command.argsNeeded <= args.length) command.execute(client, message, args);
 		else new embeds.infoEmbed('error', message.channel, `That command requires at least **${command.argsNeeded - args.length}** arg(s) to run`, message.author, 10).sendEmbed();
 	}
-	else {new embeds.infoEmbedembeds.sendEmbed('error', message.channel, `You must have the role ${message.guild.roles.cache.find(role => role.name === command.requiredRoles[0])} to run that command`, message.author, 10).sendEmbed();}
+	else {new embeds.infoEmbed('error', message.channel, `You must have the role ${message.guild.roles.cache.find(role => role.name === command.requiredRoles[0])} to run that command`, message.author, 10).sendEmbed();}
 };
