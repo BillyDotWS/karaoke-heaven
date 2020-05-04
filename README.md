@@ -2,7 +2,16 @@
     <a href="https://discord.gg/8XBTY5M" alt="Discord">
         <img src="https://img.shields.io/discord/700208007530676314" /></a>
 
-# Karaoke Heaven
+![HK Logo](https://i.imgur.com/mOVnnwj.png)
+# Discord Bot & Webpanel
+
+File structure break down:
+* Discord Events: /events/discord
+* Discord Commands: /commands
+* Website Events: /events/website
+
+Discord command list:
+* -eval <code> [Runs code entered in the first argument and returns errors]
 
 </p>
 
