@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Run a piece of code from Discord',
 	usage: '-eval <code>',
 	requiredRoles: ['☕ Developer'],
-	allowedUsers: ['281199286765748225', '213849560508792832'],
+	allowedUsers: ['707010477917470761', '213849560508792832'],
 	argsNeeded: 1,
 	async execute(client, message, args) {
 		try {
