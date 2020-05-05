@@ -22,9 +22,7 @@ module.exports = {
 			evalEmbed.setTitle('Eval Result:')
 			evalEmbed.setDescription(':white_check_mark: **Success!**')
                 	evalEmbed.addField('Result:', `\`${evaledCode}\``)
-                	message.channel.send(evalEmbed)
-			
-			message.channel.send(`${message.author}\n▶️ **Input**\n\`\`\`${args.join(' ')}\`\`\`\n\n◀️ **Output**\n\`\`\`${evaledCode}\`\`\``).catch(() => {
+                	message.channel.send(evalEmbed).catch(() => {
 				return message.channel.send({
 					files: [{
 						attachment: Buffer.from(evaledCode),
@@ -34,7 +32,12 @@ module.exports = {
 			});
 		}
 		catch (e) {
-			message.channel.send(`${message.author}\n▶️ **Input**\n\`\`\`${args.join(' ')}\`\`\`\n\n◀️ **Output**\n\`\`\`${e.stack}\`\`\``).catch(() => {
+			
+			var evalEmbed = new Discord.MessageEmbed()
+			evalEmbed.setTitle('Eval Result:')
+			evalEmbed.setDescription(':warning: **Error!**')
+                	evalEmbed.addField('Result:', `\`${e.stack}\``)
+                	message.channel.send(evalEmbed).catch(() => {
 				return message.channel.send({
 					files: [{
 						attachment: Buffer.from(evaledCode),
