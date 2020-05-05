@@ -15,10 +15,10 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/wKiXoia.png')
             .setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/wKiXoia.png')
           
-        if {args[0]} {
+        if (args[0]) {
             if (client.commands.get(args[0])) {
                 helpEmbed.setTitle(client.commands.get(args[0]).name.charAt(0).toUpperCase() + client.commands.get(args[0]).name.slice(1) + ' Command')
-                helpEmbed.addField('Command Usage', `\`${config.prefix}${client.command.get(args[0]).usage\``)
+                helpEmbed.addField('Command Usage', `\`${config.prefix}${client.command.get(args[0]).usage`\`)
                 helpEmbed.addfield('Required Role', message.channel.guild.roles.cache
                     .find(role => role.name === client.commands.get(args[0]).requiredRoles[0]))
                 message.channel.send(helpEmbed)
@@ -38,7 +38,7 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
                 commands.push({name: cmd.name, description: cmd.description})
     })
     helpEmbed.setTitle('Command List')
-    helpEmbed.setDescription(`**Use \`${config.prefix}help <command>\` for further information**`)
+    helpEmbed.setDescription(`**Use ${config.prefix}help (command) for further information**`)
     helpEmbed.addField('Command', commands.map(m => m.name).join("\n"), true)
     helpEmbed.addField('Description', commands.map(m => m.description).join("\n"), true)
     message.channel.send(helpEmbed)
