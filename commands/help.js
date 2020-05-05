@@ -39,7 +39,7 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
     })
     var helpEmbed = new Discord.MessageEmbed()
     helpEmbed.setTitle('Command List')
-    helpEmbed.setDescription(`**Use ${config.prefix}help (command) for further information**`)
+    helpEmbed.setDescription(`**Use \`${config.prefix}help (command)\` for further information**`)
     helpEmbed.addField('Command', commands.map(m => m.name).join("\n"), true)
     helpEmbed.addField('Description', commands.map(m => m.description).join("\n"), true)
     helpEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
