@@ -9,11 +9,19 @@
   "author": "CookieBilly",
   "license": "ISC",
   "dependencies": {
-    "express": "*",
-    "socket.io": "*",
-    "discord.js": "^12.1.1",
-    "webcord": "^1.0.4",
     "@slack/events-api": "^2.3.2",
-    "@slack/web-api": "^5.8.1"
+    "@slack/web-api": "^5.8.1",
+    "discord.js": "^12.1.1",
+    "ejs": "^3.1.2",
+    "express": "*",
+    "express-session": "^1.17.1",
+    "marked": "^1.0.0",
+    "moment": "^2.25.3",
+    "moment-duration-format": "^2.3.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-discord": "^0.1.3",
+    "socket.io": "*",
+    "webcord": "^1.0.4"
   }
 }
