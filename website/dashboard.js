@@ -200,6 +200,9 @@ module.exports = (client) => {
     renderTemplate(res, req, 'index.ejs', { Discord: Discord }, { clickHandler:"func1();" } );
   });
 
+  app.get("/uwu", function(req, res) {
+    bot.channels.cache.get('707282308369219664').send(`uwu`)
+  });
 
   // The list of commands the bot has. Current **not filtered** by permission.
   app.get("/commands", (req, res) => {
