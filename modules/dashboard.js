@@ -36,7 +36,7 @@ require("moment-duration-format");
 // (so that when you come back to the page, it still remembers you're logged in).
 const passport = require("passport");
 const session = require("express-session");
-const SQLiteStore = require("connect-sqlite3")(session);
+//const SQLiteStore = require("connect-sqlite3")(session);
 const Strategy = require("passport-discord").Strategy;
 
 // Helmet is specifically a security plugin that enables some specific, useful 
@@ -53,7 +53,7 @@ module.exports = (client) => {
 
   // This resolves to: yourbotdir/dashboard/templates/ 
   // which is the folder that stores all the internal template files.
-  const templateDir = path.resolve(`${dataDir}${path.sep}templates`);
+  const templateDir = path.resolve(`../templates`);
 
   // The public data directory, which is accessible from the *browser*. 
   // It contains all css, client javascript, and images needed for the site.
