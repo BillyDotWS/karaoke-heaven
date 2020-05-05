@@ -43,5 +43,5 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
     helpEmbed.addField('Description', commands.map(m => m.description).join("\n"), true)
     message.channel.send(helpEmbed)
 
-}
+    }
 }
