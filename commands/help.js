@@ -2,9 +2,9 @@ const Discord = require('discord.js')
 const config = require('../settings/config.json')
 
 module.exports = {
-    name: '',
+    name: 'help',
     description: 'View all bot commands',
-    usage: '',
+    usage: '-help [command]',
     requiredRoles: ['👪 Member', '🧍🏿‍♂️  Bouncer'],
     allowedUsers: [],
     argsNeeded: 1,
