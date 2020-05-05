@@ -12,7 +12,7 @@ module.exports = {
         var helpEmbed = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
             .setColor('#FFC0CB')
-            .setThumbnail('https://i.imgur.com/2w4KKRE.png')
+            .setThumbnail('https://i.imgur.com/wKiXoia.png')
             .setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/wKiXoia.png')
           
         if (args[0]) {
@@ -81,7 +81,7 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
     helpEmbed.addField('Description', commands.map(m => m.description).join("\n"), true)
     helpEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
     helpEmbed.setColor('#FFC0CB')
-    helpEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/2w4KKRE.png')
+    helpEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/wKiXoia.png')
     message.channel.send(helpEmbed)
 
 }
