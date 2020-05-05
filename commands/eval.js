@@ -18,13 +18,13 @@ module.exports = {
       }
 
       var evalEmbed = new Discord.MessageEmbed()
-      helpEmbed.setTitle('Eval Result')
-      helpEmbed.setDescription(`:white_check_mark: **Success!**`)
-      helpEmbed.addField('Output', `${evaledcode}`, true)
-      helpEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
-      helpEmbed.setColor('#FFC0CB')
-      helpEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/2w4KKRE.png')
-      message.channel.send(helpEmbed).catch(() => {
+      evalEmbed.setTitle('Eval Result')
+      evalEmbed.setDescription(`:white_check_mark: **Success!**`)
+      evalEmbed.addField('Output', `\`\`\`${evaledcode}\`\`\``, true)
+      evalEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
+      evalEmbed.setColor('#FFC0CB')
+      evalEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/2w4KKRE.png')
+      message.channel.send(evalEmbed).catch(() => {
         return message.channel.send({
           files: [{
             attachment: Buffer.from(evaledCode),
@@ -35,13 +35,13 @@ module.exports = {
     }
     catch (e) {
       var evalEmbed = new Discord.MessageEmbed()
-      helpEmbed.setTitle('Eval Result')
-      helpEmbed.setDescription(`:warning: **Error!**`)
-      helpEmbed.addField('Output', `${e.stack}`, true)
-      helpEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
-      helpEmbed.setColor('#FFC0CB')
-      helpEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/2w4KKRE.png')
-      message.channel.send(helpEmbed).catch(() => {
+      evalEmbed.setTitle('Eval Result')
+      evalEmbed.setDescription(`:warning: **Error!**`)
+      evalEmbed.addField('Output', `\`\`\`${e.stack}\`\`\``, true)
+      evalEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
+      evalEmbed.setColor('#FFC0CB')
+      evalEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/2w4KKRE.png')
+      message.channel.send(evalEmbed).catch(() => {
         return message.channel.send({
           files: [{
             attachment: Buffer.from(evaledCode),
