@@ -248,8 +248,8 @@ module.exports = (client) => {
 		res.redirect('/404');
 	});
 
-	client.site = app.listen(client.config.dashboard.port, function() {
-		client.log('log', `Dashboard running on port ${client.config.dashboard.port}`, 'INFO');
+	client.site = app.listen(config.port, function() {
+		client.log('log', `Dashboard running on port ${config.port}`, 'INFO');
 	}).on('error', (err) => {
 		client.log('ERROR', `Error with starting dashboard: ${err.code}`);
 		return process.exit(0);
