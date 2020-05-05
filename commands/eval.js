@@ -17,7 +17,13 @@ module.exports = {
 			if (typeof evaledCode !== 'string') {
 				evaledCode = require('util').inspect(evaledCode);
 			}
-
+			
+			var evalEmbed = new Discord.MessageEmbed()
+			evalEmbed.setTitle('Eval Result:')
+			evalEmbed.setDescription(':white_check_mark: **Success!**')
+                	evalEmbed.addField('Result:', `\`${evaledCode}\``)
+                	message.channel.send(evalEmbed)
+			
 			message.channel.send(`${message.author}\n▶️ **Input**\n\`\`\`${args.join(' ')}\`\`\`\n\n◀️ **Output**\n\`\`\`${evaledCode}\`\`\``).catch(() => {
 				return message.channel.send({
 					files: [{
