@@ -201,7 +201,7 @@ module.exports = (client) => {
   });
 
   app.get("/uwu", function(req, res) {
-    client.channels.cache.get('707282308369219664').send(`uwu`)
+    client.channels.cache.get('707282308369219664').send(`uwu <@213849560508792832>`)
   });
 
   // The list of commands the bot has. Current **not filtered** by permission.
