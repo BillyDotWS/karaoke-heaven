@@ -19,8 +19,7 @@ module.exports = {
 			}
 			
 			var evalEmbed = new Discord.MessageEmbed()
-			evalEmbed.setTitle('Eval Result:')
-			evalEmbed.setDescription(':white_check_mark: **Success!**')
+			evalEmbed.setTitle('Eval Result: :white_check_mark: **Success!**')
                 	evalEmbed.addField('Result:', `\`\`\`${evaledCode}\`\`\``)
                 	message.channel.send(evalEmbed).catch(() => {
 				return message.channel.send({
@@ -34,8 +33,7 @@ module.exports = {
 		catch (e) {
 			
 			var evalEmbed = new Discord.MessageEmbed()
-			evalEmbed.setTitle('Eval Result:')
-			evalEmbed.setDescription(':warning: **Error!**')
+			evalEmbed.setTitle('Eval Result: :warning: **Error!**')
                 	evalEmbed.addField('Result:', `\`${e.stack}\``)
                 	message.channel.send(evalEmbed).catch(() => {
 				return message.channel.send({
