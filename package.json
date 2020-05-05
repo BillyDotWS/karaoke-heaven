@@ -12,6 +12,8 @@
     "express": "*",
     "socket.io": "*",
     "discord.js": "^12.1.1",
-    "webcord": "^1.0.4"
+    "webcord": "^1.0.4",
+    "@slack/events-api": "^2.3.2",
+    "@slack/web-api": "^5.8.1"
   }
 }
