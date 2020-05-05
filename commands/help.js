@@ -19,7 +19,7 @@ module.exports = {
             if (client.commands.get(args[0])) {
                 helpEmbed.setTitle(client.commands.get(args[0]).name.charAt(0).toUpperCase() + client.commands.get(args[0]).name.slice(1) + ' Command')
                 helpEmbed.addField('Command Usage', `\`${config.prefix}${client.commands.get(args[0]).usage}\``)
-                helpEmbed.addfield('Required Role', message.channel.guild.roles.cache
+                helpEmbed.addField('Required Role', message.channel.guild.roles.cache
                     .find(role => role.name === client.commands.get(args[0]).requiredRoles[0]))
                 message.channel.send(helpEmbed)
             
