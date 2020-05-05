@@ -23,7 +23,7 @@ module.exports = {
                     .find(role => role.name === client.commands.get(args[0]).requiredRoles[0]))
                 message.channel.send(helpEmbed)
             
-            } else sendMainHelperEmbed(message, helpEmbed, [])
+            } else sendMainHelpEmbed(message, helpEmbed, [])
 
                
         } else sendMainHelpEmbed(message, helpEmbed, [])
