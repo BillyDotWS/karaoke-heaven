@@ -19,7 +19,7 @@ module.exports = {
 			}
 			
 			var evalEmbed = new Discord.MessageEmbed()
-			evalEmbed.setTitle('Eval Result: :white_check_mark: **Success!**')
+			evalEmbed.setTitle(':white_check_mark: **Success!**')
 			evalEmbed.setColor('#00FF00')
                 	evalEmbed.addField('Result:', `\`\`\`${evaledCode}\`\`\``)
                 	message.channel.send(evalEmbed).catch(() => {
@@ -34,7 +34,7 @@ module.exports = {
 		catch (e) {
 			
 			var evalEmbed = new Discord.MessageEmbed()
-			evalEmbed.setTitle('Eval Result: :warning: **Error!**')
+			evalEmbed.setTitle(':warning: **Error!**')
                 	evalEmbed.addField('Result:', `\`\`\`${e.stack}\`\`\``)
 			evalEmbed.setColor('#FF4500')
                 	message.channel.send(evalEmbed).catch(() => {
