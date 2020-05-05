@@ -25,6 +25,7 @@
     "webcord": "^1.0.4",
     "connect-sqlite3": "^0.9.11",
     "slackbots": "^1.2.0",
-    "helmet": "^3.22.0"
+    "helmet": "^3.22.0",
+    "axios": "^0.19.2"
   }
 }
