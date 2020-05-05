@@ -7,7 +7,7 @@ module.exports = {
     usage: '-help [command]',
     requiredRoles: ['👪 Member', '🧍🏿‍♂️  Bouncer'],
     allowedUsers: [],
-    argsNeeded: 1,
+    argsNeeded: 0,
     async execute(client, message, args, embeds) {
         var helpEmbed = Discord.MessageEmbed()
             .setauthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
