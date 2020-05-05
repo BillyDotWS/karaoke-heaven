@@ -10,7 +10,17 @@
 
         <script>
           function func1(){
-            window.location.href = "http://45.9.60.30:3080/uwu";
+             fetch('/uwu', {method: 'POST'})
+            .then(function(response) {
+              if(response.ok) {
+                console.log('Click was recorded');
+                return;
+              }
+              throw new Error('Request failed.');
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
           }
         </script>
 
