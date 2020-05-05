@@ -9,6 +9,7 @@ module.exports = {
     allowedUsers: [],
     argsNeeded: 0,
     async execute(client, message, args, embeds) {
+        console.log(args)
         var helpEmbed = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
             .setColor('#FFC0CB')
