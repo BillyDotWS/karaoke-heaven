@@ -197,7 +197,7 @@ module.exports = (client) => {
   // Index page. If the user is authenticated, it shows their info
   // at the top right of the screen.
   app.get("/", (req, res) => {
-    renderTemplate(res, req, 'index.ejs', { client: client });
+    renderTemplate(res, req, 'index.ejs', { Discord: Discord });
   });
 
 
