@@ -13,7 +13,7 @@ module.exports = async (client, member) => {
 	channelEmbed.setTitle(`:wave: **Welcome to Karaoke Heaven ${member.user.username}!**`)
 	channelEmbed.setColor('#FFC0CB')
         channelEmbed.setDescription(`Welcome to the discord, we hope you enjoy your time here! Please check out <#700209261917241416> for information and to view our discord server's rules`)
-        client.channels.get(`700209212751609916`).send(channelEmbed)
+        client.channels.cache.get(`700209212751609916`).send(channelEmbed)
 	
 	
 				
