@@ -2,7 +2,7 @@
  
     "prefix": "-",
     "domain": "http://45.9.60.30",
-	"callbackURL": "http://45.9.60.30/callback"
+    "callbackURL": "http://45.9.60.30/callback",
     
     "info": {
       
