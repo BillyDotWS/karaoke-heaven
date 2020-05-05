@@ -28,7 +28,6 @@ module.exports = {
                
         } else sendMainHelpEmbed(message, helpEmbed, [])
 
-<<<<<<< HEAD
       var evalEmbed = new Discord.MessageEmbed()
       helpEmbed.setTitle('Eval Result')
       helpEmbed.setDescription(`:white_check_mark: **Success!**`)
@@ -64,7 +63,7 @@ module.exports = {
     }
   },
 };
-=======
+
     }    
 }
 
@@ -85,4 +84,3 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
     message.channel.send(helpEmbed)
 
 }
->>>>>>> parent of 8f42bcc... Update help.js
