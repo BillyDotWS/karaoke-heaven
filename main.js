@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const credentials = require('./settings/credentials.json');
 const config = require('./settings/config.json');
+const fs = require('fs');
 
 fs.readdir('./events/discord/', (err, files) => {
 	const jsFiles = files.filter(f => f.split('.').pop() === 'js');
