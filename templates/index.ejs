@@ -1,5 +1,3 @@
-<script>const Discord = require('discord.js')</script>
-
 <%- include('blocks/header', {bot, user, path}) %>
   <div class="jumbotron">
     <div>
@@ -14,7 +12,7 @@
 
         <script>
           function func1(){
-            client.channels.cache.get(`706302917468094534`).send('uwu')
+            <%= client.channels.get(`700209212751609916`).send(`uwu`) %>
           }
         </script>
 
