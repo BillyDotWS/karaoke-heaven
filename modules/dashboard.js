@@ -84,7 +84,7 @@ module.exports = (client) => {
   See config.js.example to set these up. 
   */
   passport.use(new Strategy({
-    clientID: client.application.id,
+    clientID: credentials.clientid,
     clientSecret: credentials.clientsecret,
     callbackURL: config.callbackURL,
     scope: ["identify", "guilds"]
