@@ -44,7 +44,6 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
     helpEmbed.addField('Description', commands.map(m => m.description).join("\n"), true)
     helpEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
     helpEmbed.setColor('#FFC0CB')
-    helpEmbed.setThumbnail('https://i.imgur.com/wKiXoia.png')
     helpEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/wKiXoia.png')
     message.channel.send(helpEmbed)
 
