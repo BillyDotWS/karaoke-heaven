@@ -4,7 +4,7 @@ const config = require('../settings/config.json')
 module.exports = {
     name: 'help',
     description: 'View all bot commands',
-    usage: '-help [command]',
+    usage: 'help [command]',
     requiredRoles: ['👪 Member', '🧍🏿‍♂️  Bouncer'],
     allowedUsers: [],
     argsNeeded: 0,
