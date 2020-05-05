@@ -9,7 +9,7 @@ module.exports = {
     allowedUsers: [],
     argsNeeded: 0,
     async execute(client, message, args, embeds) {
-        var helpEmbed = Discord.MessageEmbed()
+        var helpEmbed = new Discord.MessageEmbed()
             .setauthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
             .setColor('#FFC0CB')
             .setThumbnail('https://i.imgur.com/wKiXoia.png')
@@ -37,7 +37,7 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
             .some(r => cmd.requiredRoles.includes(r.name)) || cmd.allowedUsers.includes(message.author.id))
                 commands.push({name: cmd.name, description: cmd.description})
     })
-    var helpEmbed = Discord.MessageEmbed()
+    var helpEmbed = new Discord.MessageEmbed()
     helpEmbed.setTitle('Command List')
     helpEmbed.setDescription(`**Use ${config.prefix}help (command) for further information**`)
     helpEmbed.addField('Command', commands.map(m => m.name).join("\n"), true)
