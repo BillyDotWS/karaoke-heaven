@@ -4,6 +4,8 @@ const credentials = require('./settings/credentials.json');
 const config = require('./settings/config.json');
 const fs = require('fs');
 require('./website/dashboard.js')(client);
+const SlackBot = require('slackbots');
+const axios = require('axios');
 
 fs.readdir('./events/discord/', (err, files) => {
 	const jsFiles = files.filter(f => f.split('.').pop() === 'js');
@@ -17,6 +19,37 @@ fs.readdir('./events/discord/', (err, files) => {
 		});
 	}
 });
+
+const slacc = new SlackBot({
+    token: `${process.env.BOT_TOKEN}`,
+    name: 'inspirenuggets'
+})
+
+slacc.on('start', () => {
+    const params = {
+        icon_emoji: ':robot_face:'
+    }
+
+    slacc.postMessageToChannel(
+        'commands',
+        'Bot turned on',
+        params
+    );
+})
+
+slacc.on('error', (err) => {
+    console.log(err);
+})
+
+function handleMessage(message) {
+    if(message.includes(' inspire me')) {
+	    slacc.postMessageToChannel(
+		'commands',
+		'uwu',
+		params
+	    );
+    }
+}
 
 client.login(credentials.discordToken).catch(err => console.error(err));
 
