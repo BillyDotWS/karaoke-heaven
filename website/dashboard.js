@@ -53,11 +53,11 @@ module.exports = (client) => {
 
   // This resolves to: yourbotdir/dashboard/templates/ 
   // which is the folder that stores all the internal template files.
-  const templateDir = path.resolve(`./templates`);
+  const templateDir = path.resolve(`/templates`);
 
   // The public data directory, which is accessible from the *browser*. 
   // It contains all css, client javascript, and images needed for the site.
-  app.use("/public", express.static(path.resolve(`./public`)));
+  app.use("/public", express.static(path.resolve(`/public`)));
 
   // These are... internal things related to passport. Honestly I have no clue either.
   // Just leave 'em there.
