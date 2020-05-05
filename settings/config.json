@@ -1,8 +1,8 @@
 {
  
     "prefix": "-",
-    "domain": "http://karaoke-heaven.net",
-    "callbackURL": "http://karaoke-heaven.net/callback",
+    "domain": "https://karaoke-heaven.net",
+    "callbackURL": "https://karaoke-heaven.net/callback",
     
     "info": {
       
