@@ -12,7 +12,7 @@ module.exports = async (client, member) => {
 	var channelEmbed = new Discord.MessageEmbed()
 	channelEmbed.setTitle(`:wave: **Welcome to Karaoke Heaven!**`)
 	channelEmbed.setColor('#FFC0CB')
-	channelEmbed.setThumbnail(member.displayAvatarURL({ format: "png"}))
+	channelEmbed.setThumbnail(member.user.displayAvatarURL({ format: "png"}))
         channelEmbed.setDescription(`Welcome to the discord ${member}! we hope you enjoy your time here! Please check out <#700209261917241416> for information and to view our discord server's rules`)
         client.channels.cache.get(`700209212751609916`).send(channelEmbed)
 	
