@@ -1,4 +1,4 @@
-const config = require('../../settings/config.json');
+const config = require('../../../settings/config.json');
 
 module.exports = {
 	name: 'eval',
