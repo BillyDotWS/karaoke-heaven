@@ -13,8 +13,8 @@ Note that this *could* be split into multiple files, but for the purpose of this
 example, putting it in one file is a little simpler. Just *a little*.
 */
 
-const credentials = require('./settings/credentials.json');
-const config = require('./settings/config.json');
+const credentials = require('../settings/credentials.json');
+const config = require('../settings/config.json');
 
 // Native Node Imports
 const url = require("url");
