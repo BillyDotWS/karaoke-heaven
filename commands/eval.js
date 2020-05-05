@@ -1,4 +1,5 @@
 const config = require('../settings/config.json');
+const Discord = require('discord.js');
 
 module.exports = {
   name: 'eval',
