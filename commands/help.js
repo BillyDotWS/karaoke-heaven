@@ -10,7 +10,7 @@ module.exports = {
     argsNeeded: 0,
     async execute(client, message, args, embeds) {
         var helpEmbed = new Discord.MessageEmbed()
-            .setauthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
+            .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
             .setColor('#FFC0CB')
             .setThumbnail('https://i.imgur.com/wKiXoia.png')
             .setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/wKiXoia.png')
