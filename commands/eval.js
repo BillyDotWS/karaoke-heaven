@@ -9,10 +9,6 @@ module.exports = {
   allowedUsers: ['707010477917470761', '213849560508792832'],
   argsNeeded: 1,
 	async execute(client, message, args) {
-		if (filteredCode.some(w => args.join(' ').toLowerCase().includes(w))) {
-			message.channel.send(`▶️ **Input**\n\`\`\`${args.join(' ')}\`\`\`\n\n◀️ **Output**\n\`\`\`Eval Block, don't test me bitch\`\`\``);
-			return;
-		}
 		try {
 			var evaledCode = require('util').inspect(eval(args.join(' '), {
 				depth: 0,
