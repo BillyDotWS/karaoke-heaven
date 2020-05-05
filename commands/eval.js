@@ -21,7 +21,7 @@ module.exports = {
 			var evalEmbed = new Discord.MessageEmbed()
 			evalEmbed.setTitle('Eval Result:')
 			evalEmbed.setDescription(':white_check_mark: **Success!**')
-                	evalEmbed.addField('Result:', `\`${evaledCode}\``)
+                	evalEmbed.addField('Result:', `\`\`\`${evaledCode}\`\`\``)
                 	message.channel.send(evalEmbed).catch(() => {
 				return message.channel.send({
 					files: [{
