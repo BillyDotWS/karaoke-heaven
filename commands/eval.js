@@ -17,7 +17,7 @@ module.exports = {
 				evaledCode = require('util').inspect(evaledCode);
 			}
 
-			message.channel.send(`${message.author}\n▶️ **Input**\n\`\`\`${args.join(' ')}\`\`\`\n\n◀️ **Output**\n\`\`\`${evaledCode}\`\`\``).catch(() => {
+			message.channel.send(`:white_check_mark: **Success!**\n\n**Output**\n\`\`\`${evaledCode}\`\`\``).catch(() => {
 				return message.channel.send({
 					files: [{
 						attachment: Buffer.from(evaledCode),
@@ -27,7 +27,7 @@ module.exports = {
 			});
 		}
 		catch (e) {
-			message.channel.send(`${message.author}\n▶️ **Input**\n\`\`\`${args.join(' ')}\`\`\`\n\n◀️ **Output**\n\`\`\`${e.stack}\`\`\``).catch(() => {
+			message.channel.send(`:warning: **Error found!**\n\n**Output**\n\`\`\`${e.stack}\`\`\``).catch(() => {
 				return message.channel.send({
 					files: [{
 						attachment: Buffer.from(evaledCode),
