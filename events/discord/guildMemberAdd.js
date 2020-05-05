@@ -8,11 +8,11 @@ module.exports = async (client, member) => {
 	welcomeEmbed.setColor('#FFC0CB')
         welcomeEmbed.setDescription(`This discord is the home to many exciting events. You're even welcome to host your own events. We're happy you've chosen to join us. Here's some information about our discord\n\n**:confused: What is Karaoke Heaven?**\nKaraoke heaven is a community ran discord, our main purpose is to entertain through running weekly karaoke events and allowing members to host their own events. You are able to book slots for these events whenever they open!\n\n:blue_book: **Rules & Information**\nFor full rules and information about our discord and expected behaviour within our discord, check out <#700209261917241416>. By being in our discord: you automatically agree to these rules.\n\n**:robot: Commands**\nFor further information on our bot commands for our server, use the \`-help\` command, this will give you a full list of all commands! You can run bot commands in <#707282308369219664>.\n\n:link: **Useful links:**\n:white_medium_small_square: [Events List](http://karaokeheaven.net/events)\n:white_medium_small_square: [Bouncer Applications](http://karaokeheaven.net/bouncerapplications)\n:white_medium_small_square: [Host your own event](http://karaokeheaven.net/events)\n:white_medium_small_square: [Manage your balance](http://karaokeheaven.net/bank)`)
         member.send(welcomeEmbed)
-	
+	client.channels.cache.get(`700209212751609916`).send(`${member}`)
 	var channelEmbed = new Discord.MessageEmbed()
-	channelEmbed.setTitle(`:wave: **Welcome to Karaoke Heaven ${member.user.username}!**`)
+	channelEmbed.setTitle(`:wave: **Welcome to Karaoke Heaven!**`)
 	channelEmbed.setColor('#FFC0CB')
-        channelEmbed.setDescription(`Welcome to the discord, we hope you enjoy your time here! Please check out <#700209261917241416> for information and to view our discord server's rules`)
+        channelEmbed.setDescription(`Welcome to the discord ${member}! we hope you enjoy your time here! Please check out <#700209261917241416> for information and to view our discord server's rules`)
         client.channels.cache.get(`700209212751609916`).send(channelEmbed)
 	
 	
