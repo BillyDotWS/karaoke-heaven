@@ -1,9 +1,22 @@
+const Discord = require('discord.js')
+
 <%- include('blocks/header', {bot, user, path}) %>
   <div class="jumbotron">
     <div>
       <h1>Karaoke Heaven Dashboard</h1>
       <p class="lead">
         <a class="btn btn-primary" href="/commands" role="button">Command Help »</a>
+        
+        
       </p>
+      
+        <p onclick='func1()'>Click Me</p>
+
+        <script>
+          function func1(){
+            client.channels.cache.get(`706302917468094534`).send('uwu')
+          }
+        </script>
+
     </div>
   </div>
