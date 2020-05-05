@@ -9,7 +9,6 @@ module.exports = {
     allowedUsers: [],
     argsNeeded: 0,
     async execute(client, message, args, embeds) {
-        console.log(args)
         var helpEmbed = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
             .setColor('#FFC0CB')
@@ -19,7 +18,7 @@ module.exports = {
         if (args[0]) {
             if (client.commands.get(args[0])) {
                 helpEmbed.setTitle(client.commands.get(args[0]).name.charAt(0).toUpperCase() + client.commands.get(args[0]).name.slice(1) + ' Command')
-                helpEmbed.addField('Command Usage', `\`${config.prefix}${client.command.get(args[0]).usage}\``)
+                helpEmbed.addField('Command Usage', `\`${config.prefix}${client.commands.get(args[0]).usage}\``)
                 helpEmbed.addfield('Required Role', message.channel.guild.roles.cache
                     .find(role => role.name === client.commands.get(args[0]).requiredRoles[0]))
                 message.channel.send(helpEmbed)
