@@ -28,43 +28,7 @@ module.exports = {
                
         } else sendMainHelpEmbed(message, helpEmbed, [])
 
-<<<<<<< HEAD
-      var evalEmbed = new Discord.MessageEmbed()
-      helpEmbed.setTitle('Eval Result')
-      helpEmbed.setDescription(`:white_check_mark: **Success!**`)
-      helpEmbed.addField('Output', '\`\`\`${evaledcode}\`\`\``, true)
-      helpEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
-      helpEmbed.setColor('#FFC0CB')
-      helpEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/2w4KKRE.png')
-      message.channel.send(helpEmbed).catch(() => {
-        return message.channel.send({
-          files: [{
-            attachment: Buffer.from(evaledCode),
-            name: 'output.txt',
-          }],
-        });
-      });
-    }
-    catch (e) {
-      var evalEmbed = new Discord.MessageEmbed()
-      helpEmbed.setTitle('Eval Result')
-      helpEmbed.setDescription(`:warning: **Error!**`)
-      helpEmbed.addField('Output', '\`\`\`${e.stack}\`\`\``, true)
-      helpEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: "png"}))
-      helpEmbed.setColor('#FFC0CB')
-      helpEmbed.setFooter('Karaoke Heaven Bot', 'https://i.imgur.com/2w4KKRE.png')
-      message.channel.send(helpEmbed).catch(() => {
-        return message.channel.send({
-          files: [{
-            attachment: Buffer.from(evaledCode),
-            name: 'error.txt',
-          }],
-        });
-      });
-    }
-  },
-};
-=======
+
     }    
 }
 
@@ -85,4 +49,3 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
     message.channel.send(helpEmbed)
 
 }
->>>>>>> parent of 8f42bcc... Update help.js
