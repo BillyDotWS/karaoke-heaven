@@ -37,7 +37,7 @@ function sendMainHelpEmbed(message, helpEmbed, commands) {
             .some(r => cmd.requiredRoles.includes(r.name)) || cmd.allowedUsers.includes(message.author.id))
                 commands.push({name: cmd.name, description: cmd.description})
     })
-    var helpEmbed = new Discord.MessageEmbed()
+    var helpEmbed = Discord.MessageEmbed()
     helpEmbed.setTitle('Command List')
     helpEmbed.setDescription(`**Use ${config.prefix}help (command) for further information**`)
     helpEmbed.addField('Command', commands.map(m => m.name).join("\n"), true)
