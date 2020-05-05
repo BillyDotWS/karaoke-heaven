@@ -40,7 +40,7 @@ module.exports = {
                 	message.channel.send(evalEmbed).catch(() => {
 				return message.channel.send({
 					files: [{
-						attachment: Buffer.from(evaledCode),
+						attachment: Buffer.from(e.stack),
 						name: 'error.txt',
 					}],
 				});
