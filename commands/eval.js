@@ -6,6 +6,7 @@ module.exports = {
 	name: 'eval',
 	description: 'Run a piece of code from Discord',
 	usage: 'eval <code>',
+	example: 'eval config',
 	requiredRoles: ['☕ Developer'],
 	allowedUsers: ['707010477917470761', '213849560508792832'],
 	argsNeeded: 1,
