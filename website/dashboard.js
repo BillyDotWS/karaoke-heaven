@@ -192,6 +192,11 @@ module.exports = (client) => {
     });
   });
 
+  // style test
+  app.get("/public/style/karaokeheaven.css", (req, res) => {
+    renderTemplate(res, req, "./public/style/karaokeheaven.css");
+  });
+
   /** REGULAR INFORMATION PAGES */
 
   // Index page. If the user is authenticated, it shows their info
