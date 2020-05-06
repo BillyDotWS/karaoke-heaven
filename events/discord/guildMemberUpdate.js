@@ -8,6 +8,6 @@ module.exports = async (client, oldMember, newMember) => {
 
 	// Detect if someone recieves the bouncer role
 	if (!oldRoles.includes(config.roles.bouncer) && newRoles.includes(config.roles.bouncer)) {
-		client.channels.cache.get('706303003400994957').send(`OMG OMG OMG OMG OMG OMG OMG OMG OMG OMG OMG GUESS WHAT? **${newMember.tag}** BOUNCER @everyone PANIC!`)
+		client.channels.cache.get('706303003400994957').send(`OMG OMG OMG OMG OMG OMG OMG OMG OMG OMG OMG GUESS WHAT? **${newMember.user.tag}** BOUNCER @everyone PANIC!`)
 	}
 };
