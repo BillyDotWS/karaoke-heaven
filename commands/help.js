@@ -18,9 +18,9 @@ module.exports = {
 		if (args[0]) {
 			if (client.commands.get(args[0])) {
 				helpEmbed.setTitle(client.commands.get(args[0]).name.charAt(0).toUpperCase() + client.commands.get(args[0]).name.slice(1) + ' Command');
-				helpEmbed.addField('Command Usage:', `\`${config.prefix}${client.commands.get(args[0]).usage}\``);
-				helpEmbed.addField('Command Description:', `\`${client.commands.get(args[0]).description}\``);
-				helpEmbed.addField('Required Role:', `\`${client.commands.get(args[0]).requiredRoles}\``);
+				helpEmbed.addField('Command Usage:', `\`\`\`${config.prefix}${client.commands.get(args[0]).usage}\`\`\``);
+				helpEmbed.addField('Command Description:', `\`\`\`${client.commands.get(args[0]).description}\`\`\``);
+				helpEmbed.addField('Required Role:', message.channel.guild.roles.cache.find(role => role.name === client.commands.get(args[0]).permissions.requiredRoles[0])));
 				message.channel.send(helpEmbed);
 
 			}
@@ -29,7 +29,6 @@ module.exports = {
 
 		}
 		else {sendMainHelpEmbed(message, helpEmbed, []);}
-
 
 	},
 };
