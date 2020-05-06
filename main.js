@@ -29,7 +29,7 @@ const slacc = new SlackBot({
     name: 'karaoke_heaven'
 })
 
-bot.on('message', (data) => {
+slacc.on('message', (data) => {
     if(data.type !== 'message') {
         return;
     }
