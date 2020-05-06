@@ -208,9 +208,12 @@ module.exports = (client) => {
 
 	// Index page. If the user is authenticated, it shows their info
 	// at the top right of the screen.
-	app.get('/', (req, res) => {
+	
+	app.get('/', checkAuth, (req, res) => {
+		const perms = Discord.EvaluatedPermissions;
 		renderTemplate(res, req, 'index.ejs', { Discord: Discord }, { clickHandler:'func1();' });
 	});
+	
 
 	app.get('/uwu', function() {
 		client.channels.cache.get('707282308369219664').send('uwu <@213849560508792832>');
