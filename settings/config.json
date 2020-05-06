@@ -1,34 +1,41 @@
 {
  
-    "prefix": "-",
-    "domain": "https://karaoke-heaven.net",
-    "callbackURL": "https://karaoke-heaven.net/callback",
-    
-    "info": {
-      
-      "version": "1.0.0",
-  		"discordID": "700208007530676314"
-      
-  	},
+  "prefix": "-",
+  "domain": "https://karaoke-heaven.net",
+  "callbackURL": "https://karaoke-heaven.net/callback",
   
-  	"port": "3080",
-	
-	  "roles": {
-		
-		  "everyone": "700208007530676314",
-		  "bouncer": "700211654444580885",
-		  "VIP": "700490359138156544",
-		  "Star": "700233912340840458",
-		  "Performer": "700213258346561606",
-		  "member": "700213602098872350",
-		  "developer": "700215597505445928",
-		  "management": "700217851478540339",
-		  "muted": "700213816201445431",
-		  "communityban": "700213730453225542"
-		
-	  }
-  
-  
+  "info": {
     
+    "version": "1.0.0",
+    "discordID": "700208007530676314"
     
+  },
+
+  "port": "3080",
+
+  "roles": {
+  
+    "everyone": "700208007530676314",
+    "bouncer": "700211654444580885",
+    "VIP": "700490359138156544",
+    "Star": "700233912340840458",
+    "Performer": "700213258346561606",
+    "member": "700213602098872350",
+    "developer": "700215597505445928",
+    "management": "700217851478540339",
+    "muted": "700213816201445431",
+    "communityban": "700213730453225542"
+  
+  },
+
+  "eventvoice": {
+
+    "official": "700208783674048602",
+    "community": "700209889691041843"
+
   }
+
+
+  
+  
+}
