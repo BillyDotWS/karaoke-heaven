@@ -11,6 +11,8 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
+console.log(process.env.BOT_TOKEN)
+
 fs.readdir('./events/discord/', (err, files) => {
 	const jsFiles = files.filter(f => f.split('.').pop() === 'js');
 
@@ -25,7 +27,7 @@ fs.readdir('./events/discord/', (err, files) => {
 });
 
 const slacc = new SlackBot({
-    token: `${process.env.BOT_TOKEN}`,
+    token: process.env.BOT_TOKEN,
     name: 'karaoke_heaven'
 })
 
