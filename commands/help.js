@@ -21,6 +21,7 @@ module.exports = {
 				helpEmbed.setTitle(client.commands.get(args[0]).name.charAt(0).toUpperCase() + client.commands.get(args[0]).name.slice(1) + ' Command');
 				helpEmbed.addField('Command Usage:', `\`\`\`${config.prefix}${client.commands.get(args[0]).usage}\`\`\``);
 				helpEmbed.addField('Command Description:', `\`\`\`${client.commands.get(args[0]).description}\`\`\``);
+				helpEmbed.addField('Command Example:', `\`\`\`${config.prefix}${client.commands.get(args[0]).example}\`\`\``);
 				helpEmbed.addField('Required Role:', `\`\`\`${client.commands.get(args[0]).requiredRoles}\`\`\``);
 				message.channel.send(helpEmbed);
 
