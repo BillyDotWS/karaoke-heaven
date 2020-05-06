@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const config = require('...../settings/config.json');
+const config = require('./../../settings/config.json');
 
 module.exports = async (client, member) => {
 	member.roles.add(['700213602098872350']);
