@@ -15,22 +15,8 @@ module.exports = async (client, message) => {
 		client.commands.set(command.name, command);
 	}
 
-	if (message.channel.name === 'guild-bridge' || message.channel.name === 'officer-bridge') {
-		if (message.author.bot) return;
-		else return guildBridge.bridgeToMC(message, message.channel.name);
-	}
-
 	const messageAsArray = message.content.split(/ +/);
 	const args = messageAsArray.slice(1);
-
-	if (message.channel.name === 'verification') {
-		if (message.content.split(' ').length === 1) {
-			message.delete();
-			const discordUser = client.users.cache.get(message.author.id);
-			return verify.linkAccount(message, false, discordUser, message.content.split(' ')[0], null);
-		}
-		else {return message.delete();}
-	}
 
 	const command = client.commands.get(messageAsArray[0].slice(config.prefix.length).toLowerCase());
 

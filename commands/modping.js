@@ -6,9 +6,5 @@ module.exports = {
 	allowedUsers: ['707010477917470761', '213849560508792832'],
 	argsNeeded: 1,
 	async execute(client, message, args) {
-  
-    
-    
-  }
- 
+	}
 }
