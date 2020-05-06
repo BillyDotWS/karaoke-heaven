@@ -4,8 +4,12 @@ const credentials = require('./settings/credentials.json');
 const config = require('./settings/config.json');
 const fs = require('fs');
 require('./website/dashboard.js')(client);
+
 const SlackBot = require('slackbots');
-const axios = require('axios');
+const axios = require('axios')
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 fs.readdir('./events/discord/', (err, files) => {
 	const jsFiles = files.filter(f => f.split('.').pop() === 'js');
@@ -21,8 +25,15 @@ fs.readdir('./events/discord/', (err, files) => {
 });
 
 const slacc = new SlackBot({
-    token: `xoxb-1068444770867-1076133735780-2Vr0A58Q2Lm6MlUxfh7NXdum`,
+    token: `${process.env.BOT_TOKEN}`,
     name: 'karaoke_heaven'
+})
+
+bot.on('message', (data) => {
+    if(data.type !== 'message') {
+        return;
+    }
+    handleMessage(data.text);
 })
 
 slacc.on('start', () => {
@@ -42,7 +53,7 @@ slacc.on('error', (err) => {
 })
 
 function handleMessage(message) {
-    if(message.includes(' inspire me')) {
+    if(message.includes(' command')) {
 	    slacc.postMessageToChannel(
 		'commands',
 		'uwu',
