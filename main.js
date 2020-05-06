@@ -21,7 +21,7 @@ fs.readdir('./events/discord/', (err, files) => {
 });
 
 const slacc = new SlackBot({
-    token: `${process.env.BOT_TOKEN}`,
+    token: `xoxb-1068444770867-1076133735780-2Vr0A58Q2Lm6MlUxfh7NXdum`,
     name: 'karaoke_heaven'
 })
 
