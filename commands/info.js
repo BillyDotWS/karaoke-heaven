@@ -18,7 +18,6 @@ module.exports = {
         commandembed.addField('Mem Usage:', `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\``, true)
         commandembed.addField('Uptime:', `\`${duration}\``, true)
         commandembed.addField('Discord.js:', `\`v${version}\``, true)
-        commandembed.addField('Discord.js:', `\`v${version}\``, true)
         commandembed.addField('Node:', `\`${process.version}\``, true)
         commandembed.setColor('#FFC0CB')
         message.channel.send(commandembed)
