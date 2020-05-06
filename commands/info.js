@@ -17,10 +17,10 @@ module.exports = {
         commandembed.setTitle('Bot Information')
         commandembed.addField('Mem Usage:', `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\``, true)
         commandembed.addField('Uptime:', `\`${duration}\``, true)
-        commandembed.addField('Users:', `\`${client.users.size}\``, true)
         commandembed.addField('Discord.js:', `\`v${version}\``, true)
         commandembed.addField('Discord.js:', `\`v${version}\``, true)
         commandembed.addField('Node:', `\`${process.version}\``, true)
+        commandembed.setColor('#FFC0CB')
         message.channel.send(commandembed)
     }
 
