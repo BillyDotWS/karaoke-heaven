@@ -11,8 +11,6 @@ const dotenv = require('dotenv')
 
 dotenv.config()
 
-console.log(process.env.BOT_TOKEN)
-
 fs.readdir('./events/discord/', (err, files) => {
 	const jsFiles = files.filter(f => f.split('.').pop() === 'js');
 
