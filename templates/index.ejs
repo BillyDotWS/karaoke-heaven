@@ -1,24 +1,7 @@
+<!DOCTYPE html>
+<head>
+<title>Karaoke Heaven - Home</title>
+</head>
+
 <%- include('blocks/header', {bot, user, path}) %>
-  <div class="jumbotron">
-    <div>
-      <h1>Karaoke Heaven Dashboard</h1>
-      <p class="lead">      
-        
-      </p>
-      
-        <button onclick='func1()'>Click to uwu</p>
-
-        <script>
-          function func1(){
-             fetch('./uwu')
-            .then(function(response) {
-              if(response.ok) {
-                console.log('Click was recorded');
-                return;
-              }
-            })
-          }
-        </script>
-
-    </div>
-  </div>
+<%- include('blocks/navbar', {bot, user, path}) %>
