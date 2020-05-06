@@ -15,10 +15,7 @@ module.exports = {
         const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
         var commandembed = new Discord.MessageEmbed()
         commandembed.setTitle('Bot Information')
-        commandembed.addField('Mem Usage:', `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\``, true)
-        commandembed.addField('Uptime:', `\`${duration}\``, true)
-        commandembed.addField('Discord.js:', `\`v${version}\``, true)
-        commandembed.addField('Node:', `\`${process.version}\``, true)
+        commandembed.setDescription(`Mem Usage: \`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB\`\nUptime: \`${duration}\`\nDiscord.js: \`v${version}\`\nNode: \`${process.version}\``)
         commandembed.setColor('#FFC0CB')
         message.channel.send(commandembed)
     }
