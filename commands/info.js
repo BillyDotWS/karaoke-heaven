@@ -22,6 +22,6 @@ module.exports = {
         commandembed.addField('Discord.js:', `\`v${version}\``, true)
         commandembed.addField('Node:', `\`${process.version}\``, true)
         message.channel.send(commandembed)
-    {
+    }
 
 };
