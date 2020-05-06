@@ -199,18 +199,12 @@ module.exports = (client) => {
 		});
 	});
 
-	// style test
-	app.get('/public/style/karaokeheaven.css', (req, res) => {
-		renderTemplate(res, req, './public/style/karaokeheaven.css');
-	});
-
 	/** REGULAR INFORMATION PAGES */
 
 	// Index page. If the user is authenticated, it shows their info
 	// at the top right of the screen.
 	
-	app.get('/', checkAuth, (req, res) => {
-		const perms = Discord.EvaluatedPermissions;
+	app.get('/', (req, res) => {
 		renderTemplate(res, req, 'index.ejs', { Discord: Discord }, { clickHandler:'func1();' });
 	});
 	
@@ -377,5 +371,9 @@ module.exports = (client) => {
 		res.redirect('/dashboard/' + req.params.guildID);
 	});
 
+	app.get('*', (req, res) => {
+		renderTemplate(res, req, '404.ejs');
+	});
+	
 	client.site = app.listen(config.port);
 };
