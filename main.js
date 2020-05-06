@@ -43,8 +43,7 @@ slacc.on('start', () => {
 
     slacc.postMessageToChannel(
         'commands',
-        'Bot turned on',
-        params
+        'Bot turned on'
     );
 })
 
@@ -56,8 +55,7 @@ function handleMessage(message) {
     if(message.includes('command')) {
 	    slacc.postMessageToChannel(
 		'commands',
-		'uwu',
-		params
+		'uwu'
 	    );
     }
 }
