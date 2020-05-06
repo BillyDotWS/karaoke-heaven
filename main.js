@@ -53,7 +53,7 @@ slacc.on('error', (err) => {
 })
 
 function handleMessage(message) {
-    if(message.includes(' command')) {
+    if(message.includes('command')) {
 	    slacc.postMessageToChannel(
 		'commands',
 		'uwu',
