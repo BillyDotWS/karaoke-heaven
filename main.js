@@ -26,7 +26,7 @@ fs.readdir('./events/discord/', (err, files) => {
 
 const slacc = new SlackBot({
     token: process.env.BOT_TOKEN,
-    name: 'karaoke_heaven'
+    name: 'Karaoke Heaven'
 })
 
 slacc.on('message', (data) => {
@@ -38,12 +38,13 @@ slacc.on('message', (data) => {
 
 slacc.on('start', () => {
     const params = {
-        icon_emoji: ':robot_face:'
+        icon_emoji: ':khicon:'
     }
 
     slacc.postMessageToChannel(
         'commands',
-        'Bot turned on'
+        'Bot turned on',
+	 params
     );
 })
 
@@ -52,10 +53,17 @@ slacc.on('error', (err) => {
 })
 
 function handleMessage(message) {
+
+    const params = {
+        icon_emoji: ':khicon:'
+    }
+
+	
     if(message.includes('command')) {
 	    slacc.postMessageToChannel(
 		'commands',
-		'uwu'
+		'uwu pls put your code in me',
+		 params
 	    );
     }
 }
