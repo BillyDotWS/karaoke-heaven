@@ -7,6 +7,7 @@ module.exports = {
 	name: 'info',
 	description: 'View information about the bot',
 	usage: 'info',
+	example: 'info',
 	requiredRoles: ['@everyone'],
 	allowedUsers: [],
 	argsNeeded: 0,
