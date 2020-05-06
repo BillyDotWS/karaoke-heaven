@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 module.exports = async (client, oldMember, newMember) => {
 	// Config File
 	const config = require('../../settings/config.json');
