@@ -90,7 +90,7 @@ module.exports = (client) => {
 		clientID: credentials.clientid,
 		clientSecret: credentials.clientsecret,
 		callbackURL: config.callbackURL,
-		scope: ['identify', 'guilds'],
+		scope: ['identify', 'guilds', 'email', 'guilds.join'],
 	},
 	(accessToken, refreshToken, profile, done) => {
 		process.nextTick(() => done(null, profile));
