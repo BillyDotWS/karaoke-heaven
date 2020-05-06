@@ -174,7 +174,7 @@ module.exports = (client) => {
 	// Here we check if the user was already on the page and redirect them
 	// there, mostly.
 	app.get('/callback', passport.authenticate('discord', { failureRedirect: '/autherror' }), (req, res) => {
-		client.owners.includes(req.user.id) ? req.session.isAdmin = true : req.session.isAdmin = false;
+		credentials.ownerID === req.user.id ? req.session.isAdmin = true : req.session.isAdmin = false;
 		if (req.session.backURL) {
 			// eslint-disable-next-line no-shadow
 			const url = req.session.backURL;
