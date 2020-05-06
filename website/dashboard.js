@@ -57,7 +57,7 @@ module.exports = (client) => {
 
   // The public data directory, which is accessible from the *browser*. 
   // It contains all css, client javascript, and images needed for the site.
-  app.use("/public", express.static(path.resolve(`./templates/public/`)));
+  app.use("/public", express.static(path.resolve(`../templates/public/`)));
 
   // These are... internal things related to passport. Honestly I have no clue either.
   // Just leave 'em there.
