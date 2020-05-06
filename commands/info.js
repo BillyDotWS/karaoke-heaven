@@ -8,7 +8,7 @@ module.exports = {
     name: 'info',
     description: 'View information about the bot',
     usage: 'info',
-    requiredRoles: ['👪 Member'],
+    requiredRoles: ['@everyone'],
     allowedUsers: [],
     argsNeeded: 0,
     async execute(client, message, args, embeds) {
