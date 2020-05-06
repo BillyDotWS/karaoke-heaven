@@ -38,7 +38,7 @@ slacc.on('message', (data) => {
 
 slacc.on('start', () => {
     const params = {
-        icon_emoji: ':khicon2:'
+        icon_url: 'https://i.imgur.com/TsLUF8r.png'
     }
 
     slacc.postMessageToChannel(
@@ -55,7 +55,7 @@ slacc.on('error', (err) => {
 function handleMessage(message) {
 
     const params = {
-        icon_emoji: ':khicon2:'
+        icon_url: 'https://i.imgur.com/TsLUF8r.png'
     }
 
 	
