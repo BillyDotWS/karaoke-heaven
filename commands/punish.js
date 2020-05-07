@@ -13,6 +13,8 @@ module.exports = {
         
         let global = punishmentconfig.punishments.global;
 
+        message.reply(`${args}`)
+
         for (const idk in punishmentconfig.punishments.args[1]) {
             message.reply(`reason: ${idk} track: ${global[idk][0]} weight: ${global[idk][1]}`)
         }
