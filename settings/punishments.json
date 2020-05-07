@@ -30,7 +30,7 @@
 
         "global": {
                     
-            "Spamming": ["mutetrack", "1"],
+            "Spamming": ["mutetrack", "2"],
             "Controversial": ["mutetrack", "5"],
             "Promotion": ["mutetrack", "2"],
             "recordingthreat": ["bantrack", "1"],
