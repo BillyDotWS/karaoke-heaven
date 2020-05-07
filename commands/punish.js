@@ -16,22 +16,24 @@ module.exports = {
 
         if (`${config}` == "not found") {message.reply(`You haven't entered a correct punishment type -- entered ${args[1]}`)}
 
-        for (const idk in config) {if (idk === args[2]) {
+        for (const idk in config) {
+        
+            if (idk === args[2]) {
             
-            message.reply(`**Found!** reason: ${idk} track: ${config[idk][0]} weight: ${config[idk][1]}`)}
+                message.reply(`**Found!** reason: ${idk} track: ${config[idk][0]} weight: ${config[idk][1]}`)
 
-            let punishment = {
-                user: client.users.cache.get(args[0]),
-                type: args[1],
-                reason: args[2],
-                moderator: message.author,
-                weight: config[idk][1],
-                track: config[idk][0]
+                let punishment = {
+                    user: client.users.cache.get(args[0]),
+                    type: args[1],
+                    reason: args[2],
+                    moderator: message.author,
+                    weight: config[idk][1],
+                    track: config[idk][0]
+                }
+
+                punishmenthandler.punishment.add(punishment)
+
             }
-
-            punishmenthandler.add(punishment)
-
-
         } 
 
   	},
