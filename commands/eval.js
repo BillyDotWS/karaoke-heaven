@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const config = require('../settings/config.json');
+const punishmentconfig = require('../settings/punishments.json');
 const Discord = require('discord.js');
 
 module.exports = {
