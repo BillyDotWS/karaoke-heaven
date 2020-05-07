@@ -11,13 +11,34 @@ module.exports = {
 	argsNeeded: 3,
 	async execute(client, message, args) {
         
-        let global = punishmentconfig.punishments.global;
 
-        message.reply(`${args}`)
+        if (args[1] === "global") {
 
-        for (const idk in punishmentconfig.punishments.args[1]) {
-            message.reply(`reason: ${idk} track: ${global[idk][0]} weight: ${global[idk][1]}`)
+            const config = punishmentconfig.punishments.global
+
         }
+
+        if (args[1] === "community") {
+
+            const config = punishmentconfig.punishments.community
+
+        }
+
+        if (args[1] === "official") {
+
+            const config = punishmentconfig.punishments.official
+
+        }
+
+        for (const idk in config) {
+
+            if (idk === args[2]) {
+
+                message.reply(`**Found!** reason: ${idk} track: ${global[idk][0]} weight: ${global[idk][1]}`)
+
+            }
+        }
+
 
   	},
 
