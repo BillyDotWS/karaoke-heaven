@@ -20,7 +20,7 @@ module.exports = {
             
             message.reply(`**Found!** reason: ${idk} track: ${config[idk][0]} weight: ${config[idk][1]}`)}
 
-            const punishment = {
+            let punishment = {
                 user: args[0],
                 type: args[1],
                 reason: args[2],
