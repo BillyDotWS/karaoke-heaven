@@ -154,10 +154,8 @@ module.exports = (client) => {
 	// The login page saves the page the person was on in the session,
 	// then throws the user to the Discord OAuth2 login page.
 	app.get('/login', (req, res, next) => {
-		if (req.session.backURL) {
-			next();
-		}
-		else if (req.headers.referer) {
+		
+		if (req.headers.referer) {
 			const parsed = url.parse(req.headers.referer);
 			if (parsed.hostname === app.locals.domain) {
 				req.session.backURL = parsed.path;
