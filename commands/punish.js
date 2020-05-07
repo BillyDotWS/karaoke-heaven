@@ -11,10 +11,8 @@ module.exports = {
 	argsNeeded: 3,
 	async execute(client, message, args) {
         
-        let config = "not found"
-        if (`${args[1]}` == "global") {let config = punishmentconfig.punishments.global}
-        if (`${args[1]}` == "community") {let config = punishmentconfig.punishments.community}
-        if (`${args[1]}` == "official") {let config = punishmentconfig.punishments.official}
+        let config = setconfig(args[1])
+
         if (`${config}` == "not found") {message.reply(`You haven't entered a correct punishment type -- entered ${args[1]}`)}
 
         for (const idk in config) {if (idk === args[2]) {message.reply(`**Found!** reason: ${idk} track: ${global[idk][0]} weight: ${global[idk][1]}`)}}
@@ -22,3 +20,11 @@ module.exports = {
   	},
 
 };
+
+function setconfig(type) {
+
+    if (`${type}` == "global") {let config = punishmentconfig.punishments.global; return config;}
+    if (`${type}` == "community") {let config = punishmentconfig.punishments.community; return config;}
+    if (`${type}` == "official") {let config = punishmentconfig.punishments.official; return config;}
+    return "not found";
+}
