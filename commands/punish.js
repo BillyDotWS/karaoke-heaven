@@ -39,7 +39,7 @@ module.exports = {
                 punishmenthandler.add(punishment)
 
                 // spit out good/bad error
-                new embeds.punishEmbed('success', verifyEmbed, `Punished ${client.users.cache.get(args[0])} for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
+                new embeds.punishEmbed('success', punishEmbed, `Punished ${client.users.cache.get(args[0])} for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
 
             }
         } 
