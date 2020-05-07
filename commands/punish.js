@@ -29,7 +29,8 @@ module.exports = {
                 track: config[idk][0]
             }
 
-            punishmenthandler.punishment.add(punishment)
+            //punishmenthandler.punishment.add(punishment)
+            console.log(punishment)
 
 
         } 
