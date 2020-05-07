@@ -1,0 +1,65 @@
+{
+ 
+    "defaultweight": 0,
+    
+    "weightresolves": {
+
+        "bantrack": {
+
+            "1": "warning",
+            "3": 86400,
+            "5": 259200,
+            "7": 777600,
+            "9": -1
+
+        },
+
+        "mutetrack": {
+
+            "1": "warning",
+            "3": 600,
+            "5": 3600,
+            "7": 21600,
+            "9": -1
+            
+        }
+
+    },
+
+    "punishments": {
+
+        "global": {
+                    
+            "Spamming": ["mutetrack", "1"],
+            "Controversial": ["mutetrack", "5"],
+            "Promotion": ["mutetrack", "2"],
+            "recordingthreat": ["bantrack", "1"],
+            "recordingactual": ["bantrack", "3"]
+
+        },
+
+        "community": {
+
+            "audiotrolling": ["bantrack", "4"],
+            "lovesong": ["bantrack", "2"],
+            "rudeness": ["mutetrack", "3"]
+            
+
+        },
+
+        "official": {
+        
+            "audiotrolling": ["bantrack", "7"],
+            "lovesong": ["bantrack", "3"],
+            "rudeness": ["mutetrack", "5"]
+            
+        }
+
+    }
+
+    
+  
+    
+    
+  }
+  
