@@ -15,7 +15,7 @@ module.exports = {
 
         if (`${config}` == "not found") {message.reply(`You haven't entered a correct punishment type -- entered ${args[1]}`)}
 
-        for (const idk in config) {if (idk === args[2]) {message.reply(`**Found!** reason: ${idk} track: ${global[idk][0]} weight: ${global[idk][1]}`)}}
+        for (const idk in config) {if (idk === args[2]) {message.reply(`**Found!** reason: ${idk}`)}} //  track: ${global[idk][0]} weight: ${global[idk][1]}
 
   	},
 
