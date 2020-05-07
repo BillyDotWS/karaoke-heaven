@@ -2,6 +2,7 @@ const punishment = {};
 
 punishment.add = async (punishment) => {
 
+    console.log(punishment);
     // add punishment to database
 
     // return
@@ -77,3 +78,5 @@ punishment.appealdeny = async (punishment) => {
     // return
 
 }
+
+module.exports = punishment;
