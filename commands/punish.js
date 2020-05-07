@@ -23,7 +23,6 @@ module.exports = {
         
             if (reason === args[2]) {
             
-                message.reply(`**Found!** reason: ${reason} track: ${config[reason][0]} weight: ${config[reason][1]}`)
 
                 let punishment = {
                     user: client.users.cache.get(args[0]),
