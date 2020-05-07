@@ -22,6 +22,22 @@ punishment.modify = async (punishment, data = {}) => {
 
 }
 
+punishment.fetchweight = async (user, type) => {
+
+    // fetch weight of user in type
+
+    // return
+
+}
+
+punishment.addweight = async (user, type) => {
+
+    // add weight to user in type
+
+    // return
+
+}
+
 punishment.appeal = async (punishment, data = {}) => {
 
     // create appeal in slack
