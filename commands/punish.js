@@ -9,9 +9,13 @@ module.exports = {
 	requiredRoles: ['🧍🏿‍♂️  Bouncer'],
 	allowedUsers: [],
 	argsNeeded: 3,
-	async execute(client, message) {
+	async execute(client, message, args) {
         
-        message.reply(punishmentconfig);
+        let global = punishmentconfig.punishments.global;
+
+        for (const idk in punishmentconfig.punishments.args[1]) {
+            message.reply(`reason: ${idk} track: ${global[idk][0]} weight: ${global[idk][1]}`)
+        }
 
   	},
 
