@@ -1,4 +1,4 @@
-punishment.add = async (data = {}) => {
+punishment.add = async (punishment) => {
 
     // add punishment to database
 
