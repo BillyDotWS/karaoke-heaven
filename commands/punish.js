@@ -21,7 +21,7 @@ module.exports = {
             message.reply(`**Found!** reason: ${idk} track: ${config[idk][0]} weight: ${config[idk][1]}`)}
 
             let punishment = {
-                user: args[0],
+                user: client.users.cache.get(args[0]),
                 type: args[1],
                 reason: args[2],
                 moderator: message.author,
@@ -29,8 +29,7 @@ module.exports = {
                 track: config[idk][0]
             }
 
-            //punishmenthandler.punishment.add(punishment)
-            console.log(punishment)
+            punishmenthandler.punishment.add(punishment)
 
 
         } 
