@@ -4,7 +4,7 @@ const punishmenthandler = require('../API/punishmentHandler.js');
 
 module.exports = {
 	name: 'punish',
-	description: 'View information about the bot',
+	description: 'Enforce rules on the discord',
 	usage: 'punish [member] [type] [reason]',
 	example: 'punish 281199286765748225 global Spamming',
 	requiredRoles: ['🧍🏿‍♂️  Bouncer'],
@@ -28,7 +28,8 @@ module.exports = {
                     reason: args[2],
                     moderator: message.author,
                     weight: config[idk][1],
-                    track: config[idk][0]
+                    track: config[idk][0],
+                    active: true
                 }
 
                 punishmenthandler.add(punishment)
