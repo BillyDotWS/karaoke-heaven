@@ -78,3 +78,5 @@ punishment.appealdeny = async (punishment) => {
     // return
 
 }
+
+module.exports = punishment;
