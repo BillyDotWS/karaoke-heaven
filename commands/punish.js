@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const punishmentconfig = require('../settings/punishments.json');
 const punishmenthandler = require('../API/punishmentHandler.js');
+const embeds = require('../modules/embeds.js');
 
 module.exports = {
 	name: 'punish',
@@ -12,27 +13,33 @@ module.exports = {
 	argsNeeded: 3,
 	async execute(client, message, args) {
         
+        const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to punish user ${client.users.cache.get(args[0])}`, message.author, null).sendEmbed();
+
         let config = setconfig(args[1])
 
         if (`${config}` == "not found") {message.reply(`You haven't entered a correct punishment type -- entered ${args[1]}`)}
 
-        for (const idk in config) {
+        for (const reason in config) {
         
-            if (idk === args[2]) {
+            if (reason === args[2]) {
             
-                message.reply(`**Found!** reason: ${idk} track: ${config[idk][0]} weight: ${config[idk][1]}`)
+                message.reply(`**Found!** reason: ${reason} track: ${config[reason][0]} weight: ${config[reason][1]}`)
 
                 let punishment = {
                     user: client.users.cache.get(args[0]),
                     type: args[1],
                     reason: args[2],
                     moderator: message.author,
-                    weight: config[idk][1],
-                    track: config[idk][0],
+                    weight: config[reason][1],
+                    track: config[reason][0],
                     active: true
                 }
 
+                // make this a variable and check if it's a good reply once I do it ty future billy
                 punishmenthandler.add(punishment)
+
+                // spit out good/bad error
+                new embeds.punishEmbed('success', verifyEmbed, `Punished ${client.users.cache.get(args[0])} for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
 
             }
         } 
