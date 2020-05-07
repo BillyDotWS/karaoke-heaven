@@ -1,3 +1,5 @@
+const premium = {};
+
 premium.add = async (user, days) => {
 
     // add days to user

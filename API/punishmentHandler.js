@@ -1,3 +1,5 @@
+const punishment = {};
+
 punishment.add = async (punishment) => {
 
     // add punishment to database

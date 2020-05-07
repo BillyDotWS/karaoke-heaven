@@ -1,3 +1,5 @@
+const event = {};
+
 event.delete = async (event, req) => {
 
     // delete event validation

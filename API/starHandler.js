@@ -1,3 +1,5 @@
+const star = {};
+
 star.add = async (fromuser, touser) => {
 
     // validate

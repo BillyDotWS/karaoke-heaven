@@ -1,3 +1,5 @@
+const currency = {};
+
 currency.remove = async (user, amount) => {
 
     // check user has enough
