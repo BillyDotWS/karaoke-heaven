@@ -1,5 +1,5 @@
 const punishment = {};
-client.r = require('rethinkdbdash')();
+database = require('rethinkdbdash')();
 
 
 punishment.add = async (punishment) => {
@@ -9,7 +9,7 @@ punishment.add = async (punishment) => {
     // validation
 
     // add punishment to database
-    client.r.db('punishments').table('blacklist').insert(punishment, { conflict: 'update' }).run();
+    database.db('punishments').table('blacklist').insert(punishment, { conflict: 'update' }).run();
 
     // error
     const returnvar = {
