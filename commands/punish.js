@@ -27,13 +27,13 @@ module.exports = {
             if (reason === args[2]) {
             
                 const punishment = {
-                    user: user,
-                    type: args[1],
-                    reason: args[2],
-                    moderator: message.author,
-                    weight: config[reason][1],
-                    track: config[reason][0],
-                    active: true
+                    user: `${user}`,
+                    type: `${args[1]}`,
+                    reason: `${args[2]}`,
+                    moderator: `${message.author}`,
+                    weight: `${config[reason][1]}`,
+                    track: `${config[reason][0]}`,
+                    active: `true`
                 }
 
                 // make this a variable and check if it's a good reply once I do it ty future billy
