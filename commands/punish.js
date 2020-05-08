@@ -27,10 +27,10 @@ module.exports = {
             if (reason === args[2]) {
             
                 const punishment = {
-                    user: `${user}`,
+                    user: `${user.id}`,
                     type: `${args[1]}`,
                     reason: `${args[2]}`,
-                    moderator: `${message.author}`,
+                    moderator: `${message.author.id}`,
                     weight: `${config[reason][1]}`,
                     track: `${config[reason][0]}`,
                     active: `true`
