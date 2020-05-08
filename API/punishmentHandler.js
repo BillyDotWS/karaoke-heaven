@@ -39,7 +39,7 @@ punishment.clear = async (punishment) => {
     }
     
     const response = {status: "success"}
-    return;
+    return response;
 
 }
 
