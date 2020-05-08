@@ -9,7 +9,7 @@ punishment.add = async (punishment) => {
     // validation
 
     // add punishment to database
-    database.db('punishments').table('blacklist').insert(punishment, { conflict: 'update' }).run();
+    await database.db('punishments').table('blacklist').insert(punishment, { conflict: 'update' }).run();
 
     // error
     const returnvar = {
