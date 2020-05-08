@@ -26,8 +26,7 @@ module.exports = {
         
             if (reason === args[2]) {
             
-
-                let punishment = {
+                const punishment = {
                     user: user,
                     type: args[1],
                     reason: args[2],
