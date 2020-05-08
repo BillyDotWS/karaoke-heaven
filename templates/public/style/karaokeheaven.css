@@ -1,23 +1,159 @@
-body {
-
-    margin: 0;
-
+img {
+    max-width: 100%;
 }
 
 
-#topbar {
-
-    background-color: #3d4374;
-
-}
-
-#username {
-
+/*header*/
+header {
+    background: #3d4374;
     color: #828ac9;
-
+    padding: 20px 0;
 }
 
-#discriminator {
+header .avatar {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
 
+header .avatar img {
+    border: 1px solid #323868;
+    border-radius: 50%;
+}
 
+header .ent {
+    margin-left: 10px;
+    float: left;
+}
+
+header .ent h3 {
+    font-size: 16px;
+}
+
+header .ent i {
+    color: #6fac58;
+}
+
+header .ent span {
+    font-size: 12px;
+    background: #323868;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+header .logo img {
+    width: 180px;
+    margin: 0 auto;
+}
+
+.coin {
+    text-align: center;
+    float: right;
+    width: 159px;
+    font-size: 21px;
+    background: #323868;
+    padding: 4px 0;
+    border-radius: 15px;
+    color: #9d6727;
+}
+.coin .ent{
+    padding: 8px 0;
+}
+
+/*nav*/
+
+.navbar-kar {
+    background: #b669b3 !important;
+    color: #e0c4e1;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.navbar-kar a {
+
+    color: #e0c4e1;
+}
+
+.navbar .active {
+    border-radius: 10px;
+    background: #964f9d;
+}
+
+#dashboard{
+    background: url("../images/background2.jpg") no-repeat;
+    background-size: cover;
+    padding: 40px 0;
+    position: relative;
+}
+
+h3.title-sec{
+    color: #3d4374;
+    border-bottom: 1px solid #797ea5;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 21px;
+}
+.upcoming{
+    margin-bottom: 20px;
+}
+.upcoming .box{
+    background:#d1c7d8;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.upcoming .box h3{
+    font-size: 16px;
+    color: #3d4374;
+}
+.upcoming .box p{
+    color: #b669b3;
+    font-size: 14px;
+}
+
+.feed .box{
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+    content: ' ';
+    min-height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+    header .col-md-4{
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+    header .ent{
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        float: none;
+    }
+    header .col-md-4 .coin{
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+.setting{
+    position: fixed;
+    top: 180px;
+    left: 0;
+    background: #d6c8d8;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.setting ul{
+    margin: 0;
+    padding: 0;
+}
+.setting ul li{
+    list-style: none;
+    padding: 10px 20px;
+}
+.setting ul li a{
+    color: #964f9d;
 }
