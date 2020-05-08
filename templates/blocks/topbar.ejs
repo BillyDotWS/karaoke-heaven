@@ -13,18 +13,18 @@
                     <div class="ent">
                         <h3><%= user.username %>#<%= user.discriminator %></h3>
 
-                        <% let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id)._roles %>
+                        <% let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles.cache.sort((a, b) => b.position - a.position); %>
                         
                         
+                        <% let [firstRole, secondRole] = roles %>
+                        <% console.log(firstRole) %>
 
-                        <% for (var i = 0; i < roles.length; i++) { %>
-                            <% var role1 = roles[i]; %>
-                            <% var role2 = roles[i]; %>
-                        <% } %>
-
-
-                        <span><i class="fas fa-circle"></i> <%= role1 %></span>
-                        <span><i class="fas fa-circle"></i> <%= role2 %></span>
+                    <span><i class="fas fa-circle" style="color: #<%= bot.guilds.cache.get('700208007530676314').roles.cache.get(firstRole[0]).color.toString(16) %>; }"></i><style="font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;"> <%= bot.guilds.cache.get('700208007530676314').roles.cache.get(firstRole[0]).name %></style></span>
+                    
+                    <% if (bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).name != "@everyone") {let hidden = true} else {let hidden = false} %>
+                    <span><i class="fas fa-circle" style="color: #<%= bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).color.toString(16) %>; }"></i> <%= bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).name %></span>
+                    
+                    
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                         <img style="width: 40px" src="public/images/coin.png" alt="">
                     </div>
                     <div class="ent">
-                        132, 103
+                        132,103
                     </div>
                 </div>
             </div>

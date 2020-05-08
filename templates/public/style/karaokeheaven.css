@@ -51,6 +51,7 @@ header .logo img {
     float: right;
     width: 159px;
     font-size: 21px;
+    font-weight: 600;
     background: #323868;
     padding: 4px 0;
     border-radius: 15px;
