@@ -7,12 +7,25 @@
             <div class="col-md-4">
                 <div class="eny">
                     <div class="avatar">
-                        <img src="public/images/av-co.jpeg" alt="">
+                        
+                        <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %>.png" alt="">
                     </div>
                     <div class="ent">
-                        <h3>CokkyBilly#11231</h3>
-                        <span><i class="fas fa-circle"></i> Bouncer</span>
-                        <span><i class="fas fa-circle"></i> Developer</span>
+                        <h3><%= user.username %>#<%= user.discriminator %></h3>
+
+                        <%= 
+                            let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles
+
+
+                            for (var i = 0; i < roles.length; i++) {
+                                var role1 = roles[i]
+                                var role2 = roles[i]
+                            }
+
+                        %>
+
+                        <span><i class="fas fa-circle"></i> <%= role1 %></span>
+                        <span><i class="fas fa-circle"></i> <%= role2 %></span>
                     </div>
                 </div>
             </div>
