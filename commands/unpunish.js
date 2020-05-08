@@ -21,7 +21,8 @@ module.exports = {
         }
 
         const punishmentstatus = await punishmenthandler.clear(punishment)
-
+	console.log(punishmentstatus)
+	
         if (`${punishmentstatus.status}` == "success") {
             // spit out good/bad error
             return new embeds.infoEmbed('success', punishEmbed, `Removed punishment ${punishid}`, message.author, null).editEmbed();
