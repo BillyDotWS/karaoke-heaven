@@ -46,7 +46,7 @@ module.exports = {
                 if (args[0].indexOf('<!@') >= 0) {
                     new embeds.infoEmbed('success', punishEmbed, `Punished <@${client.users.cache.get(args[0])}> for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
                 } else {
-                    const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to punish user ${client.users.cache.get(args[0])}`, message.author, null).sendEmbed();
+                    new embeds.infoEmbed('success', punishEmbed, `Punished ${client.users.cache.get(args[0])} for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
                 }
                 
 
