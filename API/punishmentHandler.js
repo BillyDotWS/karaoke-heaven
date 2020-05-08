@@ -3,30 +3,43 @@ const main = require('../main.js');
 
 punishment.add = async (punishment) => {
 
-    // validation
-
-    // add punishment to database
-    console.log(punishment)
-    await main.client.r.db('punishments').table('punishments').insert(punishment, { conflict: 'update' }).run();
-
-    // error
-    const returnvar = {
-
-        status: "error",
-        reason: "Invalid data"
-
+    console.log(`[api/punishmenthandler.js] Trying to punish ${punishment.user} for ${punishment.reason}`)
+    
+    try {
+        
+        await main.client.r.db('punishments').table('punishments').insert(punishment, { conflict: 'update' }).run()
+        
+    } catch(err) {
+        
+        const response = {status: "error", reason: `${err}`}
+        return response;
+        
     }
-
-    return;
-    // return
-
+    
+    
+    // fetch action to execute
+    
+    // execute action
+    const response = {status: "success", action: "uwu"}
+    return response;
+    
 }
 
 punishment.clear = async (punishment) => {
-
-    // clear punishment to database
-
-    // return
+    
+    try {
+        
+        await main.client.r.db('punishments').table('punishments').get(`${punishment.id}`).delete().run()
+        
+    } catch(err) {
+        
+        const response = {status: "error", reason: `${err}`}
+        return response;
+        
+    }
+    
+    const response = {status: "success"}
+    return;
 
 }
 
