@@ -13,7 +13,11 @@ module.exports = {
 	argsNeeded: 3,
 	async execute(client, message, args) {
         
-        const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to punish user ${client.users.cache.get(args[0]).user}`, message.author, null).sendEmbed();
+        if (args[0].indexOf('<!@') >= 0) {
+            const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to punish user <@${client.users.cache.get(args[0])}>`, message.author, null).sendEmbed();
+        } else {
+            const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to punish user ${client.users.cache.get(args[0])}`, message.author, null).sendEmbed();
+        }
 
         let config = setconfig(args[1])
 
@@ -38,7 +42,13 @@ module.exports = {
                 punishmenthandler.add(punishment)
 
                 // spit out good/bad error
-                new embeds.infoEmbed('success', punishEmbed, `Punished ${client.users.cache.get(args[0]).user} for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
+
+                if (args[0].indexOf('<!@') >= 0) {
+                    new embeds.infoEmbed('success', punishEmbed, `Punished <@${client.users.cache.get(args[0])}> for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
+                } else {
+                    const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to punish user ${client.users.cache.get(args[0])}`, message.author, null).sendEmbed();
+                }
+                
 
             }
         } 
