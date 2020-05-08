@@ -40,11 +40,14 @@ module.exports = {
                 }
 
                 // make this a variable and check if it's a good reply once I do it ty future billy
-                punishmenthandler.add(punishment)
-
-                // spit out good/bad error
-                return new embeds.infoEmbed('success', punishEmbed, `Punished ${user} for **${args[2]} (${args[1]})**`, message.author, null).editEmbed();
-
+                const punishmentstatus = punishmenthandler.add(punishment)
+		
+		if (punishmentstatus.status == "success") {
+			// spit out good/bad error
+			return new embeds.infoEmbed('success', punishEmbed, `Punished ${user} for **${args[2]} (${args[1]})**`, message.author, null).editEmbed();
+		} else {
+			return new embeds.infoEmbed('error', punishEmbed, `Failed to execute punishment\n\nReason: \`\`\`${punishmentstatus.reason}\`\`\``, message.author, null).editEmbed();
+		}
 
             }
         } 
