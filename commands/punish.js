@@ -41,8 +41,9 @@ module.exports = {
 
                 // make this a variable and check if it's a good reply once I do it ty future billy
                 const punishmentstatus = punishmenthandler.add(punishment)
+		console.log(punishmentstatus)
 		
-		if (punishmentstatus.status == "success") {
+		if (`${punishmentstatus.status}` == "success") {
 			// spit out good/bad error
 			return new embeds.infoEmbed('success', punishEmbed, `Punished ${user} for **${args[2]} (${args[1]})**`, message.author, null).editEmbed();
 		} else {
