@@ -7,7 +7,7 @@ punishment.add = async (punishment) => {
 
     // add punishment to database
     console.log(punishment)
-    // await main.client.r.db('punishments').table('punishments').insert(punishment, { conflict: 'update' }).run();
+    await main.client.r.db('punishments').table('punishments').insert(punishment, { conflict: 'update' }).run();
 
     // error
     const returnvar = {
