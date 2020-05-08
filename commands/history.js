@@ -22,7 +22,7 @@ module.exports = {
             // spit out good/bad error
             return new embeds.infoEmbed('success', punishEmbed, `Punishment history:\n\`\`\`${punishmentstatus.result}\`\`\``, message.author, null).editEmbed();
         } else {
-            return new embeds.infoEmbed('error', punishEmbed, `Failed to remove punishment\n\nReason: \`\`\`${punishmentstatus.reason}\`\`\``, message.author, null).editEmbed();
+            return new embeds.infoEmbed('error', punishEmbed, `Failed to fetch history\n\nReason: \`\`\`${punishmentstatus.reason}\`\`\``, message.author, null).editEmbed();
         }
 
 
