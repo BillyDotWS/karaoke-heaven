@@ -45,7 +45,7 @@ module.exports = {
 		
 		if (`${punishmentstatus.status}` == "success") {
 			// spit out good/bad error
-			return new embeds.infoEmbed('success', punishEmbed, `**Punishment successful!**\nYou have punished ${user} for **${args[2]} (${args[1]})**\n\nAction: \`\`\`${punishmentstatus.action}\`\`\`\n\nPunishment ID: \`\`\`${punishid}\`\`\``, message.author, null).editEmbed();
+			return new embeds.infoEmbed('success', punishEmbed, `**Punishment successful!**\nYou have punished ${user} for **${args[2]} (${args[1]})**\n\nAction: \`\`\`${punishmentstatus.action}\`\`\`\nPunishment ID: \`\`\`${punishid}\`\`\``, message.author, null).editEmbed();
 		} else {
 			return new embeds.infoEmbed('error', punishEmbed, `Failed to execute punishment\n\nReason: \`\`\`${punishmentstatus.reason}\`\`\``, message.author, null).editEmbed();
 		}
