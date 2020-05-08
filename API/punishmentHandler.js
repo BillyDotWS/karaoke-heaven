@@ -84,10 +84,21 @@ punishment.appeal = async (punishment, data = {}) => {
 }
 
 punishment.history = async (user) => {
+    
+    try {
+        
+        const historyresult = await client.r.db('punishments').table('punishments').filter({ user: `${user}` }).default(false).run();
 
-    // fetch punishments of user
-
-    // return
+    } catch(err) {
+        
+        const response = {status: "error", reason: `${err}`}
+        return response;
+        
+    }
+        
+    // execute action
+    const response = {status: "success", result: historyresult}
+    return response;
 
 }
 
