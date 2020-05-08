@@ -1,15 +1,15 @@
 const punishment = {};
-database = require('rethinkdbdash')();
-
+const main = require('../main.js');
 
 punishment.add = async (punishment) => {
-
-    console.log(punishment);
 
     // validation
 
     // add punishment to database
-    await database.db('punishments').table('blacklist').insert(punishment, { conflict: 'update' }).run();
+    const test = {
+        test: "test"
+    }
+    await main.client.r.db('punishments').table('punishments').insert(test, { conflict: 'update' }).run();
 
     // error
     const returnvar = {
