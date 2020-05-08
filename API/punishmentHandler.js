@@ -45,23 +45,31 @@ punishment.clear = async (punishment) => {
 
 punishment.modify = async (punishment, data = {}) => {
 
-    // clear punishment to database
-
-    // return
+    console.log(`[api/punishmenthandler.js] Trying to update punishment ${punishment.user} for ${punishment.reason}`)
+    
+    try {
+        
+        await main.client.r.db('punishments').table('punishments').insert(punishment, { conflict: 'update' }).run()
+        
+    } catch(err) {
+        
+        const response = {status: "error", reason: `${err}`}
+        return response;
+        
+    }
+    
+    
+    // fetch action to execute
+    
+    // execute action
+    const response = {status: "success", action: "uwu"}
+    return response;
 
 }
 
 punishment.fetchweight = async (user, type) => {
 
     // fetch weight of user in type
-
-    // return
-
-}
-
-punishment.addweight = async (user, type) => {
-
-    // add weight to user in type
 
     // return
 
