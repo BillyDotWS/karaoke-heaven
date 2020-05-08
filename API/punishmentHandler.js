@@ -1,4 +1,5 @@
 const punishment = {};
+client.r = require('rethinkdbdash')();
 
 punishment.add = async (punishment) => {
 
