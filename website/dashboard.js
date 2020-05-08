@@ -203,7 +203,13 @@ module.exports = (client) => {
 	// at the top right of the screen.
 	
 	app.get('/', (req, res) => {
-		renderTemplate(res, req, 'index.ejs', { Discord: Discord }, { clickHandler:'func1();' });
+		if (req.isAuthenticated()) {
+			renderTemplate(res, req, 'index.ejs', { Discord: Discord }, { clickHandler:'func1();' });
+		} else {
+			renderTemplate(res, req, 'notloggedin.ejs', { Discord: Discord });
+		}
+		
+		
 	});
 	
 
