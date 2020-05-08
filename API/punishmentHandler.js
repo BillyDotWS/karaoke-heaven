@@ -6,10 +6,7 @@ punishment.add = async (punishment) => {
     // validation
 
     // add punishment to database
-    const test = {
-        test: "test"
-    }
-    await main.client.r.db('punishments').table('punishments').insert(test, { conflict: 'update' }).run();
+    await main.client.r.db('punishments').table('punishments').insert(punishment, { conflict: 'update' }).run();
 
     // error
     const returnvar = {
