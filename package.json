@@ -27,7 +27,8 @@
     "passport-discord": "^0.1.3",
     "slackbots": "^1.2.0",
     "socket.io": "*",
-    "webcord": "^1.0.4"
+    "webcord": "^1.0.4",
+    "rethinkdbdash": "^2.3.31"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
