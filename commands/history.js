@@ -16,14 +16,8 @@ module.exports = {
         const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to find history of ${user}`, message.author, null).sendEmbed();
         
         const punishmentstatus = await punishmenthandler.history(user.id)
-	    console.log(punishmentstatus)
 	
-        if (`${punishmentstatus.status}` == "success" || `${punishmentstatus.status}` == "undefined") {
-            // spit out good/bad error
-            return new embeds.infoEmbed('success', punishEmbed, `Punishment history:\n\`\`\`${punishmentstatus.result}\`\`\``, message.author, null).editEmbed();
-        } else {
-            return new embeds.infoEmbed('error', punishEmbed, `Failed to fetch history\n\nReason: \`\`\`${punishmentstatus.reason}\`\`\``, message.author, null).editEmbed();
-        }
+        return new embeds.infoEmbed('success', punishEmbed, `Punishment history:\n\`\`\`${punishmentstatus}\`\`\``, message.author, null).editEmbed();
 
 
 
