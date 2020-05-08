@@ -92,6 +92,7 @@ punishment.history = async (user) => {
     try {
         
         const historyresult = await checkHistory(user);
+        console.log(historyresult);
 
     } catch(err) {
         
