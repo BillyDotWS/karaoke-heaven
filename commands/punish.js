@@ -12,9 +12,10 @@ module.exports = {
 	allowedUsers: [],
 	argsNeeded: 3,
 	async execute(client, message, args) {
-        
-        const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to punish user ${client.users.cache.get(args[0])}`, message.author, null).sendEmbed();
 
+        let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+        const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to punish user ${user}`, message.author, null).sendEmbed();
+        
         let config = setconfig(args[1])
 
         if (`${config}` == "not found") {message.reply(`You haven't entered a correct punishment type -- entered ${args[1]}`)}
@@ -25,7 +26,7 @@ module.exports = {
             
 
                 let punishment = {
-                    user: client.users.cache.get(args[0]),
+                    user: user,
                     type: args[1],
                     reason: args[2],
                     moderator: message.author,
@@ -38,7 +39,7 @@ module.exports = {
                 punishmenthandler.add(punishment)
 
                 // spit out good/bad error
-                new embeds.infoEmbed('success', punishEmbed, `Punished ${client.users.cache.get(args[0])} for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
+                new embeds.infoEmbed('success', punishEmbed, `Punished ${user} for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
 
             }
         } 
