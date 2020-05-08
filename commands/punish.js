@@ -26,7 +26,10 @@ module.exports = {
         
             if (reason === args[2]) {
             
+		let punishid = makeid(8)
+		    
                 const punishment = {
+		    id: `${punishid}`,
                     user: `${user.id}`,
                     type: `${args[1]}`,
                     reason: `${args[2]}`,
@@ -59,4 +62,14 @@ function setconfig(type) {
     if (`${type}` == "community") {let config = punishmentconfig.punishments.community; return config;}
     if (`${type}` == "official") {let config = punishmentconfig.punishments.official; return config;}
     return "not found";
+}
+
+function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
 }
