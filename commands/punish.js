@@ -40,7 +40,7 @@ module.exports = {
                 }
 
                 // make this a variable and check if it's a good reply once I do it ty future billy
-                const punishmentstatus = punishmenthandler.add(punishment)
+                const punishmentstatus = await punishmenthandler.add(punishment)
 		console.log(punishmentstatus)
 		
 		if (`${punishmentstatus.status}` == "success") {
