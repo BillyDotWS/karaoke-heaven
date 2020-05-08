@@ -87,7 +87,7 @@ punishment.history = async (user) => {
     
     try {
         
-        const historyresult = await client.r.db('punishments').table('punishments').filter({ user: `${user}` }).default(false).run();
+        const historyresult = await main.client.r.db('punishments').table('punishments').filter({ user: `${user}` }).default(false).run();
 
     } catch(err) {
         
