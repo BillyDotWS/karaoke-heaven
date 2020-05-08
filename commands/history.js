@@ -18,7 +18,7 @@ module.exports = {
         const punishmentstatus = await punishmenthandler.history(user.id)
 	    console.log(punishmentstatus)
 	
-        if (`${punishmentstatus.status}` == "success") {
+        if (`${punishmentstatus.status}` == "success" || `${punishmentstatus.status}` == "undefined") {
             // spit out good/bad error
             return new embeds.infoEmbed('success', punishEmbed, `Punishment history:\n\`\`\`${punishmentstatus.result}\`\`\``, message.author, null).editEmbed();
         } else {
