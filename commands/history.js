@@ -15,11 +15,7 @@ module.exports = {
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to find history of ${user}`, message.author, null).sendEmbed();
         
-        const user = {
-            id: `${user.id}`
-        }
-
-        const punishmentstatus = await punishmenthandler.history(user)
+        const punishmentstatus = await punishmenthandler.history(user.id)
 	    console.log(punishmentstatus)
 	
         if (`${punishmentstatus.status}` == "success") {
