@@ -18,7 +18,10 @@ module.exports = {
         
         let config = setconfig(args[1])
 
-        if (`${config}` == "not found") {message.reply(`You haven't entered a correct punishment type -- entered ${args[1]}`)}
+        if (`${config}` == "not found") {
+            new embeds.infoEmbed('error', punishEmbed, `Invalid type, use **global**, **official** or **community**`, message.author, 60).editEmbed();
+            return lastlineofcode;
+        }
 
         for (const reason in config) {
         
@@ -39,10 +42,17 @@ module.exports = {
                 punishmenthandler.add(punishment)
 
                 // spit out good/bad error
-                new embeds.infoEmbed('success', punishEmbed, `Punished ${user} for **${args[2]} (${args[1]})**`, message.author, 10).editEmbed();
+                new embeds.infoEmbed('success', punishEmbed, `Punished ${user} for **${args[2]} (${args[1]})**`, message.author, 60).editEmbed();
+
+                return lastlineofcode;
+
 
             }
         } 
+        new embeds.infoEmbed('error', punishEmbed, `Reason was not found, check punishment guidelines.`, message.author, 60).editEmbed();
+        return lastlineofcode;
+
+
 
   	},
 
