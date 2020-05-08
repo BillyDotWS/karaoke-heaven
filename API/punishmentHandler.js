@@ -97,7 +97,18 @@ punishment.history = async (user) => {
     }
         
     // execute action
-    const response = {status: "success", result: historyresult}
+    try {
+        
+        const response = {status: "success", result: historyresult}
+
+    } catch(err) {
+        
+        const response = {status: "error", reason: `No punishments`}
+        return response;
+        
+    }
+    
+     
     return response;
 
 }
