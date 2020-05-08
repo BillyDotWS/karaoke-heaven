@@ -85,6 +85,8 @@ punishment.appeal = async (punishment, data = {}) => {
 
 punishment.history = async (user) => {
     
+    console.log(user)
+    
     try {
         
         const historyresult = await main.client.r.db('punishments').table('punishments').filter({ user: `${user}` }).default(false).run();
