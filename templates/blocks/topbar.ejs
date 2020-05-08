@@ -13,16 +13,15 @@
                     <div class="ent">
                         <h3><%= user.username %>#<%= user.discriminator %></h3>
 
-                        <%= 
-                            let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles
+                        <% let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id)._roles %>
+                        
+                        
 
+                        <% for (var i = 0; i < roles.length; i++) { %>
+                            <% var role1 = roles[i]; %>
+                            <% var role2 = roles[i]; %>
+                        <% } %>
 
-                            for (var i = 0; i < roles.length; i++) {
-                                var role1 = roles[i]
-                                var role2 = roles[i]
-                            }
-
-                        %>
 
                         <span><i class="fas fa-circle"></i> <%= role1 %></span>
                         <span><i class="fas fa-circle"></i> <%= role2 %></span>
