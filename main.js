@@ -6,6 +6,8 @@ const config = require('./settings/config.json');
 const fs = require('fs');
 require('./website/dashboard.js')(client);
 
+client.r = require('rethinkdbdash')();
+
 const SlackBot = require('slackbots');
 const axios = require('axios');
 const dotenv = require('dotenv');

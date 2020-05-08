@@ -3,8 +3,21 @@ const punishment = {};
 punishment.add = async (punishment) => {
 
     console.log(punishment);
-    // add punishment to database
 
+    // validation
+
+    // add punishment to database
+    client.r.db('punishments').table('blacklist').insert(punishment, { conflict: 'update' }).run();
+
+    // error
+    const returnvar = {
+
+        status: "error",
+        reason: "Invalid data"
+
+    }
+
+    return;
     // return
 
 }
