@@ -23,6 +23,8 @@ module.exports = {
 		historyEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: 'png' }))
 		historyEmbed.setThumbnail(user.user.displayAvatarURL({ format: 'png' }))
 
+		console.log(punishmentstatus.size)
+
 		if(punishmentstatus.size > 0) {
 			for (const punishment in punishmentstatus) {
 				console.log(punishmentstatus[punishment]);
