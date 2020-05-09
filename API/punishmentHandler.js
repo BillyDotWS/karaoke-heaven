@@ -70,8 +70,30 @@ punishment.modify = async (punishment, data = {}) => {
 punishment.fetchweight = async (user, type) => {
 
     // fetch weight of user in type
+    const history = punishment.history(user)
+    const weight = 0
 
+    if(type == "bantrack") {
+        for (const punishment in history) {
+            if(punishmentstatus[punishment].track == "bantrack")
+            weight = weight + parseInt(punishmentstatus[punishment].weight)
+        }
+        console.log(`Weight debug: weight`)
+        const responsevar = {status: "success", weight: weight}
+        return responsevar;
+    }
+
+    if(type == "mutetrack") {
+        for (const punishment in history) {
+            if(punishmentstatus[punishment].track == "mutetrack")
+            weight = weight + parseInt(punishmentstatus[punishment].weight)
+        }
+        const responsevar = {status: "success", weight: weight}
+        return responsevar;
+    }
     // return
+    const responsevar = {status: "error", reason: "Failed to fetch weight"}
+    return responsevar;
 
 }
 
@@ -85,6 +107,7 @@ punishment.appeal = async (punishment, data = {}) => {
 
 punishment.history = async (user) => {
     
+
     async function checkHistory(user) {
         return await main.client.r.db('punishments').table('punishments').filter({ user: user }).default(false).run();
     }
@@ -141,3 +164,20 @@ punishment.appealdeny = async (punishment) => {
 }
 
 module.exports = punishment;
+
+function mutetrack(weight) {
+   
+    // convert weight to int
+    
+    // convert weights in config to int
+    
+    // loop weights in config
+    
+    // return action
+    
+}
+
+
+function bantrack(weight) {
+   
+}
