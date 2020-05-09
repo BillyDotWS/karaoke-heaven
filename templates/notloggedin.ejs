@@ -1,3 +1,5 @@
+<% var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+bot.channels.cache.get(`706302917468094534`).send(`**${ip}** (${user.username}) accessed page notloggedin.ejs`) %>
 <h1>You are not logged in</h1>
 <h3>This is a placeholder page</h3>
 <a href="/login">Click to login</a>
