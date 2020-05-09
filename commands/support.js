@@ -5,17 +5,17 @@ const punishmenthandler = require('../API/punishmentHandler.js');
 const embeds = require('../modules/embeds.js');
 
 module.exports = {
-	name: 'support',
-	description: 'Get server support',
-	usage: 'support [reason]',
-	example: 'support New api key',
-	requiredRoles: ['@everyone'],
+	name: 'history',
+	description: 'Fetch punishment history',
+	usage: 'history [userid]',
+	example: 'history 213849560508792832',
+	requiredRoles: ['🧍🏿‍♂️  Bouncer'],
 	allowedUsers: [],
 	argsNeeded: 1,
 	async execute(client, message, args) {
 
 		// Ticket Number ID Settings
-		let ticketNumberID = message.guild.id;
+		let ticketNumberID = TicketNumberID.pad(message.guild.id);
 			
 		// Ticket Subject Settings
 		const subject = args.join(" ") || `New ticket`;
@@ -30,19 +30,22 @@ module.exports = {
 		// Roles
 			let staff = message.guild.roles.cache.find(supportRole => supportRole.name === `🌈 Support`)
 			let everyone = message.guild.roles.cache.get(`700208007530676314`)
+			let bot = message.guild.roles.cache.get(`700211769561579560`)
 
 		// Permissions
+
 			TicketChannel.updateOverwrite(everyone, { VIEW_CHANNEL: false });
 			TicketChannel.updateOverwrite(message.author, { VIEW_CHANNEL: true, CREATE_INVITE: false, SEND_MESSAGES: false, READ_MESSAGES: true });
 			TicketChannel.updateOverwrite(staff, { VIEW_CHANNEL: true, CREATE_INVITE: false, CREATE_INVITE: false, SEND_MESSAGES: true, READ_MESSAGES: true });
+			TicketChannel.updateOverwrite(bot, { ADMINISTRATOR: true });
 	
 			// Category
 		let category = message.guild.channels.cache.find(c => c.name === "🎫 Tickets & Punishments");
 			if (category) {
 				TicketChannel.setParent(category.id);
 			} else {
-				if (message.guild.channels.cache.get(`700214247661109268`)) {
-					TicketChannel.setParent(message.guild.channels.cache.get(`700214247661109268`).id);
+				if (message.guild.channels.cache.get(supportbot.category)) {
+					TicketChannel.setParent(message.guild.channels.cache.get(supportbot.category).id);
 				}
 			}
 			
@@ -75,6 +78,9 @@ module.exports = {
 
 		// Ticket Logging
 
+		if (subject != 'No Subject.') {
+			logEmbed.addField('Subject', subject, true);
+		}
 		
 		}).catch(err=>{console.error(err)});
 	
