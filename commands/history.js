@@ -21,7 +21,7 @@ module.exports = {
 		historyEmbed.setColor('#00FF00');
 
 		for (const punishment in punishmentstatus) {
-		    historyEmbed.addField(`**Punishment #${punishment.id}`, `**Type:** ${punishment.type}\n**Reason:** ${punishment.reason}\n**Moderator:** <@${punishment.moderator}>`)
+		    historyEmbed.addField(`**Punishment #${punishment[id]}**`, `**Type:** ${punishment[type]}\n**Reason:** ${punishment[reason]}\n**Moderator:** <@${punishment[moderator]}>`)
 		}
 
 		message.channel.send(historyEmbed)
