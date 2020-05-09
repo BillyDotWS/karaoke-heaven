@@ -71,7 +71,7 @@ punishment.fetchweight = async (user, type) => {
 
     // fetch weight of user in type
     const history = punishment.history(user)
-    const weight = 0
+    let weight = 0
 
     if(type == "bantrack") {
         for (const punishment in history) {
