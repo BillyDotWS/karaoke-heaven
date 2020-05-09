@@ -31,7 +31,7 @@ module.exports = {
 		} else {
 			historyEmbed.setDescription(`No punishments found.`)
 		}
-
+		const fetchweight = await punishmenthandler.fetchweight(user.id, "bantrack")
 		message.channel.send(historyEmbed)
 		return;
 
