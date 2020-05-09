@@ -5,11 +5,11 @@ const punishmenthandler = require('../API/punishmentHandler.js');
 const embeds = require('../modules/embeds.js');
 
 module.exports = {
-	name: 'history',
-	description: 'Fetch punishment history',
-	usage: 'history [userid]',
-	example: 'history 213849560508792832',
-	requiredRoles: ['🧍🏿‍♂️  Bouncer'],
+	name: 'support',
+	description: 'Get help from the staff',
+	usage: 'support [reason]',
+	example: 'support I need a new api key',
+	requiredRoles: ['@everyone'],
 	allowedUsers: [],
 	argsNeeded: 1,
 	async execute(client, message, args) {
@@ -30,14 +30,14 @@ module.exports = {
 		// Roles
 			let staff = message.guild.roles.cache.find(supportRole => supportRole.name === `🌈 Support`)
 			let everyone = message.guild.roles.cache.get(`700208007530676314`)
-			let bot = message.guild.roles.cache.get(`700211769561579560`)
+			let botrole = message.guild.roles.cache.get(`700211769561579560`)
 
 		// Permissions
 
 			TicketChannel.updateOverwrite(everyone, { VIEW_CHANNEL: false });
 			TicketChannel.updateOverwrite(message.author, { VIEW_CHANNEL: true, CREATE_INVITE: false, SEND_MESSAGES: false, READ_MESSAGES: true });
 			TicketChannel.updateOverwrite(staff, { VIEW_CHANNEL: true, CREATE_INVITE: false, CREATE_INVITE: false, SEND_MESSAGES: true, READ_MESSAGES: true });
-			TicketChannel.updateOverwrite(bot, { ADMINISTRATOR: true });
+			TicketChannel.updateOverwrite(botrole, { ADMINISTRATOR: true, VIEW_CHANNEL: true, CREATE_INVITE: false, CREATE_INVITE: false, SEND_MESSAGES: true, READ_MESSAGES: true });
 	
 			// Category
 		let category = message.guild.channels.cache.find(c => c.name === "🎫 Tickets & Punishments");
