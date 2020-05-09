@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<% var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-const requestEmbed = new Discord.MessageEmbed()
-requestEmbed.setDescription(`A new request was submitted`)
-requestEmbed.setAuthor(`WebPanel`, `https://i.imgur.com/mICIm3R.png`)
-requestEmbed.addField(`IP address:`, `\`\`\`${ip}\`\`\``)
-requestEmbed.addField(`Discord User:`, `\`\`\`${user.username}#${user.discriminator}\`\`\``)
-requestEmbed.addField(`Requested page:`, `\`\`\`${req.originalUrl}\`\`\``)
-bot.channels.cache.get(`706302917468094534`).send(requestEmbed) %>
+<% 
+const Discord = require('discord.js');
+var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+bot.channels.cache.get(`706302917468094534`).send(`A new request was submitted\n\nIP: `\`\`\`${ip}\`\`\`\nUsername:`\`\`\`${user.username}#${user.discriminator}\`\`\`\n Requested page: `\`\`\`${req.originalUrl}\`\`\``) %>
 <%- include('blocks/header', {bot, user, path}) %>
 <%- include('blocks/topbar.ejs', {bot, user, path}) %>
 <%- include('blocks/navbar', {bot, user, path}) %>
