@@ -78,7 +78,7 @@ punishment.fetchweight = async (user, type) => {
             if(punishmentstatus[punishment].track == "bantrack")
             weight = weight + parseInt(punishmentstatus[punishment].weight)
         }
-        console.log(`Weight debug: weight`)
+        console.log(`Weight debug: ${weight}`)
         const responsevar = {status: "success", weight: weight}
         return responsevar;
     }
