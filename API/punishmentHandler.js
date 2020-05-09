@@ -75,7 +75,7 @@ punishment.fetchweight = async (user, type) => {
 
     if(type == "bantrack") {
         for (const punishment in history) {
-            if(punishmentstatus[punishment].track == "bantrack") {
+            if(`${punishmentstatus[punishment].track}` == "bantrack") {
             weight = weight + parseInt(punishmentstatus[punishment].weight) }
         }
         console.log(`Weight debug: ${weight}`)
