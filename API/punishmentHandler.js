@@ -73,6 +73,8 @@ punishment.fetchweight = async (user, type) => {
     const history = punishment.history(user)
     let weight = 0
 
+    console.log(type);
+
     if (type == "bantrack") {
         for (const punishment in history) {
             console.log(history[punishment].track);
