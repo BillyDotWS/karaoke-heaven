@@ -57,16 +57,12 @@ module.exports = {
 		message.channel.send({embed: ticketopened});
 		// Ticket Message - ( Able to edit this message via the settings.json file )
 		TicketChannel.send(`<@&700217828870979644>`)
-		const ticketMessage = `:ticket: **New ticket by <@${message.author.id}>**\nWhat do you need help with today? Please ensure to include as much detail as possible so we are able to help you. Please ensure that your question isn't answered elsewhere. We have resources for commonly asked questions, these can be found below.\n\n:link: **Useful Links**\n:white_medium_small_square: [Events List](${config.domain}/events)\n:white_medium_small_square: [Bouncer Applications](${config.domain}/bouncerapplications)\n:white_medium_small_square: [Host your own event](${config.domain}/events)\n:white_medium_small_square: [Manage your balance](${config.domain}/bank)`;
+		const ticketMessage = `:ticket: **New ticket by <@${message.author.id}>**\nWhat do you need help with today? Please ensure to include as much detail as possible so we are able to help you. Please ensure that your question isn't answered elsewhere. We have resources for commonly asked questions, these can be found below.\n\n:link: **Useful Links**\n:white_medium_small_square: [Events List](${config.domain}/events)\n:white_medium_small_square: [Bouncer Applications](${config.domain}/bouncerapplications)\n:white_medium_small_square: [Host your own event](${config.domain}/events)\n:white_medium_small_square: [Manage your balance](${config.domain}/bank\n\n**:rainbow: **Ticket reason:**\n${subject})`;
 
 
 		const TicketMessage = new Discord.MessageEmbed()
 			.setDescription(ticketMessage, true)
 			.setColor('#FFC0CB')
-
-			if (subject != 'No Subject.') {
-				TicketMessage.addField("Reason", subject);
-			}
 			
 
 		TicketChannel.send({embed: TicketMessage}).then(function(msg) {
