@@ -23,9 +23,13 @@ module.exports = {
 		historyEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: 'png' }))
 		historyEmbed.setThumbnail(user.user.displayAvatarURL({ format: 'png' }))
 
-		for (const punishment in punishmentstatus) {
-		    console.log(punishmentstatus[punishment]);
-		    historyEmbed.addField(`**Punishment #${punishmentstatus[punishment].id}:**`, `**Type:** ${punishmentstatus[punishment].type}\n**Reason:** ${punishmentstatus[punishment].reason}\n**Moderator:** <@${punishmentstatus[punishment].moderator}>\n[View more information](${config.domain}/bouncer/punishment/${punishmentstatus[punishment].id})`)
+		if(punishmentstatus.size > 0) {
+			for (const punishment in punishmentstatus) {
+				console.log(punishmentstatus[punishment]);
+				historyEmbed.addField(`**Punishment #${punishmentstatus[punishment].id}:**`, `**Type:** ${punishmentstatus[punishment].type}\n**Reason:** ${punishmentstatus[punishment].reason}\n**Moderator:** <@${punishmentstatus[punishment].moderator}>\n[View more information](${config.domain}/bouncer/punishment/${punishmentstatus[punishment].id})`)
+			}
+		} else {
+			historyEmbed.setDescription(`No punishments found.`)
 		}
 
 		message.channel.send(historyEmbed)
