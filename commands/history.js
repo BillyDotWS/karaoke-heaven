@@ -17,8 +17,10 @@ module.exports = {
 		const punishmentstatus = await punishmenthandler.history(user.id)
 
 		const historyEmbed = new Discord.MessageEmbed();
-		historyEmbed.setTitle(`History of ${user.user.username}`);
+		historyEmbed.setTitle(`History of ${user.user.username}#${user.user.disciriminator}`);
 		historyEmbed.setColor('#FFC0CB');
+		historyEmbed.setAuthor(message.author.username, message.author.displayAvatarURL({ format: 'png' }))
+		historyEmbed.setThumbnail(user.user.displayAvatarURL({ format: 'png' }))
 
 		for (const punishment in punishmentstatus) {
 		    console.log(punishmentstatus[punishment]);
