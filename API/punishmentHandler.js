@@ -75,9 +75,9 @@ punishment.fetchweight = async (user, type) => {
 
     if (type == "bantrack") {
         for (const punishment in history) {
-            console.log(punishmentstatus[punishment].track);
-            if (punishmentstatus[punishment].track === "bantrack") {
-            weight = weight + parseInt(punishmentstatus[punishment].weight) }
+            console.log(history[punishment].track);
+            if (history[punishment].track === "bantrack") {
+            weight = weight + parseInt(history[punishment].weight) }
         }
         console.log(`Weight debug: ${weight}`)
         const responsevar = {status: "success", weight: weight}
@@ -86,8 +86,8 @@ punishment.fetchweight = async (user, type) => {
 
     if(type == "mutetrack") {
         for (const punishment in history) {
-            if(punishmentstatus[punishment].track == "mutetrack") {
-            weight = weight + parseInt(punishmentstatus[punishment].weight) }
+            if(history[punishment].track == "mutetrack") {
+            weight = weight + parseInt(history[punishment].weight) }
         }
         const responsevar = {status: "success", weight: weight}
         return responsevar;
