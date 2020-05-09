@@ -376,7 +376,7 @@ module.exports = (client) => {
 	});
 
 	app.get('*', (req, res) => {
-		renderTemplate(res, req, '404.ejs');
+		renderTemplate(res, req, '404.ejs', { req: req });
 	});
 	
 	client.site = app.listen(config.port);
