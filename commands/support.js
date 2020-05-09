@@ -56,7 +56,8 @@ module.exports = {
 			.setColor('#FFC0CB');
 		message.channel.send({embed: ticketopened});
 		// Ticket Message - ( Able to edit this message via the settings.json file )
-		const ticketMessage = `Hi! <@${message.author.id}>\nHow can we help you?`;
+		TicketChannel.send(`<@&700217828870979644>`)
+		const ticketMessage = `:ticket: **New ticket by <@${message.author.id}>**\nWhat do you need help with today? Please ensure to include as much detail as possible so we are able to help you. Please ensure that your question isn't answered elsewhere. We have resources for commonly asked questions, these can be found below.\n\n:link: **Useful Links**\n:white_medium_small_square: [Events List](${config.domain}/events)\n:white_medium_small_square: [Bouncer Applications](${config.domain}/bouncerapplications)\n:white_medium_small_square: [Host your own event](${config.domain}/events)\n:white_medium_small_square: [Manage your balance](${config.domain}/bank)`;
 
 
 		const TicketMessage = new Discord.MessageEmbed()
