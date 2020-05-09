@@ -75,9 +75,6 @@ module.exports = {
 
 		// Ticket Logging
 
-		if (subject != 'No Subject.') {
-			logEmbed.addField('Subject', subject, true);
-		}
 		
 		}).catch(err=>{console.error(err)});
 	
