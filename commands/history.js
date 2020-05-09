@@ -12,12 +12,20 @@ module.exports = {
 	allowedUsers: [],
 	argsNeeded: 1,
 	async execute(client, message, args) {
-		let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-		const punishEmbed = await new embeds.infoEmbed('working', message.channel, `Trying to find history of ${user}`, message.author, null).sendEmbed();
 
+		let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);        
 		const punishmentstatus = await punishmenthandler.history(user.id)
 
-		return new embeds.infoEmbed('success', punishEmbed, `Punishment history:\n\`\`\`${punishmentstatus}\`\`\``, message.author, null).editEmbed();
+		const historyEmbed = new Discord.MessageEmbed();
+		historyEmbed.setTitle('History of ${user.username}');
+		historyEmbed.setColor('#00FF00');
+
+		for (const punishment in punishmentstatus) {
+		    historyEmbed.addField(`**Punishment #${punishment.id}`, `**Type:** ${punishment.type}\n**Reason:** ${punishment.reason}\n**Moderator:** <@${punishment.moderator}>`)
+		}
+
+		message.channel.send(historyEmbed)
+		return;
 
 
 
