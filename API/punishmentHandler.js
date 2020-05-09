@@ -70,7 +70,7 @@ punishment.modify = async (punishment, data = {}) => {
 punishment.fetchweight = async (user, type) => {
 
     // fetch weight of user in type
-    const history = punishment.history(user)
+    const history = await punishment.history(user)
     let weight = 0
 
     console.log('maybe');
