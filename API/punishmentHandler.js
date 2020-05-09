@@ -170,7 +170,7 @@ punishment.appealdeny = async (punishment) => {
 
 module.exports = punishment;
 
-function mutetrack async (user) {
+function mutetrack (user) {
    
     const weight = await punishment.fetchweight(user, "mutetrack")
     console.log(`debug ${weight}`)
