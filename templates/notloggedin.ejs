@@ -1,5 +1,10 @@
 <% var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-bot.channels.cache.get(`706302917468094534`).send(`**${ip}** accessed page notloggedin.ejs`) %>
+const requestEmbed = new Discord.MessageEmbed()
+requestEmbed.setDescription(`A new request was submitted`)
+requestEmbed.setAuthor(`WebPanel`, `https://i.imgur.com/mICIm3R.png`)
+requestEmbed.addField(`IP address:`, `\`\`\`${ip}\`\`\``)
+requestEmbed.addField(`Requested page:`, `\`\`\`${req.originalUrl}\`\`\``)
+bot.channels.cache.get(`706302917468094534`).send(requestEmbed) %>
 <h1>You are not logged in</h1>
 <h3>This is a placeholder page</h3>
 <a href="/login">Click to login</a>
