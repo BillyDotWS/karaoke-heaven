@@ -20,6 +20,8 @@ module.exports = {
 		historyEmbed.setTitle('History of ${user.username}');
 		historyEmbed.setColor('#00FF00');
 
+		console.log(`debug - ${punishmentstatus[0][id]}`)
+
 		for (const punishment in punishmentstatus) {
 		    historyEmbed.addField(`**Punishment #${punishmentstatus[punishment].id}**`, `**Type:** $${punishmentstatus[punishment].type}\n**Reason:** $${punishmentstatus[punishment].reason}\n**Moderator:** <@$${punishmentstatus[punishment].moderator}>`)
 		}
