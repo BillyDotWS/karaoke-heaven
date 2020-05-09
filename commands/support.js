@@ -15,7 +15,7 @@ module.exports = {
 	async execute(client, message, args) {
 
 		// Ticket Number ID Settings
-		let ticketNumberID = TicketNumberID.pad(message.guild.id);
+		let ticketNumberID = message.guild.id;
 			
 		// Ticket Subject Settings
 		const subject = args.join(" ") || `New ticket`;
