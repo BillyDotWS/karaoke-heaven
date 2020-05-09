@@ -28,6 +28,7 @@ header .ent {
 
 header .ent h3 {
     font-size: 16px;
+
 }
 
 header .ent i {
@@ -51,7 +52,6 @@ header .logo img {
     float: right;
     width: 159px;
     font-size: 21px;
-    font-weight: 600;
     background: #323868;
     padding: 4px 0;
     border-radius: 15px;
@@ -59,6 +59,10 @@ header .logo img {
 }
 .coin .ent{
     padding: 8px 0;
+    font-weight: 700;
+    background: -webkit-linear-gradient(#9E7733, #ffae1a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /*nav*/
