@@ -6,7 +6,7 @@ module.exports = async (client) => {
 	client.user.setActivity('Loud Music');
 };
 
-setInterval(function() {
+setInterval(async function() {
 
     const currentunix = new Date().getTime()
 	
@@ -16,7 +16,8 @@ setInterval(function() {
 
     const activeresult = await getallbans();
  
-    // for loop of active
+	for(result in activeresult) {// for loop of active
+		console.log(result)
 	    // if expiry is not -1:
 
 		// if expiry unix is less than current
@@ -26,4 +27,5 @@ setInterval(function() {
 
 		     //if ban
 			 //unban
+	}
 }, 60000);
