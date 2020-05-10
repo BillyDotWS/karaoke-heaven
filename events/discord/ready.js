@@ -17,7 +17,7 @@ setInterval(async function() {
     const activeresult = await getallbans();
  
 	for(result in activeresult) {// for loop of active
-		console.log(result)
+		console.log(activeresult[result])
 	    // if expiry is not -1:
 
 		// if expiry unix is less than current
