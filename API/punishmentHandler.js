@@ -272,8 +272,8 @@ async function punishmentchannel (user, reason, type, length) {
 
     if(type == "warning") {
         
-        const username = client.members.cache.get(`700208007530676314`)
-        const channel = await client.guilds.cache.get(`700208007530676314`).channels.create(`warning-${username.user.username}`, {
+        const username = main.client.members.cache.get(`700208007530676314`)
+        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`warning-${username.user.username}`, {
         type: 'text',
 
         })
