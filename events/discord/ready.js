@@ -9,7 +9,7 @@ module.exports = async (client) => {
 
 setInterval(async function() {
 
-	const currentunix = new Date().getTime()
+	let currentunix = new Date().getTime()
 	currentunix = moment.unix(currentunix)
 
 	
