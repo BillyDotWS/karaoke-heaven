@@ -274,14 +274,15 @@ async function punishmentchannel (user, reason, type, length) {
     if(type == "warning") {
         
         const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
-        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`⚠️-${username.user.username}`, {
+        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`🚫-${username.user.username}`, {
         type: 'text',
 
         })
     
         const warnEmbed = new Discord.MessageEmbed()
+        channel.send(`${username}`)
         warnEmbed.setTitle(`You have been warned!`);
-        warnEmbed.setDescription(`You have been warned for \`${reason}\`. This behaviour will not be tolerated within our discord, please ensure that you follow our rules at all times when within our discord: you can find more information about our rules in <#700209261917241416>.\n\nFailure to follow these rules may lead to further, more severe punishments: please remember this before breaking our rules. This punishment may prevent you from accessing parts of our website or being eligible for specific perks, depending on the punishment.\n\nYou can appeal your punishment by clicking below:\n[Appeal my punishment](https://karaoke-heaven.net/appeal/)`);
+        warnEmbed.setDescription(`You have been warned for \`${reason}\`.\n\n This behaviour will not be tolerated within our discord, please ensure that you follow our rules at all times when within our discord: you can find more information about our rules in <#700209261917241416>.\n\nFailure to follow these rules may lead to further, more severe punishments: please remember this before breaking our rules. This punishment may prevent you from accessing parts of our website or being eligible for specific perks, depending on the punishment.\n\nYou can appeal your punishment by clicking below:\n[Appeal my punishment](https://karaoke-heaven.net/appeal/)`);
         channel.send(warnEmbed);
         let everyone = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700208007530676314`)
         channel.updateOverwrite(everyone, { VIEW_CHANNEL: false });
@@ -292,10 +293,31 @@ async function punishmentchannel (user, reason, type, length) {
 
     if(type == "mute") {
         
+        const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
+        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`🚫-${username.user.username}`, {
+        type: 'text',
+
+        })
+        channel.send(`${username}`)
+        const warnEmbed = new Discord.MessageEmbed()
+        warnEmbed.setTitle(`You have been muted!`);
+        warnEmbed.setDescription(`You have been muted for \`${reason}\`, this will expire in \`${length} seconds\`.\n\n This behaviour will not be tolerated within our discord, please ensure that you follow our rules at all times when within our discord: you can find more information about our rules in <#700209261917241416>.\n\nFailure to follow these rules may lead to further, more severe punishments: please remember this before breaking our rules. This punishment may prevent you from accessing parts of our website or being eligible for specific perks, depending on the punishment.\n\nYou can appeal your punishment by clicking below:\n[Appeal my punishment](https://karaoke-heaven.net/appeal/)`);
+        channel.send(warnEmbed);
+        let everyone = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700208007530676314`)
+        channel.updateOverwrite(everyone, { VIEW_CHANNEL: false });
+        channel.updateOverwrite(username, { VIEW_CHANNEL: true, CREATE_INVITE: false, SEND_MESSAGES: false, READ_MESSAGES: true });
+        channel.setParent(`700214247661109268`)
     }
 
     if(type == "ban") {
         
+        const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
+        username.send(`${username}`)
+        const warnEmbed = new Discord.MessageEmbed()
+        warnEmbed.setTitle(`You have been banned!`);
+        warnEmbed.setDescription(`You have been banned for \`${reason}\`, this will expire in \`${length} seconds\`.\n\n This behaviour will not be tolerated within our discord, please ensure that you follow our rules at all times when within our discord: you can find more information about our rules in <#700209261917241416>.\n\nFailure to follow these rules may lead to further, more severe punishments: please remember this before breaking our rules. This punishment may prevent you from accessing parts of our website or being eligible for specific perks, depending on the punishment.\n\nYou can appeal your punishment by clicking below:\n[Appeal my punishment](https://karaoke-heaven.net/appeal/)`);
+        username.send(warnEmbed);
+
     }
 
 }
