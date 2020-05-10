@@ -1,4 +1,5 @@
 const config = require('../../settings/config.json');
+const main = require('../../main.js');
 
 module.exports = async (client) => {
 	console.log(`[/events/discord/ready.js] Logged in as ${client.user.tag}`);
@@ -9,7 +10,11 @@ setInterval(function() {
 
     const currentunix = new Date().getTime()
 	
-    // get punishments that are active
+    async function getallbans() {
+        return await main.client.r.db('punishments').table('punishments').filter({ active: "true" }).default(false).run();
+    }
+
+    const activeresult = await getallbans();
  
     // for loop of active
 	    // if expiry is not -1:
