@@ -11,7 +11,7 @@ punishment.add = async (punishy) => {
     const oldweight = await punishment.fetchweight(punishy.user, punishy.track)
     console.log(oldweight)
     
-    const punishweight = await parseInt(punishy.weight) 
+    const punishweight = parseInt(punishy.weight) 
     console.log(punishweight)
     
     let newweight = oldweight + punishweight
