@@ -18,7 +18,8 @@ punishment.add = async (punishy) => {
     
     const action = await fetchaction(newweight, punishy.track)
        
-	let expiry = moment().add(action, 'seconds')
+    let expiry = moment()
+    expiry = expiry.add(action, 'seconds')
     main.client.channels.cache.get(`707282308369219664`).send(`expiry: ${expiry}`)
     
     const yiteisacunt = {
