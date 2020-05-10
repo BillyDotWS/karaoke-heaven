@@ -217,7 +217,7 @@ async function mutetrack (user) {
         
         if(weight.weight <= weightvalueint) {
             console.log(`debug, true loop`)
-            return weightvalue[1];
+            return loopconfig[weightvalue];
         }
         
     }
