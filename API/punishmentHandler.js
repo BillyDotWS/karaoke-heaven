@@ -111,6 +111,8 @@ punishment.fetchweight = async (user, type) => {
             }
         console.log(`Weight debug: ${weight}`)
         const responsevar = {status: "success", weight: weight}
+        
+        console.log(`fetchweight function debug: ${responsevar.weight}`)
         return responsevar;
     }
 
@@ -121,6 +123,8 @@ punishment.fetchweight = async (user, type) => {
             }
         console.log(`Weight debug: ${weight}`)
         const responsevar = {status: "success", weight: weight}
+        
+        console.log(`fetchweight function debug: ${responsevar.weight}`)
         return responsevar;
     }
     // return
@@ -200,6 +204,7 @@ module.exports = punishment;
 async function mutetrack (user) {
    
     const weight = await punishment.fetchweight(user, "mutetrack")
+    console.log(`mutetrack function debug: ${weight.weight}`)
     
     const loopconfig = punishmentconfig.weightresolves.mutetrack
     
