@@ -6,12 +6,12 @@ punishment.add = async (punishy) => {
 
     console.log(`[api/punishmenthandler.js] Trying to punish ${punishy.user} for ${punishy.reason}`)
     
-    const action = fetchaction(punishy.user, punishy.track)
+    const action = await fetchaction(punishy.user, punishy.track)
     
     const oldweight = await punishment.fetchweight(punishy.user, punishy.track)
-    let punishweight = parseInt(punishy.weight) 
+    const punishweight = await parseInt(punishy.weight) 
     
-    const newweight = oldweight + punishweight
+    const newweight = await oldweight + punishweight
     
     const yiteisacunt = {
         
