@@ -1,7 +1,6 @@
 const punishment = {};
 const main = require('../main.js');
 const punishmentconfig = require('../settings/punishments.json');
-const Discord = require('discord.js');
 
 punishment.add = async (punishy) => {
 
@@ -273,17 +272,17 @@ async function punishmentchannel (user, reason, type, length) {
 
     if(type == "warning") {
         
-        const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
-        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`warning-${username.user.username}`, {
+        const username = client.members.cache.get(`700208007530676314`)
+        const channel = await client.guilds.cache.get(`700208007530676314`).channels.create(`warning-${username.user.username}`, {
         type: 'text',
 
         })
     
         const warnEmbed = new Discord.MessageEmbed()
         warnEmbed.setTitle(`You have been warned!`);
-        warnEmbed.setDescription(`You have been warned for ${reason}. This behaviour will not be tolerated within our discord, please ensure that you follow our rules at all times when within our discord: you can find more information about our rules in <#700209261917241416>.\n\nFailure to follow these rules may lead to further, more severe punishments: please remember this before breaking our rules.\n\nYou can appeal your punishment by clicking below:\n[Appeal my punishment](https://karaoke-heaven.net/appeal/)`);
+        warnEmbed.setDescription(`You have been warned for \`${reason}\`. This behaviour will not be tolerated within our discord, please ensure that you follow our rules at all times when within our discord: you can find more information about our rules in <#700209261917241416>.\n\nFailure to follow these rules may lead to further, more severe punishments: please remember this before breaking our rules. This punishment may prevent you from accessing parts of our website or being eligible for specific perks, depending on the punishment.\n\nYou can appeal your punishment by clicking below:\n[Appeal my punishment](https://karaoke-heaven.net/appeal/)`);
         channel.send(warnEmbed);
-        let everyone = message.guild.roles.cache.get(`700208007530676314`)
+        let everyone = client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700208007530676314`)
         channel.updateOverwrite(everyone, { VIEW_CHANNEL: false });
         channel.updateOverwrite(username, { VIEW_CHANNEL: true, CREATE_INVITE: false, SEND_MESSAGES: false, READ_MESSAGES: true });
 
