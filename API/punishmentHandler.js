@@ -20,7 +20,7 @@ punishment.add = async (punishy) => {
        
     const currentunix = new Date().getTime()
 	expiry = moment.unix(currentunix).add(action, 'seconds')._i
-
+    console.log(`expiry: ${expiry}`)
     
     const yiteisacunt = {
         
