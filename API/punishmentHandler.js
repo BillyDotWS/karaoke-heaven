@@ -24,7 +24,7 @@ punishment.add = async (punishy) => {
         
         id: `${punishy.id}`,
         user: `${punishy.user}`,
-        track: `${punishy.track}`,
+        type: `${punishy.track}`,
         reason: `${punishy.reason}`,
         action: `${action}`,
         active: true,
