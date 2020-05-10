@@ -241,7 +241,7 @@ async function bantrack (user) {
         
         if(weight.weight <= weightvalueint) {
             console.log(`debug, true loop`)
-            return weightvalue[0];
+            return loopconfig[weightvalue];
         }
         
     }
