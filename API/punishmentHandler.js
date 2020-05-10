@@ -274,7 +274,7 @@ async function punishmentchannel (user, reason, type, length) {
     if(type == "warning") {
         
         const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
-        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`warning-${username.user.username}`, {
+        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`⚠️-${username.user.username}`, {
         type: 'text',
 
         })
@@ -286,7 +286,7 @@ async function punishmentchannel (user, reason, type, length) {
         let everyone = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700208007530676314`)
         channel.updateOverwrite(everyone, { VIEW_CHANNEL: false });
         channel.updateOverwrite(username, { VIEW_CHANNEL: true, CREATE_INVITE: false, SEND_MESSAGES: false, READ_MESSAGES: true });
-
+        channel.setParent(`700214247661109268`)
     }
     
 
