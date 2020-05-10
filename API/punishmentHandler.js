@@ -8,8 +8,10 @@ punishment.add = async (punishy) => {
     
     const action = fetchaction(punishy.user, punishy.track)
     
-    const newweight = await punishment.fetchweight(punishy.user, punishy.track)
-    newweight = newweight + parseInt(punishy.weight) 
+    const oldweight = await punishment.fetchweight(punishy.user, punishy.track)
+    let punishweight = parseInt(punishy.weight) 
+    
+    const newweight = oldweight + punishweight
     
     const yiteisacunt = {
         
@@ -19,7 +21,7 @@ punishment.add = async (punishy) => {
         track: `${punishy.track}`,        
         reason: `${punishy.reason}`,
         action: `${action}`,
-        active: true,
+        active: `true`,
         moderator: `${punishy.moderator}`,
         weight: `${punishy.weight}`,
         newweight: `${newweight}`
