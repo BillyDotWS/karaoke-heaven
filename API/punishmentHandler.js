@@ -5,9 +5,18 @@ const punishmentconfig = require('../settings/punishments.json');
 punishment.add = async (punishment) => {
 
     console.log(`[api/punishmenthandler.js] Trying to punish ${punishment.user} for ${punishment.reason}`)
-    mutetrack(punishment.user)    
     
+    if(punishment.type == "mutetrack") {
+        const punishment.action = await mutetrack(punishment.user)
     
+    }
+    
+    if(punishment.type == "bantrack") {
+        const punishment.action = await bantrack(punishment.user)   
+    
+    }
+    
+    console.log(punishment)
     
     try {
         
@@ -173,10 +182,30 @@ module.exports = punishment;
 async function mutetrack (user) {
    
     const weight = await punishment.fetchweight(user, "mutetrack")
-    console.log(`debug ${weight}`)
     
     const loopconfig = punishmentconfig.weightresolves.mutetrack
-    console.log(`debug ${loopconfig}`)
+    
+    for(weightvalue in loopconfig) {
+                
+        const weightvalueint = parseInt(weightvalue)
+        
+        if(weight.weight <= weightvalueint) {
+            console.log(`debug, true loop`)
+            return weightvalue[0];
+        }
+        
+    }
+
+    return -1;
+    
+}
+
+
+async function bantrack (user) {
+   
+    const weight = await punishment.fetchweight(user, "bantrack")
+    
+    const loopconfig = punishmentconfig.weightresolves.bantrack
     
     for(weightvalue in loopconfig) {
         
@@ -193,9 +222,4 @@ async function mutetrack (user) {
 
     return -1;
     
-}
-
-
-async function bantrack (weight) {
-   
 }
