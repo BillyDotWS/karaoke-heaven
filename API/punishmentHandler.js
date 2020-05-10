@@ -1,6 +1,7 @@
 const punishment = {};
 const main = require('../main.js');
 const punishmentconfig = require('../settings/punishments.json');
+const Discord = require('discord.js');
 
 punishment.add = async (punishy) => {
 
