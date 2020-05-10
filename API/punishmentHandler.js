@@ -2,6 +2,7 @@ const punishment = {};
 const main = require('../main.js');
 const punishmentconfig = require('../settings/punishments.json');
 const Discord = require('discord.js');
+var moment = require('moment');
 
 punishment.add = async (punishy) => {
 
@@ -17,7 +18,9 @@ punishment.add = async (punishy) => {
     
     const action = await fetchaction(newweight, punishy.track)
        
-    
+    const currentunix = new Date().getTime()
+	expiry = moment.unix(currentunix).add(action, 'seconds')
+
     
     const yiteisacunt = {
         
@@ -30,7 +33,8 @@ punishment.add = async (punishy) => {
         active: `true`,
         moderator: `${punishy.moderator}`,
         weight: `${punishy.weight}`,
-        newweight: `${newweight}`
+        newweight: `${newweight}`,
+        expiry: expiry
         
     }
     
