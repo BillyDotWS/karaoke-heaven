@@ -12,7 +12,7 @@ punishment.add = async (punishy) => {
     console.log(oldweight)
     
     const punishweight = parseInt(punishy.weight) 
-    console.log(punishweight)
+    console.log(`fucking object issue ${punishy.weight} ${punishweight}`)
     
     let newweight = oldweight + punishweight
     console.log(newweight)
