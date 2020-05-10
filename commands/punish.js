@@ -32,10 +32,10 @@ module.exports = {
 		    id: `${punishid}`,
                     user: `${user.id}`,
                     type: `${args[1]}`,
-                    reason: `${args[2]}`,
+                    reason: `${config[reason][0]}`,
                     moderator: `${message.author.id}`,
-                    weight: `${config[reason][1]}`,
-                    track: `${config[reason][0]}`,
+                    weight: `${config[reason][2]}`,
+                    track: `${config[reason][1]}`,
                     active: `true`
                 }
 
