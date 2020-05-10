@@ -33,7 +33,7 @@ punishment.add = async (punishment) => {
     // fetch action to execute
     
     // execute action
-    const response = {status: "success", action: "uwu"}
+    const response = {status: "success", action: `${punishment.action}s (${punishment.type})`}
     return response;
     
 }
