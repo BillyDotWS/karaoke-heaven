@@ -196,6 +196,6 @@ async function mutetrack (user) {
 }
 
 
-async function bantrack async (weight) {
+async function bantrack (weight) {
    
 }
