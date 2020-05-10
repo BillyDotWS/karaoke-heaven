@@ -4,22 +4,12 @@ const punishmentconfig = require('../settings/punishments.json');
 
 punishment.add = async (punishy) => {
 
-    const action = -1
     console.log(`[api/punishmenthandler.js] Trying to punish ${punishy.user} for ${punishy.reason}`)
     
-    if(punishy.track == "mutetrack") {
-        const action = await mutetrack(punishy.user)
-        console.log(`action = ${action}`)
-    
-    }
-    
-    if(punishy.track == "bantrack") {
-        const action = await bantrack(punishy.user)   
-    
-    
-    }
+    const action = fetchaction(punishy.user, punishy.track)
     
     const newweight = await punishment.fetchweight(punishy.user, punishy.track)
+    newweight = newweight + parseInt(punishy.weight) 
     
     const yiteisacunt = {
         
@@ -32,7 +22,7 @@ punishment.add = async (punishy) => {
         active: true,
         moderator: `${punishy.moderator}`,
         weight: `${punishy.weight}`,
-        newweight: `${punishy.newweight}`
+        newweight: `${newweight}`
         
     }
     
@@ -50,11 +40,25 @@ punishment.add = async (punishy) => {
     }
     
     
-    // fetch action to execute
+    if(punishy.track == "mutetrack") {
+        if(action == "warning") {
+            const response = {status: "success", action: `${action}`, actiontype: `warning`}
+            return response;
+        } else {
+            const response = {status: "success", action: `${action}`, actiontype: `mute`}
+            return response; 
+        }
+    }
     
-    // execute action
-    const response = {status: "success", action: `${punishy.action}s (${punishy.type})`}
-    return response;
+    if(punishy.track == "bantrack") {
+        if(action == "warning") {
+            const response = {status: "success", action: `${action}`, actiontype: `warning`}
+            return response;
+        } else {
+            const response = {status: "success", action: `${action}`, actiontype: `ban`}
+            return response; 
+        }
+    }
     
 }
 
@@ -230,13 +234,12 @@ async function mutetrack (user) {
 async function bantrack (user) {
    
     const weight = await punishment.fetchweight(user, "bantrack")
+    console.log(`mutetrack function debug: ${weight.weight}`)
     
     const loopconfig = punishmentconfig.weightresolves.bantrack
     
     for(weightvalue in loopconfig) {
-        
-        console.log(`debug, loop ${weightvalue}`)
-        
+                
         const weightvalueint = parseInt(weightvalue)
         
         if(weight.weight <= weightvalueint) {
@@ -248,4 +251,19 @@ async function bantrack (user) {
 
     return -1;
     
+}
+
+async function fetchaction (user, track) {
+    
+    if(track == "mutetrack") {
+        return action = await mutetrack(user)
+    
+    }
+    
+    if(track == "bantrack") {
+        return action = await bantrack(user)   
+    
+    
+    }
+   
 }
