@@ -7,13 +7,13 @@ punishment.add = async (punishy) => {
     const action = -1
     console.log(`[api/punishmenthandler.js] Trying to punish ${punishy.user} for ${punishy.reason}`)
     
-    if(punishy.type == "mutetrack") {
+    if(punishy.track == "mutetrack") {
         const action = await mutetrack(punishy.user)
         console.log(`action = ${action}`)
     
     }
     
-    if(punishy.type == "bantrack") {
+    if(punishy.track == "bantrack") {
         const action = await bantrack(punishy.user)   
     
     
