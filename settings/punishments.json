@@ -30,28 +30,28 @@
 
         "global": {
                     
-            "Spamming": ["mutetrack", "2"],
-            "Controversial": ["mutetrack", "5"],
-            "Promotion": ["mutetrack", "2"],
-            "recordingthreat": ["bantrack", "1"],
-            "recordingactual": ["bantrack", "3"]
+            "S": ["Spamming", "mutetrack", "2"],
+            "C": ["Controversial Messages", "mutetrack", "5"],
+            "P": ["Promoting unrelated media", "mutetrack", "2"],
+            "RT": ["Threats of recording", "bantrack", "1"],
+            "RA": ["Recording", "bantrack", "3"]
 
         },
 
         "community": {
 
-            "audiotrolling": ["bantrack", "4"],
-            "lovesong": ["bantrack", "2"],
-            "rudeness": ["mutetrack", "3"]
+            "AT": ["Audio Trolling", "bantrack", "4"],
+            "LS": ["Singing a love song without permission", "bantrack", "2"],
+            "R": ["Rudeness", "mutetrack", "3"]
             
 
         },
 
         "official": {
         
-            "audiotrolling": ["bantrack", "7"],
-            "lovesong": ["bantrack", "3"],
-            "rudeness": ["mutetrack", "5"]
+            "AT": ["Audio Trolling", "bantrack", "7"],
+            "LS": ["Singing a love song without permission", "bantrack", "2"],
+            "R": ["Rudeness", "mutetrack", "3"]
             
         }
 
