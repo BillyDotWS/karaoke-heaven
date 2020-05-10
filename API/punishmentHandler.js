@@ -2,25 +2,25 @@ const punishment = {};
 const main = require('../main.js');
 const punishmentconfig = require('../settings/punishments.json');
 
-punishment.add = async (punishment) => {
+punishment.add = async (punishy) => {
 
-    console.log(`[api/punishmenthandler.js] Trying to punish ${punishment.user} for ${punishment.reason}`)
+    console.log(`[api/punishmenthandler.js] Trying to punish ${punishy.user} for ${punishy.reason}`)
     
-    if(punishment.type == "mutetrack") {
-        const punishment.action = await mutetrack(punishment.user)
-    
-    }
-    
-    if(punishment.type == "bantrack") {
-        const punishment.action = await bantrack(punishment.user)   
+    if(punishy.type == "mutetrack") {
+        const punishy.action = await mutetrack(punishy.user)
     
     }
     
-    console.log(punishment)
+    if(punishy.type == "bantrack") {
+        const punishy.action = await bantrack(punishy.user)   
+    
+    }
+    
+    console.log(punishy)
     
     try {
         
-        await main.client.r.db('punishments').table('punishments').insert(punishment, { conflict: 'update' }).run()
+        await main.client.r.db('punishments').table('punishments').insert(punishy, { conflict: 'update' }).run()
         
     } catch(err) {
         
@@ -33,7 +33,7 @@ punishment.add = async (punishment) => {
     // fetch action to execute
     
     // execute action
-    const response = {status: "success", action: `${punishment.action}s (${punishment.type})`}
+    const response = {status: "success", action: `${punishy.action}s (${punishy.type})`}
     return response;
     
 }
