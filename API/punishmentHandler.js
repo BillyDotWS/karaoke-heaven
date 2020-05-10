@@ -9,6 +9,7 @@ punishment.add = async (punishy) => {
     
     if(punishy.type == "mutetrack") {
         const action = await mutetrack(punishy.user)
+        console.log(`action = ${action}`)
     
     }
     
