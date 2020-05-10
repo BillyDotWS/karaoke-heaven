@@ -7,13 +7,17 @@ punishment.add = async (punishy) => {
 
     console.log(`[api/punishmenthandler.js] Trying to punish ${punishy.user} for ${punishy.reason}`)
     
-    const action = await fetchaction(punishy.user, punishy.track)
+    
     
     const oldweight = await punishment.fetchweight(punishy.user, punishy.track)
     
     const punishweight = parseInt(punishy.weight) 
-       
+    
     let newweight = oldweight.weight + punishweight
+    
+    const action = await fetchaction(newweight, punishy.track)
+       
+    
     
     const yiteisacunt = {
         
@@ -256,16 +260,37 @@ async function bantrack (user) {
     
 }
 
-async function fetchaction (user, track) {
+async function fetchaction (weight, track) {
     
     if(track == "mutetrack") {
-        return action = await mutetrack(user)
+
+        const loopconfig = punishmentconfig.weightresolves.mutetrack
+
+        for(weightvalue in loopconfig) {
+
+            const weightvalueint = parseInt(weightvalue)
+
+            if(weight <= weightvalueint) {
+                return loopconfig[weightvalue];
+            }
+
+        }
     
     }
     
     if(track == "bantrack") {
-        return action = await bantrack(user)   
-    
+
+        const loopconfig = punishmentconfig.weightresolves.bantrack
+
+        for(weightvalue in loopconfig) {
+
+            const weightvalueint = parseInt(weightvalue)
+
+            if(weight <= weightvalueint) {
+                return loopconfig[weightvalue];
+            }
+
+        }
     
     }
    
