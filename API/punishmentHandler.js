@@ -13,7 +13,6 @@ punishment.add = async (punishy) => {
     const punishweight = parseInt(punishy.weight) 
        
     let newweight = oldweight.weight + punishweight
-    console.log(newweight)
     
     const yiteisacunt = {
         
@@ -30,7 +29,6 @@ punishment.add = async (punishy) => {
         
     }
     
-    console.log(yiteisacunt)
     
     try {
         
@@ -86,7 +84,6 @@ punishment.clear = async (punishment) => {
 
 punishment.modify = async (punishment, data = {}) => {
 
-    console.log(`[api/punishmenthandler.js] Trying to update punishment ${punishment.user} for ${punishment.reason}`)
     
     try {
         
@@ -119,23 +116,18 @@ punishment.fetchweight = async (user, type) => {
             if (history[punishment].track === "bantrack") {
                 weight = weight + parseInt(history[punishment].weight) }
             }
-        console.log(`Weight debug: ${weight}`)
         const responsevar = {status: "success", weight: weight}
         
-        console.log(`fetchweight function debug: ${responsevar.weight}`)
         return responsevar;
     }
 
     if (type === "mutetrack") {
         for (const punishment in history) {
-            console.log(`mutetrack loop - ${history[punishment].track}`)
             if (history[punishment].track === "mutetrack") {
                 weight = weight + parseInt(history[punishment].weight) }
             }
-        console.log(`Weight debug: ${weight}`)
         const responsevar = {status: "success", weight: weight}
-        
-        console.log(`fetchweight function debug: ${responsevar.weight}`)
+       
         return responsevar;
     }
     // return
@@ -215,7 +207,6 @@ module.exports = punishment;
 async function mutetrack (user) {
    
     const weight = await punishment.fetchweight(user, "mutetrack")
-    console.log(`mutetrack function debug: ${weight.weight}`)
     
     const loopconfig = punishmentconfig.weightresolves.mutetrack
     
@@ -224,7 +215,6 @@ async function mutetrack (user) {
         const weightvalueint = parseInt(weightvalue)
         
         if(weight.weight <= weightvalueint) {
-            console.log(`debug, true loop`)
             return loopconfig[weightvalue];
         }
         
@@ -238,7 +228,6 @@ async function mutetrack (user) {
 async function bantrack (user) {
    
     const weight = await punishment.fetchweight(user, "bantrack")
-    console.log(`mutetrack function debug: ${weight.weight}`)
     
     const loopconfig = punishmentconfig.weightresolves.bantrack
     
@@ -247,7 +236,6 @@ async function bantrack (user) {
         const weightvalueint = parseInt(weightvalue)
         
         if(weight.weight <= weightvalueint) {
-            console.log(`debug, true loop`)
             return loopconfig[weightvalue];
         }
         
