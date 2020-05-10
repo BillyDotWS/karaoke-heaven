@@ -52,6 +52,8 @@ punishment.add = async (punishy) => {
         } else {
 
             punishmentchannel(punishy.user, punishy.reason, "mute", action)
+            const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(punishy.user)
+            username.roles.add(['700213816201445431']);
             const response = {status: "success", action: `${action}`, actiontype: `mute`}
             return response; 
         }
