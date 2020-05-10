@@ -4,23 +4,41 @@ const punishmentconfig = require('../settings/punishments.json');
 
 punishment.add = async (punishy) => {
 
+    const action = -1
     console.log(`[api/punishmenthandler.js] Trying to punish ${punishy.user} for ${punishy.reason}`)
     
     if(punishy.type == "mutetrack") {
-        const punishy.action = await mutetrack(punishy.user)
+        const action = await mutetrack(punishy.user)
     
     }
     
     if(punishy.type == "bantrack") {
-        const punishy.action = await bantrack(punishy.user)   
+        const action = await bantrack(punishy.user)   
+    
     
     }
     
-    console.log(punishy)
+    const newweight = await punishment.fetchweight(punishy.user, punishy.track)
+    
+    const yiteisacunt = {
+        
+        id: `${punishy.id}`,
+        user: `${punishy.user}`,
+        track: `${punishy.track}`,
+        reason: `${punishy.reason}`,
+        action: `${action}`,
+        active: true,
+        moderator: `${punishy.moderator}`,
+        weight: `${punishy.weight}`,
+        newweight: `${punishy.newweight}`
+        
+    }
+    
+    console.log(yiteisacunt)
     
     try {
         
-        await main.client.r.db('punishments').table('punishments').insert(punishy, { conflict: 'update' }).run()
+        await main.client.r.db('punishments').table('punishments').insert(yiteisacunt, { conflict: 'update' }).run()
         
     } catch(err) {
         
