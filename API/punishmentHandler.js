@@ -19,7 +19,7 @@ punishment.add = async (punishy) => {
     const action = await fetchaction(newweight, punishy.track)
        
     const currentunix = new Date().getTime()
-	expiry = moment.unix(currentunix).add(action, 'seconds')
+	expiry = moment.unix(currentunix).add(action, 'seconds')._i
 
     
     const yiteisacunt = {

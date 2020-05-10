@@ -10,7 +10,7 @@ module.exports = async (client) => {
 setInterval(async function() {
 
 	let currentunix = new Date().getTime()
-	currentunix = moment.unix(currentunix)
+	currentunix = moment.unix(currentunix)._i
 
 	
     async function getallbans() {
