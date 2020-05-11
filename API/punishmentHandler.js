@@ -19,8 +19,12 @@ punishment.add = async (punishy) => {
     let action = await fetchaction(newweight, punishy.track)
        
     let expiry = moment()
+    const 
+
     actionint = parseInt(action)
     expiry = expiry.add(actionint, 'seconds').unix()
+
+
     
     const yiteisacunt = {
         

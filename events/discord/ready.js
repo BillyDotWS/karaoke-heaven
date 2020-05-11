@@ -19,7 +19,7 @@ setInterval(async function() {
     const activeresult = await getallbans();
  
 	for(result in activeresult) {// for loop of active
-		if(activeresult[result].action != -1) {
+		if(activeresult[result].action != -1 && activeresult[result].action != "warning") {
 			if(activeresult[result].expiry <= currentunix) {
 				if(activeresult[result].track == "mutetrack") {
 
@@ -58,3 +58,4 @@ setInterval(async function() {
 		}
 	}
 }, 60000);
+
