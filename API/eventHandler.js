@@ -1,4 +1,6 @@
 const event = {};
+const Discord = require('discord.js');
+const main = require('../main.js');
 
 event.create = async (event) => {
 
@@ -16,6 +18,7 @@ event.create = async (event) => {
 
                     id: eventid,
                     title: `${event.title}`,
+                    description: `${event.description}`,
                     start: event.start,
                     end: event.end,
                     hosts: event.hosts,
@@ -44,6 +47,36 @@ event.create = async (event) => {
                     return response;
                     
                 }
+
+                const eventEmbed = new Discord.MessageEmbed()
+                eventEmbed.setTitle(`[${event.category}] ${event.title}`);
+                eventEmbed.setDescription(`${event.description}`);
+
+                // convert start unix time to normal human time
+
+                eventEmbed.addField(`Event start:`, `\`${eventstartconverted}\``, true)
+
+                // convert end unix time to normal human time
+
+                eventEmbed.addField(`Event end:`, `\`${eventendconverted}\``, true)
+
+                // convert list of event hosts into mention
+
+                if(event.hosts.length() == 1) {
+                    eventEmbed.addField(`Event host:`, `<@${event.hosts[0]}>`, true)
+                }
+
+                if(event.hosts.length() >= 2) {
+                    eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${submitevent.id})`, true)
+                }
+
+                eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
+
+                eventEmbed.addField(`Event max slots:`, `\`${event.maxslots}\``, true)
+
+                main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed);
+                // id: 700209759080546345
+                // discord embed
 
             }
 
@@ -82,15 +115,21 @@ event.delete = async (event) => {
 
 }
 
-event.modify = async (event, args, data = {}) => {
+event.modify = async (event) => {
 
-    // validation
+    try {
+        
+        await main.client.r.db('events').table('events').insert(event, { conflict: 'update' }).run()
+        
+    } catch(err) {
+        
+        const response = {status: "error", reason: `${err}`}
+        return response;
+        
+    }
 
-    // if fine, modify event embed
-
-    // update db
-
-    // return done json
+    const response = {status: "success"}
+    return response;
 
 }
 
@@ -116,7 +155,21 @@ event.info = async (event) => {
 
 event.list = async () => {
 
-    // return list of events json
+    async function eventlist() {
+        return await main.client.r.db('events').table('events').run();
+    }
+    
+    try {
+        
+        const listofevents = await eventlist();
+        return listofevents;
+
+    } catch(err) {
+        
+        const response = {status: "error", reason: `${err}`}
+        return response;
+        
+    }
 
 }
 
