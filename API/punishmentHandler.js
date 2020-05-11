@@ -350,12 +350,10 @@ async function punishmentchannel (user, reason, type, length, punishment) {
     if(type == "ban") {
         
         const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
-        username.send(`${username}`)
         const warnEmbed = new Discord.MessageEmbed()
         warnEmbed.setTitle(`You have been banned!`);
         warnEmbed.setDescription(`You have been banned for \`${reason}\`, this will expire in \`${length} seconds\`.\n\n This behaviour will not be tolerated within our discord, please ensure that you follow our rules at all times when within our discord: you can find more information about our rules in <#700209261917241416>.\n\nFailure to follow these rules may lead to further, more severe punishments: please remember this before breaking our rules. This punishment may prevent you from accessing parts of our website or being eligible for specific perks, depending on the punishment.\n\nYou can appeal your punishment by clicking below:\n[Appeal my punishment](https://karaoke-heaven.net/appeal/)`);
-        username.send(warnEmbed);
-        return;
+        return await username.send(warnEmbed);
 
     }
 
