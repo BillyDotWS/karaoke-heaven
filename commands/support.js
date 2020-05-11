@@ -24,7 +24,7 @@ module.exports = {
 
 		// Ticket Creation
 			if (message.guild.channels.cache.find(TicketChannel => TicketChannel.name === `ticket-` + message.author.username)) return message.channel.send(`You already have a ticket open!`);
-				message.guild.channels.create(`🎫-${ticketNumberID}`, {
+				message.guild.channels.create(`${ticketNumberID}`, {
 				type: 'text',
 			}).then(TicketChannel => {
 			

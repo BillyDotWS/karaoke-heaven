@@ -305,7 +305,7 @@ async function punishmentchannel (user, reason, type, length, punishmentid) {
     if(type == "warning") {
         
         const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
-        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`🚫-${punishmentid}`, {
+        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`${punishmentid}`, {
         type: 'text',
 
         })
@@ -325,7 +325,7 @@ async function punishmentchannel (user, reason, type, length, punishmentid) {
     if(type == "mute") {
         
         const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
-        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`🚫-${punishmentid}`, {
+        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`${punishmentid}`, {
         type: 'text',
 
         })
