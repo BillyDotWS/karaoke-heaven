@@ -41,8 +41,8 @@ setInterval(async function() {
 						
 					}
 
-					punishment.modify(yiteisacunt)
-					main.client.guilds.cache.get(`700208007530676314`).roles.remove(['700213816201445431']);
+					const modifypunishment = await punishmenthandler.modify(yiteisacunt)
+					main.client.guilds.cache.get(`700208007530676314`).members.get(activeresult[result].user).roles.remove(['700213816201445431']);
 
 				}
 				if(activeresult[result].track == "bantrack") {
