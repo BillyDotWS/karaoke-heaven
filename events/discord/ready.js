@@ -71,7 +71,7 @@ setInterval(async function() {
 
 					const modifypunishment = await punishmenthandler.modify(yiteisacunt)
 					const targetuser = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(activeresult[result].user)
-					main.client.guilds.cache.get(`700208007530676314`).members.unban(yiteisacunt.id)
+					main.client.guilds.cache.get(`700208007530676314`).members.unban(yiteisacunt.user)
 					console.log(`trying to unban ${activeresult[result].id}`)
 				}
 			}
