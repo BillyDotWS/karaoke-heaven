@@ -74,12 +74,12 @@ punishment.add = async (punishy) => {
     if(punishy.track == "bantrack") {
         if(action == "warning") {
 
-            punishmentchannel(punishy.user, punishy.reason, "warning", null, punishy)
+            await punishmentchannel(punishy.user, punishy.reason, "warning", null, punishy)
             const response = {status: "success", action: `${action}`, actiontype: `warning`}
             return response;
         } else {
 
-            punishmentchannel(punishy.user, punishy.reason, "ban", action, punishy)
+            await punishmentchannel(punishy.user, punishy.reason, "ban", action, punishy)
             const response = {status: "success", action: `${action}`, actiontype: `ban`}
             main.client.guilds.cache.get(`700208007530676314`).members.ban(punishy.user, {reason: `Punishment ID: #${punishy.id}`});
             return response; 
