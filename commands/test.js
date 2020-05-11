@@ -2,7 +2,7 @@
 const config = require('../settings/config.json');
 const punishmentconfig = require('../settings/punishments.json');
 const Discord = require('discord.js');
-const eventhander = require('../API/eventHander.js');
+const eventhander = require('../../API/eventHander.js');
 
 module.exports = {
 	name: 'test',
