@@ -15,7 +15,7 @@ module.exports = {
 	async execute(client, message, args) {
 		
 		const eventlist = await eventhandler.list()
-		message.reply(eventlist[0])
+		console.log(eventlist)
 
 	},
 };

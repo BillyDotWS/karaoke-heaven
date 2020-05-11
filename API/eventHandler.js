@@ -103,7 +103,7 @@ event.delete = async (event) => {
 
     try {
         
-        await main.client.r.db('events').table('events').get(`${event.id}`).delete().run()
+        await main.client.r.db('Events').table('events').get(`${event.id}`).delete().run()
         
     } catch(err) {
         
@@ -122,7 +122,7 @@ event.modify = async (event) => {
 
     try {
         
-        await main.client.r.db('events').table('events').insert(event, { conflict: 'update' }).run()
+        await main.client.r.db('Events').table('events').insert(event, { conflict: 'update' }).run()
         
     } catch(err) {
         
@@ -139,7 +139,7 @@ event.modify = async (event) => {
 event.info = async (event) => {
 
     async function fetchinfo(user) {
-        return await main.client.r.db('events').table('events').filter({ id: event.id }).default(false).run();
+        return await main.client.r.db('Events').table('events').filter({ id: event.id }).default(false).run();
     }
     
     try {
@@ -159,7 +159,7 @@ event.info = async (event) => {
 event.list = async () => {
 
     async function eventlist() {
-        return await main.client.r.db('events').table('events').run();
+        return await main.client.r.db('Events').table('events').run();
     }
     
     try {
