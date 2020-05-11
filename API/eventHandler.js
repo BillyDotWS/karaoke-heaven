@@ -9,15 +9,13 @@ event.create = async (event) => {
 
     if(event.title.length <= 32) {
 
-        console.log(`category ${event.category}`)
-
         if(event.category == `Official` || event.category == `Community`) {
 
-            console.log("Logic debug #2")
+            console.log(`${event.maxslots}`)
 
             if(event.maxslots <= 50) {
                 
-                
+                console.log("Logic debug #3")
 
                 const submitevent = {
 
