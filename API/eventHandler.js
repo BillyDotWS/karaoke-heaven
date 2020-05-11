@@ -6,9 +6,10 @@ event.create = async (event) => {
 
     const eventid = makeid(8)
 
+
     if(event.title.length <= 32) {
 
-        if(event.category == "official" || category == "community") {
+        if(event.category == "official" || event.category == "community") {
 
             if(event.maxslots <= 50) {
                 
