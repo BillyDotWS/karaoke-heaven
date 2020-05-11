@@ -81,8 +81,7 @@ punishment.add = async (punishy) => {
 
             punishmentchannel(punishy.user, punishy.reason, "ban", action, punishy)
             const response = {status: "success", action: `${action}`, actiontype: `ban`}
-            const guildid = main.client.guilds.cache.get(`700208007530676314`)
-            guildid.ban(punishy.user, {reason: `Punishment ID: #${punishy.id}`});
+            main.client.guilds.cache.get(`700208007530676314`).ban(punishy.user, {reason: `Punishment ID: #${punishy.id}`});
             return response; 
         }
     }
