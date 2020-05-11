@@ -44,7 +44,8 @@ setInterval(async function() {
 					const modifypunishment = await punishmenthandler.modify(yiteisacunt)
 					const targetuser = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(activeresult[result].user)
 					targetuser.roles.remove(['700213816201445431']);
-					const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.cache.find(c => c.name === `${activeresult[result].id}`).delete()
+					console.log(`trying to delete channel ${activeresult[result].id}`)
+					const channel = main.client.guilds.cache.get(`700208007530676314`).channels.cache.find(c => c.name === `${activeresult[result].id}`).delete()
 
 				}
 				if(activeresult[result].track == "bantrack") {
