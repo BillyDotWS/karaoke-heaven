@@ -75,7 +75,15 @@ event.create = async (event) => {
 
                 eventEmbed.addField(`Event max slots:`, `\`${event.maxslots}\``, true)
 
-                main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed);
+                eventEmbed.setColor("#FFC0CB")
+
+                if(event.category == `Official`) {
+                    main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed);
+                }
+
+                if(event.category == `Community`) {
+                    main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209781859942400`).send(eventEmbed);
+                }
                 // id: 700209759080546345
                 // discord embed
                 const response = {status: "success", eventid: `${eventid}`}

@@ -50,7 +50,30 @@ setInterval(async function() {
 
 				}
 				if(activeresult[result].track == "bantrack") {
+
 					console.log(`expired ban #${activeresult[result].id}`)
+
+					const yiteisacunt = {
+        
+						id: `${activeresult[result].id}`,
+						user: `${activeresult[result].user}`,
+						type: `${activeresult[result].type}`,
+						track: `${activeresult[result].track}`,        
+						reason: `${activeresult[result].reason}`,
+						action: `${activeresult[result].action}`,
+						active: `false`,
+						moderator: `${activeresult[result].moderator}`,
+						weight: `${activeresult[result].weight}`,
+						newweight: `${activeresult[result].newweight}`,
+						expiry: `${activeresult[result].expiry}`
+						
+					}
+
+					const modifypunishment = await punishmenthandler.modify(yiteisacunt)
+					const targetuser = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(activeresult[result].user)
+					const guildid = main.client.guilds.cache.get(`700208007530676314`)
+					guildid.unban(yiteisacunt.id)
+					console.log(`trying to unban ${activeresult[result].id}`)
 				}
 			}
 
