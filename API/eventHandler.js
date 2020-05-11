@@ -2,40 +2,58 @@ const event = {};
 
 event.create = async (event) => {
 
-    // validate data
+    const eventid = makeid(8)
 
-    // if valid:
+    if(event.title.length() <= 32) {
 
-    // generate id
+        if(event.category == "official" || category == "community") {
 
-    // make object
+            if(event.maxslots <= 50) {
+                
+                
 
-    const submitevent = {
+                const submitevent = {
 
-        id: insertidhere,
-        title: inserttitlehere,
-        start: insertunixstarthere,
-        end: insertunixendhere,
-        hosts: ["", ""],
-        category: category,
-        maxslots: maxslots,
-        slotsperperson: 0,
-        inviteonly: false,
-        invites: [],
-        active: false,
-        theme: "none",
-        type: "community",
-        creator: id,
-        goldenabled: true,
-        auctions: true,
-        premium: false
+                    id: eventid,
+                    title: `${event.title}`,
+                    start: event.start,
+                    end: event.end,
+                    hosts: event.hosts,
+                    category: `${event.category}`,
+                    maxslots: event.maxslots,
+                    slotsperperson: event.slotsperperson,
+                    inviteonly: false,
+                    invites: [],
+                    active: false,
+                    theme: `${event.theme}`,
+                    creator: event.hosts[0],
+                    goldenabled: true,
+                    auctions: true,
+                    premium: false
+            
+                }
+
+
+                try {
+        
+                    await main.client.r.db('events').table('events').insert(submitevent, { conflict: 'update' }).run()
+                    
+                } catch(err) {
+                    
+                    const response = {status: "error", reason: `${err}`}
+                    return response;
+                    
+                }
+
+            }
+
+        }
 
     }
-    
 
-    // add to database
+    const response = {status: "success", eventid: `${eventid}`}
+    return response;
 
-    // return done json
 
 }
 
@@ -72,3 +90,14 @@ event.list = async () => {
     // return list of events json
 
 }
+
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+ }
+ 
