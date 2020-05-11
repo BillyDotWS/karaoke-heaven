@@ -62,11 +62,11 @@ event.create = async (event) => {
 
                 // convert list of event hosts into mention
 
-                if(event.hosts.length() == 1) {
+                if(event.hosts.length == 1) {
                     eventEmbed.addField(`Event host:`, `<@${event.hosts[0]}>`, true)
                 }
 
-                if(event.hosts.length() >= 2) {
+                if(event.hosts.length >= 2) {
                     eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${submitevent.id})`, true)
                 }
 
@@ -183,3 +183,5 @@ function makeid(length) {
     return result;
  }
  
+ 
+module.exports = event;

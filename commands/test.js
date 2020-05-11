@@ -2,7 +2,7 @@
 const config = require('../settings/config.json');
 const punishmentconfig = require('../settings/punishments.json');
 const Discord = require('discord.js');
-const eventhander = require('../API/eventHandler.js');
+const eventhandler = require('../API/eventHandler.js');
 
 module.exports = {
 	name: 'test',
@@ -11,7 +11,7 @@ module.exports = {
 	example: 'test',
 	requiredRoles: [],
 	allowedUsers: ['281199286765748225'],
-	argsNeeded: 1,
+	argsNeeded: 0,
 	async execute(client, message, args) {
 		
 		const event = {
@@ -30,7 +30,7 @@ module.exports = {
 	
 		}
 
-		const diditwork = eventhander.create(event)
+		const diditwork = eventhandler.create(event)
 		message.reply("uwu sent. response: ${diditwork.eventid}")
 
 	},
