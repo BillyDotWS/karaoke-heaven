@@ -59,11 +59,26 @@ event.create = async (event) => {
 
 event.delete = async (event) => {
 
-    // delete event validation
+    const validationcheck = await event.info(event.id)
 
-    // delete event code
+    if(validationcheck[0].id == null) {
+        return response = { status: "error", reason: "No event found with that ID"}
+    }
 
-    // return done json
+    try {
+        
+        await main.client.r.db('events').table('events').get(`${event.id}`).delete().run()
+        
+    } catch(err) {
+        
+        const response = {status: "error", reason: `${err}`}
+        return response;
+        
+    }
+    
+    const response = {status: "success"}
+    return response;
+
 
 }
 
@@ -81,7 +96,21 @@ event.modify = async (event, args, data = {}) => {
 
 event.info = async (event) => {
 
-    // return info about event json
+    async function fetchinfo(user) {
+        return await main.client.r.db('events').table('events').filter({ id: event.id }).default(false).run();
+    }
+    
+    try {
+        
+        const infofetch = await fetchinfo(user);
+        return infofetch;
+
+    } catch(err) {
+        
+        const response = {status: "error", reason: `${err}`}
+        return response;
+        
+    }
 
 }
 
