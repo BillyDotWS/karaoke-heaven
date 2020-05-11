@@ -11,11 +11,8 @@ event.create = async (event) => {
 
         if(event.category == `Official` || event.category == `Community`) {
 
-            console.log(`${event.maxslots}`)
-
             if(event.maxslots <= 50) {
                 
-                console.log("Logic debug #3")
 
                 const submitevent = {
 
@@ -42,7 +39,7 @@ event.create = async (event) => {
 
                 try {
         
-                    await main.client.r.db('events').table('events').insert(submitevent, { conflict: 'update' }).run()
+                    await main.client.r.db('Events').table('events').insert(submitevent, { conflict: 'update' }).run()
                     
                 } catch(err) {
                     
