@@ -9,9 +9,9 @@ event.create = async (event) => {
 
     if(event.title.length <= 32) {
 
-        
+        console.log(`category ${event.category}`)
 
-        if(event.category == "official" || event.category == "community") {
+        if(event.category == `official` || event.category == `community`) {
 
             console.log("Logic debug #2")
 
