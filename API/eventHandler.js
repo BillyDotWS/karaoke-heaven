@@ -11,7 +11,7 @@ event.create = async (event) => {
 
         console.log(`category ${event.category}`)
 
-        if(event.category == `official` || event.category == `community`) {
+        if(event.category == `Official` || event.category == `Community`) {
 
             console.log("Logic debug #2")
 
