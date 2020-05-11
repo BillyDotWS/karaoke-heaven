@@ -5,7 +5,7 @@ const main = require('../main.js');
 event.create = async (event) => {
 
     const eventid = makeid(8)
-
+    console.log(event)
 
     if(event.title.length <= 32) {
 
