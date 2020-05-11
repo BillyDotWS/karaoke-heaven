@@ -53,11 +53,12 @@ event.create = async (event) => {
                 eventEmbed.setDescription(`${event.description}`);
 
                 // convert start unix time to normal human time
+                const eventstartconverted = "uwu"
 
                 eventEmbed.addField(`Event start:`, `\`${eventstartconverted}\``, true)
 
                 // convert end unix time to normal human time
-
+                const eventendconverted = "uwu"
                 eventEmbed.addField(`Event end:`, `\`${eventendconverted}\``, true)
 
                 // convert list of event hosts into mention
