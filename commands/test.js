@@ -14,7 +14,7 @@ module.exports = {
 	argsNeeded: 0,
 	async execute(client, message, args) {
 		
-		eventlist = await eventhandler.list()
+		const eventlist = await eventhandler.list()
 		message.reply(eventlist[0])
 
 	},
