@@ -19,9 +19,8 @@ punishment.add = async (punishy) => {
     let action = await fetchaction(newweight, punishy.track)
        
     let expiry = moment()
-    action = parseInt(action)
-    expiry = expiry.add(action, 'seconds').unix()
-    main.client.channels.cache.get(`707282308369219664`).send(`action: ${action} + expiry: ${expiry}`)
+    actionint = parseInt(action)
+    expiry = expiry.add(actionint, 'seconds').unix()
     
     const yiteisacunt = {
         
@@ -102,7 +101,7 @@ punishment.clear = async (punishment) => {
 
 }
 
-punishment.modify = async (punishment, data = {}) => {
+punishment.modify = async (punishment) => {
 
     
     try {
@@ -120,7 +119,7 @@ punishment.modify = async (punishment, data = {}) => {
     // fetch action to execute
     
     // execute action
-    const response = {status: "success", action: "uwu"}
+    const response = {status: "success"}
     return response;
 
 }
