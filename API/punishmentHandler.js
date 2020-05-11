@@ -54,12 +54,12 @@ punishment.add = async (punishy) => {
     if(punishy.track == "mutetrack") {
         if(action == "warning") {
             
-            punishmentchannel(punishy.user, punishy.reason, "warning", null)
+            punishmentchannel(punishy.user, punishy.reason, "warning", null, punishy.id)
             const response = {status: "success", action: `${action}`, actiontype: `warning`}
             return response;
         } else {
 
-            punishmentchannel(punishy.user, punishy.reason, "mute", action)
+            punishmentchannel(punishy.user, punishy.reason, "mute", action, punishy.id)
             const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(punishy.user)
             username.roles.add(['700213816201445431']);
             const response = {status: "success", action: `${action}`, actiontype: `mute`}
@@ -70,12 +70,12 @@ punishment.add = async (punishy) => {
     if(punishy.track == "bantrack") {
         if(action == "warning") {
 
-            punishmentchannel(punishy.user, punishy.reason, "warning", null)
+            punishmentchannel(punishy.user, punishy.reason, "warning", null, punishy.id)
             const response = {status: "success", action: `${action}`, actiontype: `warning`}
             return response;
         } else {
 
-            punishmentchannel(punishy.user, punishy.reason, "ban", action)
+            punishmentchannel(punishy.user, punishy.reason, "ban", action, punishy.id)
             const response = {status: "success", action: `${action}`, actiontype: `ban`}
             return response; 
         }
@@ -300,12 +300,12 @@ async function fetchaction (weight, track) {
    
 }
 
-async function punishmentchannel (user, reason, type, length) {
+async function punishmentchannel (user, reason, type, length, punishmentid) {
 
     if(type == "warning") {
         
         const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
-        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`🚫-${username.user.username}`, {
+        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`🚫-${punishmentid}`, {
         type: 'text',
 
         })
@@ -325,7 +325,7 @@ async function punishmentchannel (user, reason, type, length) {
     if(type == "mute") {
         
         const username = main.client.guilds.cache.get(`700208007530676314`).members.cache.get(user)
-        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`🚫-${username.user.username}`, {
+        const channel = await main.client.guilds.cache.get(`700208007530676314`).channels.create(`🚫-${punishmentid}`, {
         type: 'text',
 
         })
