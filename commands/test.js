@@ -31,7 +31,7 @@ module.exports = {
 		}
 
 		const diditwork = eventhandler.create(event)
-		message.reply("uwu sent. response: ${diditwork.eventid}")
+		message.reply(`uwu sent. response: ${diditwork.eventid}`)
 
 	},
 };

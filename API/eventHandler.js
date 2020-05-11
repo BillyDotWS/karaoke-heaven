@@ -6,7 +6,7 @@ event.create = async (event) => {
 
     const eventid = makeid(8)
 
-    if(event.title.length() <= 32) {
+    if(event.title.length <= 32) {
 
         if(event.category == "official" || category == "community") {
 
