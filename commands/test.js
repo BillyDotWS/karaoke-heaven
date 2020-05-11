@@ -31,7 +31,7 @@ module.exports = {
 		}
 
 		const diditwork = await eventhandler.create(event)
-		message.reply(`uwu sent. response: ${diditwork.status}`)
+		message.reply(`uwu sent. response: ${diditwork.reason}`)
 
 	},
 };
