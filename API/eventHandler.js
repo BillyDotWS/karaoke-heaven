@@ -9,6 +9,8 @@ event.create = async (event) => {
 
     if(event.title.length <= 32) {
 
+        console.log("Logic debug #1")
+
         if(event.category == "official" || event.category == "community") {
 
             if(event.maxslots <= 50) {
@@ -78,6 +80,8 @@ event.create = async (event) => {
                 main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed);
                 // id: 700209759080546345
                 // discord embed
+                const response = {status: "success", eventid: `${eventid}`}
+                return response;
 
             }
 
@@ -85,7 +89,7 @@ event.create = async (event) => {
 
     }
 
-    const response = {status: "success", eventid: `${eventid}`}
+    const response = {status: "error", reason: `You failed validation`}
     return response;
 
 
