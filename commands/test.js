@@ -17,7 +17,7 @@ module.exports = {
 		const eventlist = await eventhandler.list()
 		for(event in eventlist) {
 			
-			message.reply(eventlist[event])
+			message.reply(eventlist[event].id)
 		}
 
 	},
