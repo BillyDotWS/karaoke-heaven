@@ -206,7 +206,7 @@ module.exports = (client) => {
 		if (req.isAuthenticated()) {
 
 			for(guild in req.user.guilds) {
-				if(req.user.guilds[guild].id == "") {
+				if(req.user.guilds[guild].id == "700208007530676314") {
 					renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
 				}
 			}
