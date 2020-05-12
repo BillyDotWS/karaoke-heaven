@@ -14,11 +14,24 @@ module.exports = {
 	argsNeeded: 0,
 	async execute(client, message, args) {
 		
-		const eventlist = await eventhandler.list()
-		for(event in eventlist) {
-			
-			message.reply(eventlist[event].id)
+		const event = {
+
+			title: `Billy's amazing event`,
+			description: `an amazing event from billy`,
+			start: 1589232051,
+			end: 1589232053,
+			hosts: ["281199286765748225"],
+			category: `Official`,
+			maxslots: 30,
+			slotsperperson: 1,
+			theme: `Yite`,
+			auctions: true,
+			premium: false
+
 		}
+
+		const diditwork = await eventhandler.create(event)
+		message.reply(`uwu sent. response: ${diditwork.reason}`)
 
 	},
 };
