@@ -20,9 +20,9 @@
 
                     <span><i class="fas fa-circle" style="color: #<%= bot.guilds.cache.get('700208007530676314').roles.cache.get(firstRole[0]).color.toString(16) %>; }"></i><style="font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;"> <%= bot.guilds.cache.get('700208007530676314').roles.cache.get(firstRole[0]).name %></style></span>
                     
-                    <% if (bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).name != "@everyone") {let hidden = true} else {let hidden = false} %>
-                    <span><i class="fas fa-circle" style="color: #<%= bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).color.toString(16) %>; }"></i> <%= bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).name %></span>
-                    
+                    <% if (bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).name != "@everyone") { %>
+                        <span><i class="fas fa-circle" style="color: #<%= bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).color.toString(16) %>; }"></i> <%= bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).name %></span>
+                    <% } %>
                     
                     </div>
                 </div>
