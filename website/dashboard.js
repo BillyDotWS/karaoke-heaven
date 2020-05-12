@@ -23,7 +23,7 @@ const path = require('path');
 
 // Used for Permission Resolving...
 const Discord = require('discord.js');
-const global.fetch = require(`node-fetch`);
+const fetch = require(`node-fetch`);
 
 // Express Session
 const express = require('express');
@@ -217,7 +217,7 @@ module.exports = (client) => {
 			}
 			if(test == false) {
 
-				const guildMembersResponse = global.fetch(`http://discordapp.com/api/guilds/700208007530676314/members/${req.user.id}`,
+				const guildMembersResponse = fetch(`http://discordapp.com/api/guilds/700208007530676314/members/${req.user.id}`,
 					{
 					method: 'PUT',
 					headers: {
