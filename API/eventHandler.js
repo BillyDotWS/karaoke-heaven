@@ -207,13 +207,13 @@ event.modify = async (event) => {
             }
 
             if(event.hosts.length >= 2) {
-                eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
+                eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${event.id})`, true)
             }
 
             eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
 
             eventEmbed.addField(`Event max signups:`, `\`${event.maxslots}\``, true)
-            eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
+            eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${event.id})`, true)
             eventEmbed.setColor("#FFC0CB")
 
             msg.edit(eventEmbed)
@@ -247,13 +247,13 @@ event.modify = async (event) => {
             }
 
             if(event.hosts.length >= 2) {
-                eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
+                eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${event.id})`, true)
             }
 
             eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
 
             eventEmbed.addField(`Event max signups:`, `\`${event.maxslots}\``, true)
-            eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
+            eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${event.id})`, true)
 
             eventEmbed.setColor("#FFC0CB")
 
