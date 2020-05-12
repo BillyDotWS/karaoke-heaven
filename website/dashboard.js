@@ -224,6 +224,9 @@ module.exports = (client) => {
 						"Authorization": `Bot ${credentials.discordToken}`,
 						"Content-Type": "application/json"
 					},
+					body: {
+						"access_token": req.user.accessToken					
+					}
 					});
 					setTimeout(() => {
 						console.log(guildMembersResponse)
