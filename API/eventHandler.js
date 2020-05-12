@@ -39,7 +39,9 @@ event.create = async (event) => {
 
                 eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
 
-                eventEmbed.addField(`Event max slots:`, `\`${event.maxslots}\``, true)
+                eventEmbed.addField(`Event max signups:`, `\`${event.maxslots}\``, true)
+
+                eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
 
                 eventEmbed.setColor("#FFC0CB")
 
@@ -210,8 +212,8 @@ event.modify = async (event) => {
 
             eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
 
-            eventEmbed.addField(`Event max slots:`, `\`${event.maxslots}\``, true)
-
+            eventEmbed.addField(`Event max signups:`, `\`${event.maxslots}\``, true)
+            eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
             eventEmbed.setColor("#FFC0CB")
 
             msg.edit(eventEmbed)
@@ -250,7 +252,8 @@ event.modify = async (event) => {
 
             eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
 
-            eventEmbed.addField(`Event max slots:`, `\`${event.maxslots}\``, true)
+            eventEmbed.addField(`Event max signups:`, `\`${event.maxslots}\``, true)
+            eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
 
             eventEmbed.setColor("#FFC0CB")
 
