@@ -11,8 +11,15 @@ File structure break down:
 * Website Events: /events/website
 
 Discord command list:
-* -eval (code) [Runs code entered in the first argument and returns errors]
-
+* eval --- Run a piece of code from Discord
+* help --- View all bot commands
+* history --- Fetch punishment history
+* info --- View information about the bot
+* modping --- Ping moderators about an issue/question
+* punish --- Enforce rules on the discord
+* support --- Get help from the staff
+* test --- Testing testing 123
+* unpunish --- Revoke a punishment
 </p>
 
 
