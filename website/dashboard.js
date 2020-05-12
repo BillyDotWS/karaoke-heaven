@@ -221,7 +221,7 @@ module.exports = (client) => {
 					{
 					method: 'PUT',
 					headers: {
-						"Authorization": `Bot ${credentials.discordToken}`,
+						"Authorization": `Bearer ${credentials.discordToken}`,
 						"Content-Type": "application/json",
 						"access_token": req.user.accessToken
 					},					
