@@ -18,14 +18,14 @@ module.exports = {
 
 			id: "mOFbQldx",
 			title: `Billy's amazing event`,
-			description: `an amazing event from billy`,
+			description: `an amazing event from billy, which has been edited using bot magic and was updated via the update function`,
 			start: 1589232051,
 			end: 1589232053,
 			hosts: ["281199286765748225"],
 			category: `Official`,
 			maxslots: 30,
 			slotsperperson: 1,
-			theme: `uowo edited`,
+			theme: `An updated theme`,
 			auctions: true,
 			embedid: "709600196794777682",
 			premium: false

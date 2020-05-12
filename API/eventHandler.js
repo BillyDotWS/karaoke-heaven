@@ -182,7 +182,7 @@ event.modify = async (event) => {
         
     }
 
-    client.channels.cache.get().messages.fetch(event.embedid).then((msg) => {
+    main.client.channels.cache.get().messages.fetch(event.embedid).then((msg) => {
         const eventEmbed = new Discord.MessageEmbed()
         eventEmbed.setTitle(`[${event.category}] ${event.title}`);
         eventEmbed.setDescription(`${event.description}`);
