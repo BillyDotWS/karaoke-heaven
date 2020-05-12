@@ -12,6 +12,7 @@ File structure break down:
 
 Discord command list:
 Command | Description
+------------ | -------------
 eval | Run a piece of code from Discord
 help | View all bot commands
 history | Fetch punishment history
