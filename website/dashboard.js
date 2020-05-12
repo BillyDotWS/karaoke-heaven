@@ -204,6 +204,10 @@ module.exports = (client) => {
 	
 	app.get('/', (req, res) => {
 		if (req.isAuthenticated()) {
+
+			console.log(`user variable:`)
+			console.log(user)
+
 			renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
 		} else {
 			renderTemplate(res, req, 'notloggedin.ejs', { req: req }, { Discord: Discord });
