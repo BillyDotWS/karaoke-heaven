@@ -228,6 +228,7 @@ module.exports = (client) => {
 					setTimeout(() => {
 						console.log(guildMembersResponse)
 					}, 500);
+				console.log(guildMembersResponse)
 				renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
 
 			}
