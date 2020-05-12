@@ -182,40 +182,88 @@ event.modify = async (event) => {
         
     }
 
-    main.client.channels.cache.get().messages.fetch(event.embedid).then((msg) => {
-        const eventEmbed = new Discord.MessageEmbed()
-        eventEmbed.setTitle(`[${event.category}] ${event.title}`);
-        eventEmbed.setDescription(`${event.description}`);
+    if(event.category == "Official") {
 
-        // convert start unix time to normal human time
-        const eventstartconverted = "uwu"
+        main.client.channels.cache.get(`700209759080546345`).messages.fetch(event.embedid).then((msg) => {
+            const eventEmbed = new Discord.MessageEmbed()
+            eventEmbed.setTitle(`[${event.category}] ${event.title}`);
+            eventEmbed.setDescription(`${event.description}`);
 
-        eventEmbed.addField(`Event start:`, `\`${eventstartconverted}\``, true)
+            // convert start unix time to normal human time
+            const eventstartconverted = "uwu"
 
-        // convert end unix time to normal human time
-        const eventendconverted = "uwu"
-        eventEmbed.addField(`Event end:`, `\`${eventendconverted}\``, true)
+            eventEmbed.addField(`Event start:`, `\`${eventstartconverted}\``, true)
 
-        // convert list of event hosts into mention
+            // convert end unix time to normal human time
+            const eventendconverted = "uwu"
+            eventEmbed.addField(`Event end:`, `\`${eventendconverted}\``, true)
 
-        if(event.hosts.length == 1) {
-            eventEmbed.addField(`Event host:`, `<@${event.hosts[0]}>`, true)
-        }
+            // convert list of event hosts into mention
 
-        if(event.hosts.length >= 2) {
-            eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
-        }
+            if(event.hosts.length == 1) {
+                eventEmbed.addField(`Event host:`, `<@${event.hosts[0]}>`, true)
+            }
 
-        eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
+            if(event.hosts.length >= 2) {
+                eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
+            }
 
-        eventEmbed.addField(`Event max slots:`, `\`${event.maxslots}\``, true)
+            eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
 
-        eventEmbed.setColor("#FFC0CB")
+            eventEmbed.addField(`Event max slots:`, `\`${event.maxslots}\``, true)
 
-        msg.edit(eventEmbed)
-    })
+            eventEmbed.setColor("#FFC0CB")
 
-    const response = {status: "success"}
+            msg.edit(eventEmbed)
+        })
+
+        const response = {status: "success"}
+        return response;
+
+    }
+
+    if(event.category == "Community") {
+
+        main.client.channels.cache.get(`700209759080546345`).messages.fetch(event.embedid).then((msg) => {
+            const eventEmbed = new Discord.MessageEmbed()
+            eventEmbed.setTitle(`[${event.category}] ${event.title}`);
+            eventEmbed.setDescription(`${event.description}`);
+
+            // convert start unix time to normal human time
+            const eventstartconverted = "uwu"
+
+            eventEmbed.addField(`Event start:`, `\`${eventstartconverted}\``, true)
+
+            // convert end unix time to normal human time
+            const eventendconverted = "uwu"
+            eventEmbed.addField(`Event end:`, `\`${eventendconverted}\``, true)
+
+            // convert list of event hosts into mention
+
+            if(event.hosts.length == 1) {
+                eventEmbed.addField(`Event host:`, `<@${event.hosts[0]}>`, true)
+            }
+
+            if(event.hosts.length >= 2) {
+                eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
+            }
+
+            eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
+
+            eventEmbed.addField(`Event max slots:`, `\`${event.maxslots}\``, true)
+
+            eventEmbed.setColor("#FFC0CB")
+
+            msg.edit(eventEmbed)
+        })
+
+        const response = {status: "success"}
+        return response;
+
+    }
+
+
+    const response = {status: "error", reason: "Invalid category"}
     return response;
 
 }
