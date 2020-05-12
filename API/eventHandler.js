@@ -224,7 +224,7 @@ event.modify = async (event) => {
 
     if(event.category == "Community") {
 
-        main.client.channels.cache.get(`700209759080546345`).messages.fetch(event.embedid).then((msg) => {
+        main.client.channels.cache.get(`700209781859942400`).messages.fetch(event.embedid).then((msg) => {
             const eventEmbed = new Discord.MessageEmbed()
             eventEmbed.setTitle(`[${event.category}] ${event.title}`);
             eventEmbed.setDescription(`${event.description}`);
