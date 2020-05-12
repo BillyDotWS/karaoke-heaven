@@ -86,7 +86,7 @@ event.create = async (event) => {
                 }
                 // id: 700209759080546345
                 // discord embed
-                const response = {status: "success", eventid: `${eventid}`}
+                const response = {status: "success", eventid: `${eventid}`} 
                 return response;
 
             }

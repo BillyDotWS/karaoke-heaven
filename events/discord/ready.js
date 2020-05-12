@@ -66,7 +66,7 @@ setInterval(async function() {
 						weight: `${activeresult[result].weight}`,
 						newweight: `${activeresult[result].newweight}`,
 						expiry: `${activeresult[result].expiry}`
-						
+						 
 					}
 
 					const modifypunishment = await punishmenthandler.modify(yiteisacunt)
