@@ -16,6 +16,7 @@ module.exports = {
 		
 		const event = {
 
+			id: "mOFbQldx",
 			title: `Billy's amazing event`,
 			description: `an amazing event from billy`,
 			start: 1589232051,
@@ -24,13 +25,14 @@ module.exports = {
 			category: `Official`,
 			maxslots: 30,
 			slotsperperson: 1,
-			theme: `Yite`,
+			theme: `uowo edited`,
 			auctions: true,
+			embedid: "709600196794777682",
 			premium: false
 
 		}
 
-		const diditwork = await eventhandler.create(event)
+		const diditwork = await eventhandler.modify(event)
 		message.reply(`uwu sent. response: ${diditwork.reason}`)
 
 	},
