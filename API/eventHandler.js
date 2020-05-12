@@ -13,41 +13,7 @@ event.create = async (event) => {
 
             if(event.maxslots <= 50) {
                 
-
-                const submitevent = {
-
-                    id: eventid,
-                    title: `${event.title}`,
-                    description: `${event.description}`,
-                    start: event.start,
-                    end: event.end,
-                    hosts: event.hosts,
-                    category: `${event.category}`,
-                    maxslots: event.maxslots,
-                    slotsperperson: event.slotsperperson,
-                    inviteonly: false,
-                    invites: [],
-                    active: false,
-                    theme: `${event.theme}`,
-                    creator: event.hosts[0],
-                    goldenabled: true,
-                    auctions: true,
-                    premium: false
-            
-                }
-
-
-                try {
-        
-                    await main.client.r.db('Events').table('events').insert(submitevent, { conflict: 'update' }).run()
-                    
-                } catch(err) {
-                    
-                    const response = {status: "error", reason: `${err}`}
-                    return response;
-                    
-                }
-
+                let submitevent = []
                 const eventEmbed = new Discord.MessageEmbed()
                 eventEmbed.setTitle(`[${event.category}] ${event.title}`);
                 eventEmbed.setDescription(`${event.description}`);
@@ -78,14 +44,75 @@ event.create = async (event) => {
                 eventEmbed.setColor("#FFC0CB")
 
                 if(event.category == `Official`) {
-                    main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed);
+                    main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed).then(async (msg) => {
+                    
+                        submitevent = {
+    
+                            id: eventid,
+                            title: `${event.title}`,
+                            description: `${event.description}`,
+                            start: event.start,
+                            end: event.end,
+                            hosts: event.hosts,
+                            category: `${event.category}`,
+                            maxslots: event.maxslots,
+                            slotsperperson: event.slotsperperson,
+                            inviteonly: false,
+                            invites: [],
+                            active: false,
+                            theme: `${event.theme}`,
+                            creator: event.hosts[0],
+                            goldenabled: true,
+                            auctions: true,
+                            premium: false,
+                            embedid: msg.id
+                    
+                        }
+    
+                    })
                 }
 
                 if(event.category == `Community`) {
-                    main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209781859942400`).send(eventEmbed);
+                    main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209781859942400`).send(eventEmbed).then(async (msg) => {
+                    
+                        submitevent = {
+    
+                            id: eventid,
+                            title: `${event.title}`,
+                            description: `${event.description}`,
+                            start: event.start,
+                            end: event.end,
+                            hosts: event.hosts,
+                            category: `${event.category}`,
+                            maxslots: event.maxslots,
+                            slotsperperson: event.slotsperperson,
+                            inviteonly: false,
+                            invites: [],
+                            active: false,
+                            theme: `${event.theme}`,
+                            creator: event.hosts[0],
+                            goldenabled: true,
+                            auctions: true,
+                            premium: false,
+                            embedid: msg.id
+                    
+                        }
+    
+                    })
                 }
-                // id: 700209759080546345
-                // discord embed
+
+
+                try {
+        
+                    await main.client.r.db('Events').table('events').insert(submitevent, { conflict: 'update' }).run()
+                    
+                } catch(err) {
+                    
+                    const response = {status: "error", reason: `${err}`}
+                    return response;
+                    
+                }
+
                 const response = {status: "success", eventid: `${eventid}`} 
                 return response;
 
