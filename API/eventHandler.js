@@ -46,6 +46,7 @@ event.create = async (event) => {
                 if(event.category == `Official`) {
                     main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed).then(async (msg) => {
                     
+
                         submitevent = {
     
                             id: eventid,
@@ -68,6 +69,20 @@ event.create = async (event) => {
                             embedid: msg.id
                     
                         }
+                    
+                        try {
+        
+                            await main.client.r.db('Events').table('events').insert(submitevent, { conflict: 'update' }).run()
+                            
+                        } catch(err) {
+                            
+                            const response = {status: "error", reason: `${err}`}
+                            return response;
+                            
+                        }
+        
+                        const response = {status: "success", eventid: `${eventid}`} 
+                        return response;
     
                     })
                 }
@@ -97,25 +112,25 @@ event.create = async (event) => {
                             embedid: msg.id
                     
                         }
-    
+                        
+                        try {
+        
+                            await main.client.r.db('Events').table('events').insert(submitevent, { conflict: 'update' }).run()
+                            
+                        } catch(err) {
+                            
+                            const response = {status: "error", reason: `${err}`}
+                            return response;
+                            
+                        }
+        
+                        const response = {status: "success", eventid: `${eventid}`} 
+                        return response;
                     })
                 }
 
-                console.log(submitevent)
 
-                try {
-        
-                    await main.client.r.db('Events').table('events').insert(submitevent, { conflict: 'update' }).run()
-                    
-                } catch(err) {
-                    
-                    const response = {status: "error", reason: `${err}`}
-                    return response;
-                    
-                }
 
-                const response = {status: "success", eventid: `${eventid}`} 
-                return response;
 
             }
 
