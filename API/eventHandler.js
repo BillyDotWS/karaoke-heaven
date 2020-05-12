@@ -13,7 +13,7 @@ event.create = async (event) => {
 
             if(event.maxslots <= 50) {
                 
-                let submitevent = []
+                let submitevent = {}
                 const eventEmbed = new Discord.MessageEmbed()
                 eventEmbed.setTitle(`[${event.category}] ${event.title}`);
                 eventEmbed.setDescription(`${event.description}`);
@@ -34,7 +34,7 @@ event.create = async (event) => {
                 }
 
                 if(event.hosts.length >= 2) {
-                    eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${submitevent.id})`, true)
+                    eventEmbed.addField(`Event hosts:`, `[Click to view](https://karaoke-heaven.net/event/${eventid})`, true)
                 }
 
                 eventEmbed.addField(`Event theme:`, `\`${event.theme}\``, true)
@@ -101,6 +101,7 @@ event.create = async (event) => {
                     })
                 }
 
+                console.log(submitevent)
 
                 try {
         
