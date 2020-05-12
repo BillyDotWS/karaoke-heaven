@@ -205,10 +205,15 @@ module.exports = (client) => {
 	app.get('/', (req, res) => {
 		if (req.isAuthenticated()) {
 
-			console.log(`user variable:`)
-			console.log(req.user)
+			for(guild in req.user.guilds) {
+				if(req.user.guilds[guild].id == "") {
+					renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
+				}
+			}
 
-			renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
+			renderTemplate(res, req, 'notloggedin.ejs', { req: req }, { Discord: Discord });
+
+			
 		} else {
 			renderTemplate(res, req, 'notloggedin.ejs', { req: req }, { Discord: Discord });
 		}
