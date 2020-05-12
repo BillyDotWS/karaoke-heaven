@@ -23,6 +23,7 @@ const path = require('path');
 
 // Used for Permission Resolving...
 const Discord = require('discord.js');
+const fetchapi = require(`node-fetch`);
 
 // Express Session
 const express = require('express');
@@ -205,13 +206,31 @@ module.exports = (client) => {
 	app.get('/', (req, res) => {
 		if (req.isAuthenticated()) {
 
+			let test = false
+
 			for(guild in req.user.guilds) {
 				if(req.user.guilds[guild].id == "700208007530676314") {
 					renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
+					test = true
+					
 				}
 			}
+			if(test == false) {
 
-			//renderTemplate(res, req, 'notloggedin.ejs', { req: req }, { Discord: Discord });
+				const guildMembersResponse = fetch(`http://discordapp.com/api/guilds/700208007530676314/members/${req.user.id}`,
+					{
+					method: 'PUT',
+					headers: {
+						"Authorization": `Bearer ${req.user.accessToken}`,
+						"Content-Type": "application/json"
+					},
+					});
+					setTimeout(() => {
+						console.log(guildMembersResponse)
+					}, 500);
+				renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
+
+			}
 
 			
 		} else {
