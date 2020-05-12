@@ -23,7 +23,7 @@ const path = require('path');
 
 // Used for Permission Resolving...
 const Discord = require('discord.js');
-const fetchapi = require(`node-fetch`);
+const fetch = require(`node-fetch`);
 
 // Express Session
 const express = require('express');
