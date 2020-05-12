@@ -211,7 +211,7 @@ module.exports = (client) => {
 				}
 			}
 
-			renderTemplate(res, req, 'notloggedin.ejs', { req: req }, { Discord: Discord });
+			//renderTemplate(res, req, 'notloggedin.ejs', { req: req }, { Discord: Discord });
 
 			
 		} else {
