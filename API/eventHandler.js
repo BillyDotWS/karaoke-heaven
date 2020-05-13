@@ -300,6 +300,7 @@ event.list = async () => {
     try {
         
         const listofevents = await eventlist();
+        console.log(`uwu ${listofevents}`)
         return listofevents;
 
     } catch(err) {
