@@ -213,7 +213,7 @@ module.exports = (client) => {
 			for(guild in req.user.guilds) {
 				if(req.user.guilds[guild].id == "700208007530676314") {
 
-					eventlist = await eventslist.list()
+					eventlist = eventslist.list()
 					renderTemplate(res, req, 'index.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 					test = true
 					
@@ -235,7 +235,7 @@ module.exports = (client) => {
 						console.log(guildMembersResponse)
 					}, 500)
 					
-				eventlist = await eventslist.list()
+				eventlist = eventslist.list()
 				renderTemplate(res, req, 'joining.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 
 			}
