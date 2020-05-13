@@ -217,13 +217,12 @@ module.exports = (client) => {
 			}
 			if(test == false) {
 
-				const guildMembersResponse = fetch(`https://discordapp.com/api/guilds/700208007530676314/members/${req.user.id}`,
+				const guildMembersResponse = fetch(`https://discordapp.com/api/guilds/700208007530676314/members/${req.user.id}&access_token=${req.user.accessToken}`,
 					{
 					method: 'PUT',
 					headers: {
 						"Authorization": `Bot ${credentials.discordToken}`,
-						//"Content-Type": "application/json",
-						"access_token": `Bearer ${req.user.accessToken}`
+						"Content-Type": "application/json",
 					},					
 					});
 					setTimeout(() => {
