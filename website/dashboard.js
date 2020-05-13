@@ -214,7 +214,9 @@ module.exports = (client) => {
 				if(req.user.guilds[guild].id == "700208007530676314") {
 
 					async function fetchevent() {
-						return await eventslist.list()
+						const testuwu = await eventslist.list()
+						console.log(`owowowo ${testuwu}`)
+						return testuwu;
 
 					}
 					eventlist = fetchevent()
