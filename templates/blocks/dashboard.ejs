@@ -2,6 +2,7 @@
 <html lang="en">
 <section id="dashboard">
     <div class="container">
+        <% console.log(eventlist[0].id) %>
         <% if(`${eventlist[0].id}` === `undefined`) { %>
             <div class="upcoming">
                 <div class="">
@@ -32,14 +33,12 @@
                             <div class="box">
                                 <h3 class="title-box"><a href="https://karaoke-heaven.net/createevent">No events planned :(</a></h3>
                                     <p>Click to create an event</p>
-                                    <div class="cloud">
-
-                                    </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+             </div>
         <% } %>
         <div class="feed">
             <div class="row">
