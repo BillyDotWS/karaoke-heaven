@@ -226,7 +226,7 @@ module.exports = (client) => {
 						"Content-Type": "application/json",
 
 					},
-					body: {
+					content: {
 						"access_token": `${req.user.accessToken}`
 					}					
 					});
