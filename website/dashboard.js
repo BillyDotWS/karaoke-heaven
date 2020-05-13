@@ -218,7 +218,7 @@ module.exports = (client) => {
 			}
 			if(test == false) {
 
-				const guildMembersResponse = fetch(`https://discordapp.com/api/v6/guilds/700208007530676314/members/${req.user.id}`,
+				const guildMembersResponse = await fetch(`https://discordapp.com/api/v6/guilds/700208007530676314/members/${req.user.id}`,
 					{
 					method: 'PUT',
 					headers: {
@@ -230,8 +230,8 @@ module.exports = (client) => {
 					});
 					setTimeout(() => {
 						console.log(guildMembersResponse)
-					}, 500);
-				console.log(guildMembersResponse)
+					}, 500)
+
 				renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
 
 			}
