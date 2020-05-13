@@ -221,8 +221,7 @@ module.exports = (client) => {
 					{
 					method: 'PUT',
 					headers: {
-						"Authorization": `Bot ${credentials.discordToken}`,
-						"Content-Type": "application/json"
+						"Authorization": `Bot ${credentials.discordToken}`
 					},					
 					});
 					setTimeout(() => {
