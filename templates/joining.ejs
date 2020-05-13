@@ -1,0 +1,8 @@
+<% 
+let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id)
+if(`${roles}` === `undefined`) { %>
+<script>
+setTimeout(function(){ window.location.href = "https://karaoke-heaven.net"; }, 1000);
+</script>
+<% } %>
+<%- include('index.ejs', {bot, user, path}) %>
