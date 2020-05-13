@@ -2,26 +2,45 @@
 <html lang="en">
 <section id="dashboard">
     <div class="container">
-        <div class="upcoming">
-            <div class="">
-                <h3 class="title-sec"><i class="fas fa-music"></i> Upcoming Events</h3>
-                <div class="row">
-                    <% console.log(eventlist) %>
-                    <% for(event in eventlist) { %>
-                        <div class="col-md-3">
-                            <div class="box">
-                                <h3 class="title-box"><a href="https://karaoke-heaven.net/event/<%= eventlist[event].id %>">[<%= eventlist[event].category %>] <%= eventlist[event].title %></a></h3>
-                                <p>2 days, 6 hour, 25 minutes</p>
-                                <div class="cloud">
+        <% if(`${eventlist[0].id}` === `undefined`) { %>
+            <div class="upcoming">
+                <div class="">
+                    <h3 class="title-sec"><i class="fas fa-music"></i> Upcoming Events</h3>
+                    <div class="row">
+                        <% console.log(eventlist) %>
+                        <% for(event in eventlist) { %>
+                            <div class="col-md-3">
+                                <div class="box">
+                                    <h3 class="title-box"><a href="https://karaoke-heaven.net/event/<%= eventlist[event].id %>">[<%= eventlist[event].category %>] <%= eventlist[event].title %></a></h3>
+                                    <p>2 days, 6 hour, 25 minutes</p>
+                                    <div class="cloud">
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    <% } %>
+                        <% } %>
 
+                    </div>
                 </div>
             </div>
-        </div>
+        <% } else { %>
+            <div class="noevents">
+                <div class="">
+                    <h3 class="title-sec"><i class="fas fa-music"></i> Upcoming Events</h3>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="box">
+                                <h3 class="title-box"><a href="https://karaoke-heaven.net/createevent">No events planned :(</a></h3>
+                                    <p>Click to create an event</p>
+                                    <div class="cloud">
+
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
         <div class="feed">
             <div class="row">
                 <div class="col-md-6">
