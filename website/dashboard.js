@@ -233,7 +233,7 @@ module.exports = (client) => {
 					}, 500)
 					
 				
-				renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
+				renderTemplate(res, req, 'joining.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
 
 			}
 
