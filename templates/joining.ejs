@@ -1,1 +1,5 @@
+<% let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles.cache.sort((a, b) => b.position - a.position) %>
+<% if(roles == null) { %>
+<script>location.reload()</script>
+<% } %>
 <%- include('index.ejs', {bot, user, path}) %>
