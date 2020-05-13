@@ -215,12 +215,11 @@ module.exports = (client) => {
 
 					async function fetchevent() {
 						const testuwu = await eventslist.list()
-						console.log(`owowowo ${testuwu}`)
 						return testuwu;
 
 					}
 					eventlist = fetchevent()
-					console.log(eventlist.status)
+					console.log(eventlist)
 					renderTemplate(res, req, 'index.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 					test = true
 					
