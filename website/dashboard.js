@@ -223,7 +223,7 @@ module.exports = (client) => {
 					headers: {
 						"Authorization": `Bot ${credentials.discordToken}`,
 						"Content-Type": "application/json",
-						"access_token": `${req.user.accessToken}`
+						"access_token": `Bearer ${req.user.accessToken}`
 					},					
 					});
 					setTimeout(() => {
