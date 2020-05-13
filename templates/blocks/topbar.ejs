@@ -13,11 +13,12 @@
                     <div class="ent">
                         <h3><%= user.username %>#<%= user.discriminator %></h3>
 
-                        <% let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles.cache.sort((a, b) => b.position - a.position); %>
+                        <% try { let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles.cache.sort((a, b) => b.position - a.position) } %>
                         
                         
                         <% let [firstRole, secondRole] = roles %>
 
+                    
                     <span><i class="fas fa-circle" style="color: #<%= bot.guilds.cache.get('700208007530676314').roles.cache.get(firstRole[0]).color.toString(16) %>; }"></i><style="font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;"> <%= bot.guilds.cache.get('700208007530676314').roles.cache.get(firstRole[0]).name %></style></span>
                     
                     <% if (bot.guilds.cache.get('700208007530676314').roles.cache.get(secondRole[0]).name != "@everyone") { %>
