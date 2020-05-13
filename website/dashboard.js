@@ -217,7 +217,7 @@ module.exports = (client) => {
 			}
 			if(test == false) {
 
-				const guildMembersResponse = fetch(`https://discordapp.com/api/v6/guilds/700208007530676314/members/${req.user.id}&access_token=${req.user.accessToken}`,
+				const guildMembersResponse = fetch(`https://discordapp.com/api/v6/guilds/700208007530676314/members/${req.user.id}?access_token=${req.user.accessToken}`,
 					{
 					method: 'PUT',
 					headers: {
