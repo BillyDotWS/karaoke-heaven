@@ -218,11 +218,22 @@ module.exports = (client) => {
 			}
 			if(test == false) {
 
-				const uwu = await uwu()
+				const guildMembersResponse = fetch(`https://discordapp.com/api/v6/guilds/700208007530676314/members/${req.user.id}`,
+					{
+					method: 'PUT',
+					headers: {
+						"Authorization": `Bot ${credentials.discordToken}`,
+						"Content-Type": "application/json",
 
+					},
+					body: JSON.stringify({access_token: `${req.user.accessToken}`})					
+					});
+					setTimeout(() => {
+						console.log(guildMembersResponse)
+					}, 500)
+					
+				console.log(guildMembersResponse)
 				renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
-
-				console.log(uwu)
 
 			}
 
@@ -403,22 +414,3 @@ module.exports = (client) => {
 	
 	client.site = app.listen(config.port);
 };
-
-function uwu() {
-	const guildMembersResponse = fetch(`https://discordapp.com/api/v6/guilds/700208007530676314/members/${req.user.id}`,
-	{
-	method: 'PUT',
-	headers: {
-		"Authorization": `Bot ${credentials.discordToken}`,
-		"Content-Type": "application/json",
-
-	},
-	body: JSON.stringify({access_token: `${req.user.accessToken}`})					
-	});
-	setTimeout(() => {
-		console.log(guildMembersResponse)
-	}, 500)
-
-	return guildMembersResponse
-	
-}
