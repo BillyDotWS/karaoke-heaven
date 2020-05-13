@@ -3,4 +3,8 @@ let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id
 if(`${roles}` === `undefined`) { %>
 <script>location.reload()</script>
 <% } %>
+
+<% if(`${roles}` !== `undefined`) { %>
 <%- include('index.ejs', {bot, user, path}) %>
+<% } %>
+
