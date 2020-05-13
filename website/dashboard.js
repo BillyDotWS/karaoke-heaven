@@ -218,7 +218,7 @@ module.exports = (client) => {
 			}
 			if(test == false) {
 
-				const uwu = uwu()
+				const uwu = await uwu()
 
 				renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
 
