@@ -226,9 +226,7 @@ module.exports = (client) => {
 						"Content-Type": "application/json",
 
 					},
-					json: {
-						"access_token": `${req.user.accessToken}`
-					}					
+					body: JSON.stringify({access_token: `${req.user.accessToken}`})					
 					});
 					setTimeout(() => {
 						console.log(guildMembersResponse)
