@@ -1,5 +1,5 @@
-<% console.log(user)
-let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles.cache.sort((a, b) => b.position - a.position)
+<% 
+let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id)
 if(`${roles}` === `undefined`) { %>
 <script>location.reload()</script>
 <% } %>
