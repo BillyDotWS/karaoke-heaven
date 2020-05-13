@@ -232,7 +232,7 @@ module.exports = (client) => {
 						console.log(guildMembersResponse)
 					}, 500)
 					
-
+				
 				renderTemplate(res, req, 'index.ejs', { req: req }, { Discord: Discord }, { clickHandler:'func1();' });
 
 			}
