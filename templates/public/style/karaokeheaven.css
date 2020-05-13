@@ -119,6 +119,25 @@ h3.title-sec{
     font-size: 14px;
 }
 
+.noevents{
+    margin-bottom: 20px;
+}
+.noevents .box{
+    background:#ffcccb;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.noevents .box h3{
+    font-size: 16px;
+    color: #3d4374;
+}
+.noevents .box p{
+    color: #b669b3;
+    font-size: 14px;
+}
+
+
 .feed .box{
     border-radius: 10px;
     background: rgba(255,255,255,0.5);
