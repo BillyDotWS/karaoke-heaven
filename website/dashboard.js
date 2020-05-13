@@ -207,6 +207,7 @@ module.exports = (client) => {
 		if (req.isAuthenticated()) {
 
 			let test = false
+			console.log(req.user)
 
 			for(guild in req.user.guilds) {
 				if(req.user.guilds[guild].id == "700208007530676314") {
