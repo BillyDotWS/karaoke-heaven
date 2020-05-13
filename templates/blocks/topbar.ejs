@@ -12,8 +12,8 @@
                     </div>
                     <div class="ent">
                         <h3><%= user.username %>#<%= user.discriminator %></h3>
-
-                        <% let roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles.cache.sort((a, b) => b.position - a.position) %>
+                        <% let roles = [null, null] %>
+                        <% try { roles = bot.guilds.cache.get('700208007530676314').members.cache.get(user.id).roles.cache.sort((a, b) => b.position - a.position) } catch(e) {} %>
                         
                         
                         <% let [firstRole, secondRole] = roles %>
