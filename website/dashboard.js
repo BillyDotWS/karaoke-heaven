@@ -16,6 +16,7 @@ example, putting it in one file is a little simpler. Just *a little*.
 
 const credentials = require('../settings/credentials.json');
 const config = require('../settings/config.json');
+const eventslist = require(`../API/eventHandler`)
 
 // Native Node Imports
 const url = require('url');
@@ -211,6 +212,8 @@ module.exports = (client) => {
 
 			for(guild in req.user.guilds) {
 				if(req.user.guilds[guild].id == "700208007530676314") {
+
+					eventlist = await eventslist.list()
 					renderTemplate(res, req, 'index.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 					test = true
 					
@@ -232,7 +235,7 @@ module.exports = (client) => {
 						console.log(guildMembersResponse)
 					}, 500)
 					
-				
+				eventlist = await eventslist.list()
 				renderTemplate(res, req, 'joining.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 
 			}
