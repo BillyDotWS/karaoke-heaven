@@ -204,7 +204,7 @@ module.exports = (client) => {
 	// Index page. If the user is authenticated, it shows their info
 	// at the top right of the screen.
 	
-	app.get('/', (req, res) => {
+	app.get('/', async (req, res) => {
 		if (req.isAuthenticated()) {
 
 			let test = false
