@@ -218,7 +218,7 @@ module.exports = (client) => {
 
 					}
 					eventlist = fetchevent()
-					console.log(eventlist[0])
+					console.log(eventlist.status)
 					renderTemplate(res, req, 'index.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 					test = true
 					
