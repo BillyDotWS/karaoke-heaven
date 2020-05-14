@@ -3,7 +3,7 @@ var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 bot.channels.cache.get(`706302917468094534`).send(`A new request was submitted\n\nIP: \`\`\`${ip}\`\`\` \n Requested page: \`\`\`${req.originalUrl}\`\`\``) %>
 <%- include('blocks/header', {bot, path}) %>
 <center style="margin-top: 10%;">
-<img src="/public/images/logo.png" style="image-size: 35%;">
+<img src="/public/images/logo.png" style="width: 35%; height: 35%;">
 <h3>You are not logged in</h1>
 <h3>This is a placeholder page</h3>
 <a style="font-size: 25px;" href="/login">Click here to login</a>
