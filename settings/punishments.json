@@ -34,7 +34,10 @@
             "C": ["Controversial Messages", "mutetrack", "5"],
             "P": ["Promoting unrelated media", "mutetrack", "2"],
             "RT": ["Threats of recording", "bantrack", "1"],
-            "RA": ["Recording", "bantrack", "3"]
+            "RA": ["Recording", "bantrack", "3"],
+            "FA": ["Abusing website features", "bantrack", "7"],
+            "AB": ["Manager Issued Ban", "bantrack", "100"],
+            "AM": ["Manager Issued Mute", "mutetrack", "100"]
 
         },
 
