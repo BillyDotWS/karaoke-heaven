@@ -243,7 +243,14 @@ module.exports = (client) => {
 						console.log(guildMembersResponse)
 					}, 500)
 					
-				eventlist = eventslist.list()
+				async function fetchevent() {
+					const testuwu = await eventslist.list()
+					return testuwu;
+
+				}
+				eventlist = await fetchevent()
+
+				for(uwu in eventlist) { console.log(`loggy loggy ${eventlist[uwu]}`)}
 				renderTemplate(res, req, 'joining.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 
 			}
