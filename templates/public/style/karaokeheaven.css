@@ -57,6 +57,11 @@ header .logo img {
     border-radius: 15px;
     color: #9d6727;
 }
+
+.coin .img {
+    padding-top: 10px;
+}
+
 .coin .ent{
     padding: 8px 0;
     font-weight: 700;
