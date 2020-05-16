@@ -16,9 +16,8 @@ module.exports = {
 		
 		const event = {
 
-			id: "mOFbQldx",
-			title: `Billy's amazing event`,
-			description: `an amazing event from billy, which has been edited using bot magic and was updated via the update function`,
+			title: `notification test`,
+			description: `An event created in order to test the notification system`,
 			start: 1589232051,
 			end: 1589232053,
 			hosts: ["281199286765748225"],
@@ -27,12 +26,11 @@ module.exports = {
 			slotsperperson: 1,
 			theme: `An updated theme`,
 			auctions: true,
-			embedid: "709600196794777682",
 			premium: false
 
 		}
 
-		const diditwork = await eventhandler.modify(event)
+		const diditwork = await eventhandler.create(event)
 		message.reply(`uwu sent. response: ${diditwork.reason}`)
 
 	},
