@@ -236,7 +236,7 @@ event.modify = async (event) => {
             eventEmbed.setDescription(`${event.description}`);
 
             // convert start unix time to normal human time
-            const eventstartconverted = "uwu"
+            const eventstartconverted = "uwu" 
 
             eventEmbed.addField(`Event start:`, `\`${eventstartconverted}\``, true)
 
