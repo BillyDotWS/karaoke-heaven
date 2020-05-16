@@ -16,8 +16,8 @@ module.exports = {
 		
 		const event = {
 
-			title: `notification test`,
-			description: `An event created in order to test the notification system`,
+			title: `A really cool event`,
+			description: `an amazing event from billy, which has been edited using bot magic and was updated via the update function an amazing event from billy, which has been edited using bot magic and was updated via the update function`,
 			start: 1589232051,
 			end: 1589232053,
 			hosts: ["281199286765748225"],
