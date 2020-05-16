@@ -45,6 +45,8 @@ event.create = async (event) => {
 
                 eventEmbed.setColor("#FFC0CB")
 
+                eventEmbed.setThumbnail(`https://i.imgur.com/aK93jQp.png`)
+
                 if(event.category == `Official`) {
                     main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed).then(async (msg) => {
                         
@@ -216,6 +218,7 @@ event.modify = async (event) => {
             eventEmbed.addField(`Event max signups:`, `\`${event.maxslots}\``, true)
             eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${event.id})`, true)
             eventEmbed.setColor("#FFC0CB")
+            eventEmbed.setThumbnail(`https://i.imgur.com/aK93jQp.png`)
 
             msg.edit(eventEmbed)
         })
@@ -257,6 +260,7 @@ event.modify = async (event) => {
             eventEmbed.addField(`View full info:`, `[Click to view](https://karaoke-heaven.net/event/${event.id})`, true)
 
             eventEmbed.setColor("#FFC0CB")
+            eventEmbed.setThumbnail(`https://i.imgur.com/aK93jQp.png`)
 
             msg.edit(eventEmbed)
         })
