@@ -2,7 +2,7 @@
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 bot.channels.cache.get(`706302917468094534`).send(`A new request was submitted\n\nIP: \`\`\`${ip}\`\`\`\n Requested page: \`\`\`${req.originalUrl}\`\`\``) %>
 
-<img height="300" width="300" src="https://i.imgur.com/mY6sfwl.png">
+<img height="400" width="550" src="https://i.imgur.com/mY6sfwl.png">
 
 <div class="message-box">
   <h1>404</h1>
@@ -19,6 +19,7 @@ bot.channels.cache.get(`706302917468094534`).send(`A new request was submitted\n
   background-color: #2F3242;
 }
 img {
+  position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -50px; 
