@@ -47,7 +47,8 @@ event.create = async (event) => {
 
                 if(event.category == `Official`) {
                     main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`).send(eventEmbed).then(async (msg) => {
-                    
+                        
+                        msg.react(`711061304240242738`)
 
                         submitevent = {
     
@@ -91,7 +92,7 @@ event.create = async (event) => {
 
                 if(event.category == `Community`) {
                     main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209781859942400`).send(eventEmbed).then(async (msg) => {
-                    
+                        msg.react(`711061304240242738`)
                         submitevent = {
     
                             id: eventid,
