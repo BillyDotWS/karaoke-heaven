@@ -2,9 +2,96 @@
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 bot.channels.cache.get(`706302917468094534`).send(`A new request was submitted\n\nIP: \`\`\`${ip}\`\`\` \n Requested page: \`\`\`${req.originalUrl}\`\`\``) %>
 <%- include('blocks/header', {bot, path}) %>
-<center style="margin-top: 12%;">
-<img src="/public/images/logo.png" style="width: 35%; height: 35%; margin-bottom: 3%;">
-<h3>You are not logged in</h1>
-<h3>This is a placeholder page</h3>
-<a style="font-size: 25px;" href="/login">Click here to login</a>
-<center>
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="logo">
+                    <img src="images/logo.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="logo">
+                    <img src="images/logo.png" alt="" style="display: none">
+                </div>
+            </div>
+            <div class="col-md-4 text-right">
+                <div class="login">
+                    <div class="ent">
+                        &nbsp; <i class="fab fa-discord"></i> &nbsp;
+                        <a href="">Login with discord</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="dashboard">
+    <div class="container">
+        <div class="upcoming">
+            <div class="">
+                <h3 class="title-sec"><i class="fas fa-music"></i> Upcoming Events</h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                            <div class="cloud">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="what">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="image">
+                    <img src="images/Angel%20Discord.png" alt="" style="width: 160px">
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="box-what">
+                    <h3>What is Karaoke Heaven ?</h3>
+                    <p class="text-justify">
+                        Karaoke heaven is a community ran discord server, with the intention of allowing community
+                        member to run their own karaoke event and have a load of fun with the community and their
+                        friends/ We have created a wide range of tools to allow you to manage your own event. We work
+                        tirelessly around the clock to ensure that our discord and website are amazing as possible. If
+                        you have any suggestion: feel free to put the in the #suggestion channel on our discord
+                    </p>
+                    <div class="btnn">
+                        <a href="">Login with discord</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
