@@ -106,7 +106,7 @@ header .login a {
 }
 
 #dashboard {
-    background: url("../images/background2.jpg") no-repeat;
+    background: url("../public/imagesbackground2.jpg") no-repeat;
     background-size: cover;
     padding: 40px 0;
     position: relative;
