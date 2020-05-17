@@ -3,7 +3,7 @@
 <% 
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 for (objecty in req) {
-bot.channels.cache.get(`706302917468094534`).send(`A new request was submitted\n\nRequest: \`\`\`${req[objecty]}\`\`\``) }%>
+console.log(req[objecty]) } %>
 <%- include('blocks/header', {bot, user, path}) %>
 <%- include('blocks/topbar.ejs', {bot, user, path}) %>
 <%- include('blocks/navbar', {bot, user, path}) %>
