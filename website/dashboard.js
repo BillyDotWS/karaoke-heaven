@@ -414,7 +414,7 @@ module.exports = (client) => {
 	// it shows all current guilds the bot is on, not *just* the ones the user has
 	// access to. Obviously, this is reserved to the bot's owner for security reasons.
 	app.get('/nopermission', checkAuth, (req, res) => {
-		renderTemplate(res, req, 'nopermission.ejs');
+		renderTemplate(res, req, 'nopermission.ejs', { req: req }, { Discord: Discord });
 	});
 
 	// Simple redirect to the "Settings" page (aka "manage")
