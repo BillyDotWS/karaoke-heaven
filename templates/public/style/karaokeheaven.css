@@ -19,7 +19,6 @@ header .avatar {
 header .avatar img {
     border: 1px solid #323868;
     border-radius: 50%;
-    padding-top: 3px;
 }
 
 header .ent {
@@ -29,7 +28,6 @@ header .ent {
 
 header .ent h3 {
     font-size: 16px;
-
 }
 
 header .ent i {
@@ -46,6 +44,17 @@ header .ent span {
 header .logo img {
     width: 180px;
     margin: 0 auto;
+}
+
+.coin {
+    text-align: center;
+    float: right;
+    width: 159px;
+    font-size: 21px;
+    background: #323868;
+    padding: 4px 0;
+    border-radius: 15px;
+    color: #9d6727;
 }
 
 header .login {
@@ -68,24 +77,10 @@ header .login a {
     font-size: 18px;
     text-decoration: none;
     color: #9d6727;
-
-.coin {
-    text-align: center;
-    float: right;
-    width: 159px;
-    font-size: 21px;
-    background: #323868;
-    padding: 4px 0;
-    border-radius: 15px;
-    color: #9d6727;
 }
 
-.coin .ent{
+.coin .ent {
     padding: 8px 0;
-    font-weight: 700;
-    background: -webkit-linear-gradient(#9E7733, #ffae1a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 /*nav*/
@@ -110,82 +105,69 @@ header .login a {
     background: #964f9d;
 }
 
-#dashboard{
+#dashboard {
     background: url("../images/background2.jpg") no-repeat;
     background-size: cover;
     padding: 40px 0;
     position: relative;
 }
 
-h3.title-sec{
+h3.title-sec {
     color: #3d4374;
     border-bottom: 1px solid #797ea5;
     margin-bottom: 20px;
     padding-bottom: 10px;
     font-size: 21px;
 }
-.upcoming{
+
+.upcoming {
     margin-bottom: 20px;
 }
-.upcoming .box{
-    background:#d1c7d8;
+
+.upcoming .box {
+    background: #d1c7d8;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
-.upcoming .box h3{
+
+.upcoming .box h3 {
     font-size: 16px;
     color: #3d4374;
 }
-.upcoming .box p{
+
+.upcoming .box p {
     color: #b669b3;
     font-size: 14px;
 }
 
-.noevents{
-    margin-bottom: 20px;
-}
-.noevents .box{
-    background:#ffcccb;
-    padding: 10px;
+.feed .box {
     border-radius: 10px;
-    margin-bottom: 20px;
-}
-.noevents .box h3{
-    font-size: 16px;
-    color: #3d4374;
-}
-.noevents .box p{
-    color: #b669b3;
-    font-size: 14px;
-}
-
-
-.feed .box{
-    border-radius: 10px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     content: ' ';
     min-height: 400px;
 }
 
 @media screen and (max-width: 768px) {
-    header .col-md-4{
+    header .col-md-4 {
         text-align: center !important;
         margin-bottom: 10px;
     }
-    header .ent{
+
+    header .ent {
         display: block;
         text-align: center;
         margin: 0 auto;
         float: none;
     }
-    header .col-md-4 .coin{
+
+    header .col-md-4 .coin {
         float: none;
         margin: 0 auto;
     }
 }
 
-.setting{
+.setting {
     position: fixed;
     top: 180px;
     left: 0;
@@ -193,18 +175,21 @@ h3.title-sec{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.setting ul{
+
+.setting ul {
     margin: 0;
     padding: 0;
 }
-.setting ul li{
+
+.setting ul li {
     list-style: none;
     padding: 10px 20px;
 }
-.setting ul li a{
+
+.setting ul li a {
     color: #964f9d;
 }
-    
+
 /*what*/
 #what {
     background: #d7c9d8;
