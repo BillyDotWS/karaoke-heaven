@@ -413,9 +413,8 @@ module.exports = (client) => {
 	// The Admin dashboard is similar to the one above, with the exception that
 	// it shows all current guilds the bot is on, not *just* the ones the user has
 	// access to. Obviously, this is reserved to the bot's owner for security reasons.
-	app.get('/admin', checkAuth, (req, res) => {
-		if (!req.session.isAdmin) return res.redirect('/');
-		renderTemplate(res, req, 'admin.ejs');
+	app.get('/nopermission', checkAuth, (req, res) => {
+		renderTemplate(res, req, 'nopermission.ejs');
 	});
 
 	// Simple redirect to the "Settings" page (aka "manage")
