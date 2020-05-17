@@ -48,6 +48,27 @@ header .logo img {
     margin: 0 auto;
 }
 
+header .login {
+    text-align: center;
+    float: right;
+    width: 259px;
+    font-size: 21px;
+    background: #323868;
+    padding: 4px 0;
+    border-radius: 15px;
+    color: #9d6727;
+}
+
+header .login i {
+    color: #0074b9;
+}
+
+header .login a {
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+    color: #9d6727;
+
 .coin {
     text-align: center;
     float: right;
@@ -182,4 +203,233 @@ h3.title-sec{
 }
 .setting ul li a{
     color: #964f9d;
+}
+    
+/*what*/
+#what {
+    background: #d7c9d8;
+    padding: 60px 0;
+}
+
+#what p {
+    margin-bottom: 20px;
+}
+
+#what .btnn a {
+    padding: 13px 16px;
+    background: #323868;
+    color: white;
+    text-decoration: none;
+}
+
+#what .image {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 101px;
+}
+
+/*bank*/
+.box-bank {
+    background: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 10px;
+}
+
+.box-bank img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.btn-adt {
+    padding: 10px 0;
+}
+
+.btn-adt a:hover {
+    color: white;
+}
+
+.btn-adt a {
+    font-size: 21px;
+    padding: 14px 26px;
+    background: #0074b9;
+    color: white;
+}
+
+.modal-bank .image {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.modal-bank .image img {
+    width: 80px;
+}
+
+.box-bank h4 {
+    margin-bottom: 30px !important;
+    text-align: center !important;
+}
+
+.modal-bank .modal-body {
+    border-top: 1px solid #b669b3;
+    padding: 30px 0;
+}
+
+.modal-bank .modal-content {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer-mod button {
+    padding: 10px 21px;
+}
+
+/*performances*/
+.side {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5) !important;
+    width: 100%;
+    height: 100%;
+}
+
+.performances .p-2 {
+    min-height: 560px;
+}
+
+.box-side {
+    margin-bottom: 20px;
+}
+
+.box-side ul {
+    margin: 0;
+    padding: 0;
+}
+
+.box-side ul li p {
+    margin-bottom: 2px;
+}
+
+.box-side ul li a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.box-side ul li {
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+    border-bottom: 1px solid #777777;
+    margin-bottom: 7px;
+}
+
+.performances .main {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.box-main {
+    margin-bottom: 20px;
+}
+
+.box-main .ent-box {
+    background: white;
+    border-radius: 4px;
+    padding: 10px;
+    position: relative;
+}
+
+.box-main .ent-box .avatar {
+    width: 80px;
+    height: 80px;
+    background: #e7e7e7;
+    float: left;
+    margin-right: 8px;
+}
+
+.box-main .soc i {
+    font-size: 24px;
+}
+
+.box-main .soc {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.soc .spot {
+    color: green;
+}
+
+/*events*/
+.create-box {
+    background: rgba(255, 255, 255, 0.5) !important;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.create-box .image img {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.create-box .image {
+    text-align: center;
+}
+
+.btn-ev a {
+    background: #0074b9;
+    padding: 10px;
+    padding-right: 0;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-ev a img {
+    width: 35px;
+}
+
+.btn-ev a span {
+    background: orange;
+    padding: 10px;
+}
+
+
+/*cr e*/
+.box-side {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.cr-ev .side {
+    background: none !important;
+}
+
+.cr-ev .box-main .avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.cr-ev .box-main p {
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.cr-ev .box-main .soc {
+    position: absolute;
+    right: 3px;
+    top: 11px;
+}
+
+.side-cr {
+    width: 100%;
+    height: 100%;
+}
+
+.cr-ev .main li, .cr-ev .side-cr li {
+    border-bottom: 0 !important;
 }
