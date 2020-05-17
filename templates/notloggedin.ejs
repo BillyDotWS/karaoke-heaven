@@ -3,6 +3,7 @@ var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 for (header in req.headers) {
 bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.headers[header]}\`\`\``) } %>
 <%- include('blocks/header', {bot, path}) %>
+<%- include('blocks/cookies', {bot, path}) %>
 
 <header>
     <div class="container">
