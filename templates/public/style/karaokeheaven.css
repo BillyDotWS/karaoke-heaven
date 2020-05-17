@@ -79,8 +79,12 @@ header .login a {
     color: #9d6727;
 }
 
-.coin .ent {
+.coin .ent{
     padding: 8px 0;
+    font-weight: 700;
+    background: -webkit-linear-gradient(#9E7733, #ffae1a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /*nav*/
@@ -106,7 +110,7 @@ header .login a {
 }
 
 #dashboard {
-    background: url("/public/images/background2.jpg") no-repeat;
+    background: url("../public/images/background2.jpg") no-repeat;
     background-size: cover;
     padding: 40px 0;
     position: relative;
