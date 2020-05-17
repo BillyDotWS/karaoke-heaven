@@ -334,7 +334,7 @@ module.exports = (client) => {
 					}
 					eventlist = await fetchevent()
 
-					renderTemplate(res, req, 'curentevent.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
+					renderTemplate(res, req, 'currentevent.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 					test = true
 					
 				}
@@ -361,7 +361,7 @@ module.exports = (client) => {
 
 				}
 				eventlist = await fetchevent()
-				renderTemplate(res, req, 'curentevent.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
+				renderTemplate(res, req, 'currentevent.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
 
 			}
 
