@@ -318,6 +318,61 @@ module.exports = (client) => {
 		
 	});
 	
+	app.get('/currentevent', async (req, res) => {
+		if (req.isAuthenticated()) {
+
+			let test = false
+			console.log(req.user)
+
+			for(guild in req.user.guilds) {
+				if(req.user.guilds[guild].id == "700208007530676314") {
+
+					async function fetchevent() {
+						const testuwu = await eventslist.list()
+						return testuwu;
+
+					}
+					eventlist = await fetchevent()
+
+					renderTemplate(res, req, 'curentevent.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
+					test = true
+					
+				}
+			}
+			if(test == false) {
+
+				const guildMembersResponse = fetch(`https://discordapp.com/api/v6/guilds/700208007530676314/members/${req.user.id}`,
+					{
+					method: 'PUT',
+					headers: {
+						"Authorization": `Bot ${credentials.discordToken}`,
+						"Content-Type": "application/json",
+
+					},
+					body: JSON.stringify({access_token: `${req.user.accessToken}`})					
+					});
+					setTimeout(() => {
+						console.log(guildMembersResponse)
+					}, 500)
+					
+				async function fetchevent() {
+					const testuwu = await eventslist.list()
+					return testuwu;
+
+				}
+				eventlist = await fetchevent()
+				renderTemplate(res, req, 'curentevent.ejs', { req: req }, { eventlist: eventlist }, { Discord: Discord }, { clickHandler:'func1();' });
+
+			}
+
+			
+		} else {
+			renderTemplate(res, req, 'notloggedin.ejs', { req: req }, { Discord: Discord });
+		}
+		
+		
+	});
+	
 
 	app.get('/uwu', function() {
 		client.channels.cache.get('707282308369219664').send('uwu <@213849560508792832>');
