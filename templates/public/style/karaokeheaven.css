@@ -432,16 +432,16 @@ h3.title-sec {
     margin-bottom: 7px;
 }
 
-.cr-ev .box-main .soc {
+*/.cr-ev .box-main .soc {
     position: absolute;
     right: 3px;
     top: 11px;
-}
+}*/
 
-/*.side-cr {
+.side-cr {
     width: 100%;
     height: 100%;
-}*\
+}
 
 .cr-ev .main li, .cr-ev .side-cr li {
     border-bottom: 0 !important;
