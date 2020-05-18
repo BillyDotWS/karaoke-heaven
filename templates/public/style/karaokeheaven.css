@@ -418,19 +418,19 @@ h3.title-sec {
     background: rgba(255, 255, 255, 0.5) !important;
 }
 
-.cr-ev .side {
+/*.cr-ev .side {
     background: none !important;
-}
+}*/
 
 .cr-ev .box-main .avatar {
     width: 50px;
     height: 50px;
 }
 
-*/.cr-ev .box-main p {
+.cr-ev .box-main p {
     font-size: 11px;
     margin-bottom: 7px;
-}*/
+}
 
 .cr-ev .box-main .soc {
     position: absolute;
