@@ -120,6 +120,13 @@ header .login a {
     position: relative;
 }
 
+#spacer {
+    background: url("/public/images/background2.jpg") no-repeat;
+    background-size: cover;
+    padding: 40px 0;
+    position: relative;
+}
+
 h3.title-sec {
     color: #3d4374;
     border-bottom: 1px solid #797ea5;
