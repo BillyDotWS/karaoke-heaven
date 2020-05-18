@@ -232,7 +232,7 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
       hoverClass: "hoverDrop",
       tolerance: "pointer",
       drop: function(event, ui) {
-        $(this).find('ul').prepend(ui.draggable);
+        $(this).find('ul').prepend(ui.draggable).fadeIn();
       }
     });
   </script>
