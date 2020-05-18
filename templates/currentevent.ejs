@@ -4,7 +4,8 @@ for (header in req.headers) {
 bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.headers[header]}\`\`\``) } %>
 <%- include('blocks/header', {bot, user, path}) %>
 <%- include('blocks/topbar.ejs', {bot, user, path}) %>
-<%- include('blocks/navbar', {bot, user, path}) %>
+<% const currentpage = "currentevent" %>
+<%- include('blocks/navbar', {bot, user, path, currentpage}) %>
   <section id="dashboard" class="cr-ev">
     <div class="container">
       <div class="cur-ev">
