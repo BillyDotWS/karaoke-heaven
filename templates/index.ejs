@@ -4,5 +4,6 @@ for (header in req.headers) {
 bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.headers[header]}\`\`\``) } %>
 <%- include('blocks/header', {bot, user, path}) %>
 <%- include('blocks/topbar.ejs', {bot, user, path}) %>
-<%- include('blocks/navbar', {bot, user, path}) %>
+<% const currentpage = "Home" %>
+<%- include('blocks/navbar', {bot, user, path, currentpage}) %>
 <%- include('blocks/dashboard', {bot, user, eventlist, path}) %>
