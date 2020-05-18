@@ -228,6 +228,12 @@ h3.title-sec {
     font-size: 101px;
 }
 
+#what .image2 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 101px;
+}
+
 /*bank*/
 .box-bank {
     background: rgba(255, 255, 255, 0.5);
