@@ -73,7 +73,7 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
         <div class="row">
             <div class="col-md-4">
                 <div class="image">
-                    <img src="public/images/Angel%20Discord.png" alt="" style="width: 160px">
+                    <img src="public/images/Angel%20Discord.png" alt="" style="width: 200px">
                 </div>
             </div>
             <div class="col-md-8">
@@ -94,6 +94,27 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
         </div>
     </div>
 </section>
+
+<style>
+#image {
+  position: absolute;
+  animation: float 6s ease-in-out infinite;
+  transform: translatey(0px);
+  margin-top: -50px; 
+  margin-left: -40px;
+}
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+</style>
 
 </body>
 </html>
