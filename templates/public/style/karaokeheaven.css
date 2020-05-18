@@ -61,13 +61,11 @@ header .login {
     text-align: center;
     float: right;
     width: 259px;
+    font-size: 21px;
+    background: #323868;
+    padding: 4px 0;
     border-radius: 15px;
     color: #9d6727;
-    padding: 4px 0;
-    font-weight: 700;
-    background: -webkit-linear-gradient(#9E7733, #ffae1a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 header .login i {
