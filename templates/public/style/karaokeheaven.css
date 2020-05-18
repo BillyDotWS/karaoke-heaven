@@ -427,16 +427,16 @@ h3.title-sec {
     height: 50px;
 }
 
-.cr-ev .box-main p {
+*/.cr-ev .box-main p {
     font-size: 11px;
     margin-bottom: 7px;
-}
+}*/
 
-*/.cr-ev .box-main .soc {
+.cr-ev .box-main .soc {
     position: absolute;
     right: 3px;
     top: 11px;
-}*/
+}
 
 .side-cr {
     width: 100%;
