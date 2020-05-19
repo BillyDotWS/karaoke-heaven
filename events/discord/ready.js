@@ -2,6 +2,7 @@ const config = require('../../settings/config.json');
 const main = require('../../main.js');
 var moment = require('moment');
 const punishmenthandler = require('../../API/punishmentHandler.js');
+const eventHandler = require('../../API/eventHandler.js');
 
 module.exports = async (client) => {
 	console.log(`[/events/discord/ready.js] Logged in as ${client.user.tag}`);
@@ -79,5 +80,122 @@ setInterval(async function() {
 
 		}
 	}
+}, 60000);
+
+
+setInterval(async function() {
+
+	// set current unix
+	let currentunix = moment().unix()
+
+	// fetch the list to loop
+	const eventlist = await eventHandler.list()
+
+	// loop through list
+	for(event in eventlist) {
+		
+		// get event's unix time
+		let eventtime = await eventHandler.info(eventlist[event])
+		eventtime = parseInt(eventtime.start)
+		currenttime = parseInt(currentunix)
+	
+
+		// get time until
+		let announcetime = eventtime - currenttime
+
+		// debug
+		console.log(`debug ${eventlist[event]}`)
+		console.log(`debug ${eventtime} - ${currenttime} = ${announcetime}`)
+
+		// if time is less than 15 mins
+		if(announcetime <= 900) {
+
+			if(eventtime.announced == false) {
+
+				// make role
+
+				// give role to people
+
+				// once done giving roles, announce
+
+				console.log(`insert announcement here`)
+
+				// change to false in db
+
+			}
+
+		}
+
+		if(announcetime <= 15) {
+
+			if(eventtime.active == false) {
+
+				// change channel permissions
+
+				// change to active
+
+			}
+
+		}
+
+		if(announcetime <= -300) {
+
+			if(eventtime.active == true) {
+
+				// change channel permissions
+
+				// change to active
+
+			}
+
+		}
+
+	}
+	
+
+    // does an event start in 15 minutes?
+
+        // if so: has it been announced?
+
+            // if not: announce
+
+            // unlock event chat channel
+
+            // tweet
+
+    // does an event start now?
+
+        // are hosts around?
+            // unmute the hosts
+
+        // else
+            // tell people the event will start soon
+            // pm the event hosts reminding them
+
+    // does an event start 5 minutes ago?
+
+        // are hosts around?
+            // do nothing
+
+        // else
+            // set event as active: false
+            // tell people event cancelled
+            // stop the event
+
+    // does an event end now?
+
+        // is it already marked as inactive
+
+            // do nothing
+
+        // else
+
+            // end the event
+
+            // broadcast that the event is running too long
+
+            
+	
+	
 }, 60000);
 
