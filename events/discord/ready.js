@@ -98,7 +98,7 @@ setInterval(async function() {
 		let eventtime = await eventHandler.info(eventlist[event])
 		console.log(eventtime)
 
-		eventtime = parseInt(eventtime.start)
+		eventtime = parseInt(eventtime[0].start)
 		currenttime = parseInt(currentunix)
 	
 
@@ -106,7 +106,6 @@ setInterval(async function() {
 		let announcetime = eventtime - currenttime
 
 		// debug
-		console.log(`debug ${eventlist[event]}`)
 		console.log(`debug ${eventtime} - ${currenttime} = ${announcetime}`)
 
 		// if time is less than 15 mins
