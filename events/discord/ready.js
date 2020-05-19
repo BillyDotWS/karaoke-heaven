@@ -96,6 +96,8 @@ setInterval(async function() {
 		
 		// get event's unix time
 		let eventtime = await eventHandler.info(eventlist[event])
+		console.log(eventtime)
+
 		eventtime = parseInt(eventtime.start)
 		currenttime = parseInt(currentunix)
 	
