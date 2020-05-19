@@ -71,7 +71,8 @@ event.create = async (event) => {
                             goldenabled: true,
                             auctions: true,
                             premium: false,
-                            embedid: msg.id
+                            embedid: msg.id,
+                            announced: false
                     
                         }
                     
@@ -278,13 +279,13 @@ event.modify = async (event) => {
 
 event.info = async (event) => {
 
-    async function fetchinfo(user) {
+    async function fetchinfo(event) {
         return await main.client.r.db('Events').table('events').filter({ id: event.id }).default(false).run();
     }
     
     try {
         
-        const infofetch = await fetchinfo(user);
+        const infofetch = await fetchinfo(event);
         return infofetch;
 
     } catch(err) {
