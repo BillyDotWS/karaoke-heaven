@@ -122,14 +122,14 @@ setInterval(async function() {
 						.then(console.log)
 						.catch(console.error);
 
-					const shrugUsers = await main.client.guilds.cache.get(`700208007530676314`)// .channels.cache.get("700209759080546345").fetch(`${eventinfo[0].embedid}`).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id);
+					const shrugUsers = await main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209759080546345`)//.fetch(`${eventinfo[0].embedid}`).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id);
 					console.log(shrugUsers)
 					  
 					for (const user in shrugUsers) {
 						console.log(shrugUsers[user])
 					}
 
-					main.client.channels.cache.get(`700209759080546345`).send(`<@${rolecreated.id}> <:notify:711061304240242738> Quick reminder: \`${eventinfo[0].title}\` is starting in **15** minutes!`)
+					main.client.channels.cache.get(`700209759080546345`).send(`<@${rolecreated}> <:notify:711061304240242738> Quick reminder: \`${eventinfo[0].title}\` is starting in **15** minutes!`)
 				}
 
 				
