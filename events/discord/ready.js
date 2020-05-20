@@ -113,13 +113,29 @@ setInterval(async function() {
 
 			if(eventinfo[0].announced == false) {
 
-				// make role
 
-				// give role to people
 
-				// once done giving roles, announce
+				if(eventinfo[0].type) {
+					rolecreated = await guild.roles.create({
+						data: {
+						  name: '🔔 ${eventinfo[0].id}',
+						  color: 'ORANGE',
+						},
+					  })
+						.then(console.log)
+						.catch(console.error);
 
-				main.client.channels.cache.get(`700208131833200660`).send(`*role* <:notify:711061304240242738> Quick reminder: \`${eventinfo[0].title}\` is starting in **15** minutes!`)
+					await client.channels.cache.get('700209759080546345').messages.cache.get(eventinfo[0].embedid).reactions.cache.get('711061304240242738').users.fetch();
+					const shrugUsers = await client.channels.cache.get('700209759080546345').messages.cache.get(eventinfo[0].embedid).reactions.cache.get('711061304240242738').users.cache.map(users => users.id);
+			
+					for (const user in shrugUsers) {
+						console.log(checkUsers[user])
+					}
+
+					main.client.channels.cache.get(`700209759080546345`).send(`<@${rolecreated.id}> <:notify:711061304240242738> Quick reminder: \`${eventinfo[0].title}\` is starting in **15** minutes!`)
+				}
+
+				
 
 				JSON.stringify(eventinfo[0])
 				eventinfo[0].announced = true
