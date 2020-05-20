@@ -128,12 +128,17 @@ setInterval(async function() {
 					console.log(shrugUsers)
 					  
 					for (const user in shrugUsers) {
-						console.log(shrugUsers[user])
+						await main.client.guilds.cache.get(`700208131833200660`).members.cache.get(shrugUsers[user]).roles.add([rolecreated.id])
 					}
 
 					console.log(`------------------------`)
 					console.log(rolecreated)
 					main.client.channels.cache.get(`700208131833200660`).send(`<@&${rolecreated.id}> **Quick reminder!** \`${eventinfo[0].title}\` is starting in **15** minutes!`)
+			
+					for (const user in shrugUsers) {
+						await main.client.guilds.cache.get(`700208131833200660`).members.cache.get(shrugUsers[user]).roles.remove([rolecreated.id])
+					}
+				
 				}
 
 				
