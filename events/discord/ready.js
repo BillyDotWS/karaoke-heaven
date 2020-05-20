@@ -122,9 +122,9 @@ setInterval(async function() {
 						.then(console.log)
 						.catch(console.error);
 
-						await main.client.channels.cache.get('700209759080546345').messages.cache.get(`${eventinfo[0].embedid}`).fetch()
-					await main.client.channels.cache.get('700209759080546345').messages.cache.get(`${eventinfo[0].embedid}`).reactions.cache.get('711061304240242738').users.fetch();
-					const shrugUsers = await main.client.channels.cache.get('700209759080546345').messages.cache.get(`${eventinfo[0].embedid}`).reactions.cache.get('711061304240242738').users.cache.map(users => users.id);
+					await main.client.channels.cache.get(`700209759080546345`).messages.cache.get(`${eventinfo[0].embedid}`).fetch()
+					await main.client.channels.cache.get(`700209759080546345`).messages.cache.get(`${eventinfo[0].embedid}`).reactions.cache.get(`711061304240242738`).users.fetch();
+					const shrugUsers = await main.client.channels.cache.get(`700209759080546345`).messages.cache.get(`${eventinfo[0].embedid}`).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id);
 			
 					for (const user in shrugUsers) {
 						console.log(shrugUsers[user])
