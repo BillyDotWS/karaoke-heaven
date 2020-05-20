@@ -121,7 +121,7 @@ setInterval(async function() {
 					  })
 
 					console.log(`------------------------`)
-					const embedidentify = toString(eventinfo[0].embedid))
+					const embedidentify = toString(eventinfo[0].embedid)
 
 					const shrugUsers = main.client.guilds.cache.get("700208007530676314").channels.cache.get("700209759080546345").messages.cache.get(embedidentify).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id)
 					console.log(`------------------------`)
