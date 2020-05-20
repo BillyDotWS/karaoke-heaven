@@ -96,7 +96,6 @@ setInterval(async function() {
 		
 		// get event's unix time
 		let eventinfo = await eventHandler.info(eventlist[event])
-		console.log(eventinfo)
 
 		let eventtime = parseInt(eventinfo[0].start)
 		currenttime = parseInt(currentunix)
@@ -113,9 +112,9 @@ setInterval(async function() {
 
 			if(eventinfo[0].announced == false) {
 
+				console.log(eventinfo[0].type)
 
-
-				if(eventinfo[0].type === "Official") {
+				if(`${eventinfo[0].type}` === "Official") {
 					rolecreated = await guild.roles.create({
 						data: {
 						  name: '🔔 ${eventinfo[0].id}',
