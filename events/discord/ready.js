@@ -121,7 +121,7 @@ setInterval(async function() {
 					  })
 
 					console.log(`------------------------`)
-					const embedidentify = toString(eventinfo[0].embedid)
+					const embedidentify = eventinfo[0].embedid
 
 					
 					await main.client.channels.cache.get('700209759080546345').messages.fetch(`${embedidentify}`);
