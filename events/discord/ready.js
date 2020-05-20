@@ -122,8 +122,8 @@ setInterval(async function() {
 						.then(console.log)
 						.catch(console.error);
 
-					await main.client.message.guild.channels.cache.get("700209781859942400").fetch(`${eventinfo[0].embedid}`).fetch()
-					const shrugUsers = main.client.message.guild.channels.cache.get("700209781859942400").fetch(`${eventinfo[0].embedid}`).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id);
+					await main.client.guilds.cache.get(`700208007530676314`).channels.cache.get("700209781859942400").fetch(`${eventinfo[0].embedid}`).fetch()
+					const shrugUsers = main.client.guilds.cache.get(`700208007530676314`).channels.cache.get("700209781859942400").fetch(`${eventinfo[0].embedid}`).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id);
 			
 					for (const user in shrugUsers) {
 						console.log(shrugUsers[user])
@@ -133,7 +133,6 @@ setInterval(async function() {
 				}
 
 				
-
 				JSON.stringify(eventinfo[0])
 				eventinfo[0].announced = true
 
