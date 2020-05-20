@@ -119,7 +119,7 @@ setInterval(async function() {
 
 				// once done giving roles, announce
 
-				client.channels.cache.get(`700208131833200660`).send(`*role* <:notify:711061304240242738> Quick reminder: \`${eventinfo[0].title}\` is starting in **15** minutes!`)
+				main.client.channels.cache.get(`700208131833200660`).send(`*role* <:notify:711061304240242738> Quick reminder: \`${eventinfo[0].title}\` is starting in **15** minutes!`)
 
 				// change to false in db
 
