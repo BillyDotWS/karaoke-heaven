@@ -113,7 +113,7 @@ setInterval(async function() {
 			if(eventinfo[0].announced == false) {
 
 				if(`${eventinfo[0].category}` === "Official") {
-					rolecreated = await guild.roles.create({
+					rolecreated = await main.client.guilds.cache.get(`700208007530676314`).roles.create({
 						data: {
 						  name: '🔔 ${eventinfo[0].id}',
 						  color: 'ORANGE',
@@ -122,8 +122,8 @@ setInterval(async function() {
 						.then(console.log)
 						.catch(console.error);
 
-					await client.channels.cache.get('700209759080546345').messages.cache.get(eventinfo[0].embedid).reactions.cache.get('711061304240242738').users.fetch();
-					const shrugUsers = await client.channels.cache.get('700209759080546345').messages.cache.get(eventinfo[0].embedid).reactions.cache.get('711061304240242738').users.cache.map(users => users.id);
+					await main.client.channels.cache.get('700209759080546345').messages.cache.get(eventinfo[0].embedid).reactions.cache.get('711061304240242738').users.fetch();
+					const shrugUsers = await main.client.channels.cache.get('700209759080546345').messages.cache.get(eventinfo[0].embedid).reactions.cache.get('711061304240242738').users.cache.map(users => users.id);
 			
 					for (const user in shrugUsers) {
 						console.log(checkUsers[user])
