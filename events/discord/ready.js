@@ -111,7 +111,7 @@ setInterval(async function() {
 		// if time is less than 15 mins
 		if(announcetime <= 900) {
 
-			if(eventtime.announced == false) {
+			if(eventtime[0].announced == false) {
 
 				// make role
 
@@ -129,7 +129,7 @@ setInterval(async function() {
 
 		if(announcetime <= 15) {
 
-			if(eventtime.active == false) {
+			if(eventtime[0].active == false) {
 
 				// change channel permissions
 
@@ -141,7 +141,7 @@ setInterval(async function() {
 
 		if(announcetime <= -300) {
 
-			if(eventtime.active == true) {
+			if(eventtime[0].active == true) {
 
 				// change channel permissions
 
