@@ -111,7 +111,7 @@ setInterval(async function() {
 		// if time is less than 15 mins
 		if(announcetime <= 900) {
 
-			console.log(eventtime[0])
+			console.log(eventtime)
 			if(eventtime[0].announced == false) {
 
 				// make role
