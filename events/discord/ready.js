@@ -117,10 +117,8 @@ setInterval(async function() {
 						data: {
 						  name: `🔔 ${eventinfo[0].id}`,
 						  color: 'ORANGE',
-						},
+						}
 					  })
-						.then(console.log)
-						.catch(console.error);
 
 					console.log(`------------------------`)
 					console.log(eventinfo[0].embedid)
