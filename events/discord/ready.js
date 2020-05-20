@@ -112,9 +112,7 @@ setInterval(async function() {
 
 			if(eventinfo[0].announced == false) {
 
-				console.log(eventinfo[0].type)
-
-				if(`${eventinfo[0].type}` === "Official") {
+				if(`${eventinfo[0].category}` === "Official") {
 					rolecreated = await guild.roles.create({
 						data: {
 						  name: '🔔 ${eventinfo[0].id}',
