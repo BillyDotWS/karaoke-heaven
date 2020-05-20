@@ -133,7 +133,7 @@ setInterval(async function() {
 
 					console.log(`------------------------`)
 					console.log(rolecreated)
-					main.client.channels.cache.get(`700209586681937950`).send(`<@${rolecreated[role].id}> <:notify:711061304240242738> Quick reminder: \`${eventinfo[0].title}\` is starting in **15** minutes!`)
+					main.client.channels.cache.get(`700209586681937950`).send(`<@${rolecreated[Role].id}> <:notify:711061304240242738> Quick reminder: \`${eventinfo[0].title}\` is starting in **15** minutes!`)
 				}
 
 				
