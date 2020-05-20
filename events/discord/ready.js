@@ -95,10 +95,10 @@ setInterval(async function() {
 	for(event in eventlist) {
 		
 		// get event's unix time
-		let eventtime = await eventHandler.info(eventlist[event])
-		console.log(eventtime)
+		let eventinfo = await eventHandler.info(eventlist[event])
+		console.log(eventinfo)
 
-		eventtime = parseInt(eventtime[0].start)
+		let eventtime = parseInt(eventinfo[0].start)
 		currenttime = parseInt(currentunix)
 	
 
@@ -111,8 +111,7 @@ setInterval(async function() {
 		// if time is less than 15 mins
 		if(announcetime <= 900) {
 
-			console.log(eventtime)
-			if(eventtime[0].announced == false) {
+			if(eventinfo[0].announced == false) {
 
 				// make role
 
@@ -130,7 +129,7 @@ setInterval(async function() {
 
 		if(announcetime <= 15) {
 
-			if(eventtime[0].active == false) {
+			if(eventinfo[0].active == false) {
 
 				// change channel permissions
 
@@ -142,7 +141,7 @@ setInterval(async function() {
 
 		if(announcetime <= -300) {
 
-			if(eventtime[0].active == true) {
+			if(eventinfo[0].active == true) {
 
 				// change channel permissions
 
