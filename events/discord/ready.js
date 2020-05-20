@@ -113,14 +113,14 @@ setInterval(async function() {
 			if(eventinfo[0].announced == false) {
 
 				if(`${eventinfo[0].category}` === "Official") {
-					rolecreated = await main.client.guilds.cache.get(`700208007530676314`).roles.create({
-						data: {
-						  name: `🔔 ${eventinfo[0].id}`,
-						  color: 'ORANGE',
-						},
-					  })
-						.then(console.log)
-						.catch(console.error);
+					//rolecreated = await main.client.guilds.cache.get(`700208007530676314`).roles.create({
+					//	data: {
+					//	  name: `🔔 ${eventinfo[0].id}`,
+					//	  color: 'ORANGE',
+					//	},
+					//  })
+					//	.then(console.log)
+					//	.catch(console.error);
 
 					await main.client.channels.cache.get(`700209759080546345`).messages.cache.get(`${eventinfo[0].embedid}`).fetch()
 					await main.client.channels.cache.get(`700209759080546345`).messages.cache.get(`${eventinfo[0].embedid}`).reactions.cache.get(`711061304240242738`).users.fetch();
