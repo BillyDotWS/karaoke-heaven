@@ -115,7 +115,8 @@ event.create = async (event) => {
                             goldenabled: true,
                             auctions: true,
                             premium: false,
-                            embedid: msg.id
+                            embedid: msg.id,
+                            announced: false
                     
                         }
                         
