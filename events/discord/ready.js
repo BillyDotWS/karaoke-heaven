@@ -125,7 +125,7 @@ setInterval(async function() {
 
 					
 					await main.client.channels.cache.get('700209759080546345').messages.fetch(`${embedidentify}`);
-					const shrugUsers = main.client.guilds.cache.get("700208007530676314").channels.cache.get("700209759080546345").messages.cache.get(embedidentify).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id)
+					const shrugUsers = main.client.guilds.cache.get("700208007530676314").channels.cache.get("700209759080546345").messages.cache.get(`${embedidentify}`).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id)
 					console.log(`------------------------`)
 					console.log(shrugUsers)
 					  
