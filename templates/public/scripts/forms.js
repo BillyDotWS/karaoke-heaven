@@ -1,8 +1,5 @@
 window.onload = function () {
-  document.querySelector('#sample1').addEventListener('click', sample1)
-  document.querySelector('#sampleWithPromises').addEventListener('click', sampleWithPromises)
   document.querySelector('#complex').addEventListener('click', complex)
-  document.querySelector('#lotsOfFields').addEventListener('click', lotsOfFields)
 }
 
 function sample1 () {
