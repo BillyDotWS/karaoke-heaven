@@ -196,9 +196,9 @@ setInterval(async function() {
 					const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
 					
 					eventchannel.overwritePermissions(
-						memberrole,
-						{ 'VIEW_CHANNEL': true, 'CONNECT': true, 'SPEAK': false,  },
-					)
+                        memberrole,
+                        [{ 'VIEW_CHANNEL': true, 'CONNECT': true, 'SPEAK': false,  }],
+                    )
 
 				}
 
@@ -208,9 +208,9 @@ setInterval(async function() {
 					const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
 					
 					eventchannel.overwritePermissions(
-						memberrole,
-						{ 'VIEW_CHANNEL': true, 'CONNECT': true, 'SPEAK': false,  },
-					)
+                        memberrole,
+                        [{ 'VIEW_CHANNEL': true, 'CONNECT': true, 'SPEAK': false,  }],
+                    )
 
 				}
 
