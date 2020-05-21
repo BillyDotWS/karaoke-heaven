@@ -2,6 +2,17 @@ img {
     max-width: 100%;
 }
 
+.footer {
+    background: #a9a9a9;
+    color: #828ac9;
+    padding: 20px 0;
+}
+
+.footer .a {
+    background: #a9a9a9;
+    color: #828ac9;
+    float: left;
+}
 
 /*header*/
 header {
