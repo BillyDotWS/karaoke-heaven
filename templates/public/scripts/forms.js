@@ -1,13 +1,13 @@
 function testclone() {
-  swal.withForm({
+  swal.mixin({
     confirmButtonText: 'Next &rarr;',
     showCancelButton: true,
     progressSteps: ['1', '2', '3']
     }).queue([
       {
         title: 'Question 1',
-        text: 'Chaining swal2 modals is easy'
-        formFields: [{ id: 'name', placeholder: 'Name Field' }]
+        text: 'Chaining swal2 modals is easy',
+        input: 'text'
       },
       'Question 2',
       'Question 3'
