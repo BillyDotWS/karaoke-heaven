@@ -144,6 +144,37 @@ setInterval(async function() {
 					rolecreated.delete()
 				}
 
+				if(`${eventinfo[0].category}` === "Community") {
+					rolecreated = await main.client.guilds.cache.get(`700208007530676314`).roles.create({
+						data: {
+						  name: `🔔 ${eventinfo[0].id}`,
+						  color: 'ORANGE',
+						}
+					  })
+
+					console.log(`------------------------`)
+					const embedidentify = eventinfo[0].embedid
+
+					
+					await main.client.channels.cache.get('700209781859942400').messages.fetch(`${embedidentify}`);
+					const shrugUsers = main.client.guilds.cache.get("700208007530676314").channels.cache.get("700209781859942400").messages.cache.get(`${embedidentify}`).reactions.cache.get(`711061304240242738`).users.cache.map(users => users.id)
+					console.log(`------------------------`)
+					console.log(shrugUsers)
+					  
+					for (const user in shrugUsers) {
+						await main.client.guilds.cache.get(`700208007530676314`).members.cache.get(shrugUsers[user]).roles.add([rolecreated.id])
+					}
+
+					console.log(`------------------------`)
+					console.log(rolecreated)
+					main.client.channels.cache.get(`700209586681937950`).send(`<@&${rolecreated.id}> **Quick reminder!** \`${eventinfo[0].title}\` is starting in **15** minutes!`)
+			
+					for (const user in shrugUsers) {
+						await main.client.guilds.cache.get(`700208007530676314`).members.cache.get(shrugUsers[user]).roles.remove([rolecreated.id])
+					}
+				
+					rolecreated.delete()
+				}			
 				
 				JSON.stringify(eventinfo[0])
 				eventinfo[0].announced = true
