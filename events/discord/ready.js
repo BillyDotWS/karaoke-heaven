@@ -197,7 +197,9 @@ setInterval(async function() {
 					
 					eventchannel.updateOverwrite(memberrole, {
 						VIEW_CHANNEL: true,
-						CONNECT: true
+						CONNECT: true,
+						SPEAK: false,
+						STREAM: false 
 					  })
 					  
 
