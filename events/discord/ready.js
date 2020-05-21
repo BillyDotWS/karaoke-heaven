@@ -196,7 +196,7 @@ setInterval(async function() {
 					const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
 					
 					eventchannel.overwritePermissions([{
-                        memberrole,
+                        id: memberrole.id,
                         allow: ['CONNECT']
 					}])
 
