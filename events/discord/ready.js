@@ -197,8 +197,8 @@ setInterval(async function() {
 					
 					eventchannel.overwritePermissions(
                         memberrole,
-                        [{ 'VIEW_CHANNEL': true, 'CONNECT': true, 'SPEAK': false,  }],
-                    )
+                        { CONNECT: true }
+					)
 
 				}
 
