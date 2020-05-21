@@ -190,9 +190,35 @@ setInterval(async function() {
 
 			if(eventinfo[0].active == false) {
 
-				// change channel permissions
+				if(`${eventinfo[0].category}` === "Community") {
 
-				// change to active
+					const eventchannel = main.client.channels.cache.get(`700208783674048602`)
+					const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
+					
+					eventchannel.overwritePermissions(
+						memberrole,
+						{ 'VIEW_CHANNEL': true, 'CONNECT': true, 'SPEAK': false,  },
+					)
+
+				}
+
+				if(`${eventinfo[0].category}` === "Official") {
+
+					const eventchannel = main.client.channels.cache.get(`700209889691041843`)
+					const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
+					
+					eventchannel.overwritePermissions(
+						memberrole,
+						{ 'VIEW_CHANNEL': true, 'CONNECT': true, 'SPEAK': false,  },
+					)
+
+				}
+
+				JSON.stringify(eventinfo[0])
+				eventinfo[0].active = true
+
+				eventHandler.modify(eventinfo[0])
+				// change to false in db
 
 			}
 
