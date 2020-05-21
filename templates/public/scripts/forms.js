@@ -3,7 +3,7 @@ window.onload = function () {
 }
 
 function testclone() {
-  Swal.mixin({
+  Swal.withForm({
     input: 'text',
     confirmButtonText: 'Next &rarr;',
     showCancelButton: true,
