@@ -51,26 +51,17 @@ function complex () {
     confirmButtonText: 'Get form data!',
     closeOnConfirm: true,
     formFields: [
-      { id: 'name', placeholder: 'Name Field' },
-      { id: 'nickname', placeholder: 'Add a cool nickname' },
-      { id: 'password', type: 'password' },
+      { id: 'hosts', placeholder: 'CookieBilly#1234' },
+      { id: 'name', placeholder: 'Event Name' },
+      { id: 'nickname', placeholder: 'Event Description' },
+      { id: 'theme', placeholder: 'Event theme' },
 
-      { name: 'sex', value: 'Male', type: 'radio' },
-      { name: 'sex', value: 'Female', type: 'radio' },
+      { name: 'eventdate', placeholder: 'Event Date', type: 'date' },
+      { name: 'eventtime', value: '00:00', type: 'text' },
 
-      { name: 'skills', value: 'JS', type: 'checkbox' },
-      { name: 'skills', value: 'Ruby', type: 'checkbox' },
-      { name: 'skills', value: 'Java', type: 'checkbox' },
+      { id: 'maxparticipants', placeholder: 'Maximum Participants' },
+      { id: 'maxparticipants', placeholder: 'Maximum Participants' }
 
-      { id: 'select',
-        type: 'select',
-        options: [
-          {value: 'test1', text: 'test1'},
-          {value: 'test2', text: 'test2'},
-          {value: 'test3', text: 'test3'},
-          {value: 'test4', text: 'test4'},
-          {value: 'test5', text: 'test5'}
-        ]}
     ]
   }, function (isConfirm) {
     // do whatever you want with the form data
