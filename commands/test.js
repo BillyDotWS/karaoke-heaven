@@ -21,7 +21,7 @@ module.exports = {
 			start: 1589232051,
 			end: 1589232053,
 			hosts: ["281199286765748225"],
-			category: `Official`,
+			category: `Community`,
 			maxslots: 30,
 			slotsperperson: 1,
 			theme: `An updated theme`,
