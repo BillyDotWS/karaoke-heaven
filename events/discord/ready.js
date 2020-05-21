@@ -141,6 +141,7 @@ setInterval(async function() {
 						await main.client.guilds.cache.get(`700208007530676314`).members.cache.get(shrugUsers[user]).roles.remove([rolecreated.id])
 					}
 				
+					rolecreated.delete()
 				}
 
 				
