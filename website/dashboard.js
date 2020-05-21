@@ -382,6 +382,10 @@ module.exports = (client) => {
 	app.get('/commands', (req, res) => {
 		renderTemplate(res, req, 'commands.ejs', { md });
 	});
+	
+	app.get('/formtest', (req, res) => {
+		renderTemplate(res, req, 'blocks/modals/eventcreator.ejs', { md });
+	});
 
 	// Bot statistics. Notice that most of the rendering of data is done through this code,
 	// not in the template, to simplify the page code. Most of it **could** be done on the page.
