@@ -192,7 +192,7 @@ setInterval(async function() {
 
 				if(`${eventinfo[0].category}` === "Community") {
 
-					const eventchannel = main.client.channels.cache.get(`700208783674048602`)
+					const eventchannel = main.client.channels.cache.get(`700209889691041843`)
 					const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
 					
 					eventchannel.updateOverwrite(memberrole, {
@@ -207,13 +207,16 @@ setInterval(async function() {
 
 				if(`${eventinfo[0].category}` === "Official") {
 
-					const eventchannel = main.client.channels.cache.get(`700209889691041843`)
+					const eventchannel = main.client.channels.cache.get(`700208783674048602`)
 					const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
 					
-					eventchannel.overwritePermissions(
-                        memberrole,
-                        [{ 'VIEW_CHANNEL': true, 'CONNECT': true, 'SPEAK': false,  }],
-                    )
+					eventchannel.updateOverwrite(memberrole, {
+						VIEW_CHANNEL: true,
+						CONNECT: true,
+						SPEAK: false,
+						STREAM: false 
+					  })
+					  
 
 				}
 
