@@ -1,3 +1,7 @@
+window.onload = function () {
+  document.querySelector('#testclone').addEventListener('click', testclone)
+}
+
 function testclone() {
   Swal.mixin({
     input: 'text',
