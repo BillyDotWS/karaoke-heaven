@@ -2,7 +2,7 @@
 var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 for (header in req.headers) {
 bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.headers[header]}\`\`\``) } %>
-<% const currentpage = "Banking" %>
+<% const currentpage = "Events" %>
 <%- include('blocks/header', {bot, user, path, currentpage}) %>
 <%- include('blocks/topbar.ejs', {bot, user, path}) %>
 <%- include('blocks/navbar', {bot, user, path, currentpage}) %>
@@ -67,12 +67,12 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
             </div>
         </div>
         <div class="create">
-            <h3 class="title-sec"><i class="fas fa-music"></i> Create An Events</h3>
+            <h3 class="title-sec"><i class="fas fa-music"></i> Create An Event</h3>
             <div class="create-box">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="image">
-                            <img src="images/Jukebox.png" alt="">
+                            <img src="public/images/Jukebox.png" alt="">
                         </div>
                     </div>
                     <div class="col-md-9">
@@ -85,7 +85,7 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
                                 must follow our <a href="">Event Creator Rules</a>
                             </p>
                             <div class="btn-ev">
-                                <a href=""><i class="fas fa-calendar"></i> Create an event <span><img src="images/coin.png" alt=""> 500</span></a>
+                                <a href=""><i class="fas fa-calendar"></i> Create an event <span><img src="public/images/Coin.png" alt=""> 500</span></a>
                             </div>
                         </div>
                     </div>
