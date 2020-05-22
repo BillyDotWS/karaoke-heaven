@@ -137,6 +137,7 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
 
                     <div class="tab">Event Hosts:
                       <p><input placeholder="<%= user.username %>#<%= user.discriminator %>" oninput="this.className = ''"></p>
+                        <button id="addMore" class="btn btn-primary">Add more</button>
                       <hr>
                     </div>
 
@@ -247,6 +248,15 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
+$(function() {
+  $("#addMore").click(function(e) {
+    e.preventDefault();
+    $("#tab").append("Event Hosts:");
+    $("#tab").append("<p><input placeholder=\"Username#1234\" oninput=\" this.className = ''\"></p>");
+                     
+  });
+});
 </script>
 
 </body>
