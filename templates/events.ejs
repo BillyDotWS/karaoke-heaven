@@ -137,8 +137,10 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
 
                     <div class="tab">
                       <br>Event Hosts:
-                      <p><input placeholder="<%= user.username %>#<%= user.discriminator %>" oninput="this.className = ''"></p>
-                        <button id="addMore" class="btn btn-primary">Add more</button>
+                      <div class="hostslist">
+                        <p><input placeholder="<%= user.username %>#<%= user.discriminator %>" oninput="this.className = ''"></p>
+                      </div>
+                      <button id="addMore" class="btn btn-primary">Add more</button>
                       <hr>
                     </div>
 
@@ -254,7 +256,7 @@ $(function() {
   $("#addMore").click(function(e) {
     var x = document.getElementsByClassName("tab");
     e.preventDefault();
-    $(x[1]).append("<p><input placeholder=\"Username#1234\" oninput=\" this.className = ''\"></p>").before( "<button id=\"addMore\" class=\"btn btn-primary\">Add more</button>" );
+    $("#hostslist").append("<p><input placeholder=\"Username#1234\" oninput=\" this.className = ''\"></p>");
                      
   });
 });
