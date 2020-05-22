@@ -472,6 +472,11 @@ module.exports = (client) => {
 		const perms = Discord.EvaluatedPermissions;
 		renderTemplate(res, req, 'dashboard.ejs', { perms });
 	});
+	
+	app.get('/bouncerapplications', checkAuth, (req, res) => {
+		renderTemplate(res, req, 'bouncer.ejs');
+	});
+	
 
 	// The Admin dashboard is similar to the one above, with the exception that
 	// it shows all current guilds the bot is on, not *just* the ones the user has
