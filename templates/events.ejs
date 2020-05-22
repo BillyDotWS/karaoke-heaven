@@ -251,9 +251,10 @@ function fixStepIndicator(n) {
 
 $(function() {
   $("#addMore").click(function(e) {
+    var x = document.getElementsByClassName("tab");
     e.preventDefault();
-    $("#tab").append("Event Hosts:");
-    $("#tab").append("<p><input placeholder=\"Username#1234\" oninput=\" this.className = ''\"></p>");
+    $(x[1]).append("Event Hosts:");
+    $(x[1]).append("<p><input placeholder=\"Username#1234\" oninput=\" this.className = ''\"></p>");
                      
   });
 });
