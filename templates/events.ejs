@@ -1,0 +1,105 @@
+<% 
+var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+for (header in req.headers) {
+bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.headers[header]}\`\`\``) } %>
+<% const currentpage = "Banking" %>
+<%- include('blocks/header', {bot, user, path, currentpage}) %>
+<%- include('blocks/topbar.ejs', {bot, user, path}) %>
+<%- include('blocks/navbar', {bot, user, path, currentpage}) %>
+<section id="dashboard" class="events">
+    <div class="container">
+        <div class="upcoming">
+            <div class="">
+                <h3 class="title-sec"><i class="fas fa-music"></i> Upcoming Events</h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                            <div class="cloud">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box">
+                            <h3 class="title-box"><a href="#">[Official] Disney Karaoke</a></h3>
+                            <p>2 days, 6 hour, 25 minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="create">
+            <h3 class="title-sec"><i class="fas fa-music"></i> Create An Events</h3>
+            <div class="create-box">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="image">
+                            <img src="images/Jukebox.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="box-what">
+                            <h5>Create your own event!</h5>
+                            <p class="text-justify">
+                                Creating your own event allows you to control your events theme and allows you to build an
+                                audience of people singing similar song. Events are made for fun and we give you a wide
+                                range of tools to allow you to control your event and ensure that it’s moderated. All events
+                                must follow our <a href="">Event Creator Rules</a>
+                            </p>
+                            <div class="btn-ev">
+                                <a href=""><i class="fas fa-calendar"></i> Create an event <span><img src="images/coin.png" alt=""> 500</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="setting">
+        <ul>
+            <li><a href=""><i class="fa fa-cog"></i></a></li>
+            <li><a href=""><i class="fa fa-bell"></i></a></li>
+        </ul>
+    </div>
+</section>
+
+</body>
+</html>
