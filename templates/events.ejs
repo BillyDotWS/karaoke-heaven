@@ -138,7 +138,7 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
                     <div class="tab">
                       Event Hosts:
                       <div id="hostslist">
-                        <p><input placeholder="<%= user.username %>#<%= user.discriminator %>" oninput="this.className = ''"></p>
+                        <p><input value="<%= user.username %>#<%= user.discriminator %>" oninput="this.className = ''" readonly></p>
                       </div>
                       <button id="addMore" class="btn btn-primary">Add more</button>
                       <hr>
