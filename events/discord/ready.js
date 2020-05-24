@@ -241,7 +241,7 @@ setInterval(async function() {
 
 					for(host in eventinfo[0].hosts) {
 
-						console.log(`u9we9uidwihjdwijhdw debug ${host} - ${eventinfo[0].hosts[host]}`)
+						// future bug, use numbers instead of true/false and check 1 or more host is present
 
 						try {
 
@@ -262,7 +262,12 @@ setInterval(async function() {
 						eventEmbed.setColor("#FFC0CB")
 						main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209837866483804`).send(eventEmbed)
 
-						// change event to inactive
+						JSON.stringify(eventinfo[0])
+						eventinfo[0].active = false
+		
+						eventHandler.modify(eventinfo[0])
+						// change to false in db
+		
 
 					}
 	
@@ -270,8 +275,40 @@ setInterval(async function() {
 	
 				if(`${eventinfo[0].category}` === "Official") {
 
-					// 700208783674048602
-	
+					let hostpresent = false
+					// future bug, use numbers instead of true/false and check 1 or more host is present
+
+					for(host in eventinfo[0].hosts) {
+
+						console.log(`u9we9uidwihjdwijhdw debug ${host} - ${eventinfo[0].hosts[host]}`)
+
+						try {
+
+							if(`${main.guilds.cache.get(`700208007530676314`).members.cache.get(`${eventinfo[0].hosts[host]}`).voice.channelID}` === `700208783674048602`) {
+								hostpresent = true
+							}
+						
+						} catch(e) { hostpresent = false}
+						
+							
+					}
+					console.log(hostpresent)
+					if(hostpresent == false) {
+
+						const eventEmbed = new Discord.MessageEmbed()
+						eventEmbed.setTitle(`The hosts are not present`);
+						eventEmbed.setDescription(`The hosts of this event are not currently present at this event, this means that the event will automatically be ended to prevent the event from going unattended. Thank you for coming! You are welcome to ask the hosts to create a new event in the future if you'd like to see this event again.\n\n**Event Hosts:**\n[Find the hosts of the event here](https://karaoke-heaven.net/event/${eventinfo[0].id})`);
+						eventEmbed.setColor("#FFC0CB")
+						main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209837866483804`).send(eventEmbed)
+
+						JSON.stringify(eventinfo[0])
+						eventinfo[0].active = false
+		
+						eventHandler.modify(eventinfo[0])
+						// change to false in db
+		
+
+					}
 				}
 			
 			}
