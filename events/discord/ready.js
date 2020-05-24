@@ -243,14 +243,18 @@ setInterval(async function() {
 
 						console.log(`u9we9uidwihjdwijhdw debug ${host} - ${eventinfo[0].hosts[host]}`)
 
-						if(`${main.guilds.cache.get(`700208007530676314`).members.cache.get(`${eventinfo[0].hosts[host]}`).voice.channelID}` === `700209889691041843`) {
-							hostpresent = true
-						}
-												
+						try {
+
+							if(`${main.guilds.cache.get(`700208007530676314`).members.cache.get(`${eventinfo[0].hosts[host]}`).voice.channelID}` === `700209889691041843`) {
+								hostpresent = true
+							}
+						
+						} catch(e) {hostpresent = false}
+						
 							
 					}
-						  
-					if(hostpresent = false) {
+					console.log(hostpresent)
+					if(hostpresent == false) {
 
 						const eventEmbed = new Discord.MessageEmbed()
 						eventEmbed.setTitle(`The hosts are not present`);
