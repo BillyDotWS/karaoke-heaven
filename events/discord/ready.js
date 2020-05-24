@@ -234,10 +234,40 @@ setInterval(async function() {
 
 			if(eventinfo[0].active == true) {
 
-				// change channel permissions
+				if(`${eventinfo[0].category}` === "Community") {
+	
+					let hostpresent = false
 
-				// change to active
+					for(host in eventinfo[0].hosts) {
 
+						console.log(`u9we9uidwihjdwijhdw debug ${host} - ${eventinfo[0].hosts[host]}`)
+						
+						if(main.guilds.cache.get(`700208007530676314`).members.cache.get(`${eventinfo[0].hosts[host]}`).voice.channelID === `700209889691041843`) {
+							hostpresent = true
+						}
+							
+					}
+						  
+					if(hostpresent = false) {
+
+						const eventEmbed = new Discord.MessageEmbed()
+						eventEmbed.setTitle(`The hosts are not present`);
+						eventEmbed.setDescription(`The hosts of this event are not currently present at the event, this means that the event will automatically be ended. Thanks for you for coming! You are welcome to ask the hosts to create a new event in the future if you'd like to see this event.`);
+						eventEmbed.setColor("#FFC0CB")
+						main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209837866483804`).send(eventEmbed)
+
+						// change event to inactive
+
+					}
+	
+				}
+	
+				if(`${eventinfo[0].category}` === "Official") {
+
+					// 700208783674048602
+	
+				}
+			
 			}
 
 		}
