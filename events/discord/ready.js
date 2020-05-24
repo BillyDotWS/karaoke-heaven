@@ -2,6 +2,7 @@ const config = require('../../settings/config.json');
 const main = require('../../main.js');
 var moment = require('moment');
 const punishmenthandler = require('../../API/punishmentHandler.js');
+const Discord = require('discord.js');
 const eventHandler = require('../../API/eventHandler.js');
 
 module.exports = async (client) => {
@@ -241,7 +242,7 @@ setInterval(async function() {
 					for(host in eventinfo[0].hosts) {
 
 						console.log(`u9we9uidwihjdwijhdw debug ${host} - ${eventinfo[0].hosts[host]}`)
-						
+
 						if(main.guilds.cache.get(`700208007530676314`).members.cache.get(`${eventinfo[0].hosts[host]}`).voice.channelID === `700209889691041843`) {
 							hostpresent = true
 						}
