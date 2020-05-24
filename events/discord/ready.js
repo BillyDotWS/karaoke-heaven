@@ -258,7 +258,7 @@ setInterval(async function() {
 
 						const eventEmbed = new Discord.MessageEmbed()
 						eventEmbed.setTitle(`The hosts are not present`);
-						eventEmbed.setDescription(`The hosts of this event are not currently present at the event, this means that the event will automatically be ended. Thanks for you for coming! You are welcome to ask the hosts to create a new event in the future if you'd like to see this event.`);
+						eventEmbed.setDescription(`The hosts of this event are not currently present at this event, this means that the event will automatically be ended to prevent the event from going unattended. Thank you for coming! You are welcome to ask the hosts to create a new event in the future if you'd like to see this event again.\n\n**Event Hosts:**\n[Find the hosts of the event here](https://karaoke-heaven.net/event/${eventinfo[0].id})`);
 						eventEmbed.setColor("#FFC0CB")
 						main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209837866483804`).send(eventEmbed)
 
