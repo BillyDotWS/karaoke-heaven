@@ -99,7 +99,7 @@ setInterval(async function() {
 		let eventinfo = await eventHandler.info(eventlist[event])
 
 		console.log(eventinfo)
-		console.log(eventinfo[0])
+		
 
 		let eventtime = parseInt(eventinfo[0].start)
 		currenttime = parseInt(currentunix)
@@ -189,7 +189,7 @@ setInterval(async function() {
 			}
 
 		}
-
+		console.log(eventinfo[0])
 		if(announcetime <= 15) {
 
 			if(eventinfo[0].active == false) {
