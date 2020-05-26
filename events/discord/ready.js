@@ -189,8 +189,8 @@ setInterval(async function() {
 			}
 
 		}
-		console.log(eventinfo[0])
-		if(announcetime <= 15) {
+		
+		if(announcetime <= 90 && announcetime >= 0) {
 
 			if(eventinfo[0].active == false) {
 
@@ -233,7 +233,7 @@ setInterval(async function() {
 			}
 
 		}
-
+		console.log(eventinfo[0])
 		if(announcetime <= -300) {
 
 			console.log(eventinfo[0])
