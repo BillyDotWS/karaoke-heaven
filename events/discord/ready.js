@@ -190,7 +190,7 @@ setInterval(async function() {
 
 		}
 		
-		if(announcetime <= 90 && announcetime >= 0) {
+		if(announcetime <= 180 && announcetime >= 0) {
 
 			if(eventinfo[0].active == false) {
 
