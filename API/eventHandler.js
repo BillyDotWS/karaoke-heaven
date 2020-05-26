@@ -194,7 +194,7 @@ event.endevent = async (event) => {
             })
 
             for(channelmember of eventchannel.members) {
-                console.log(channelmember)
+                main.client.guilds.cache.get(`700208007530676314`).members.cache.get(channelmember).voice.setChannel(movelobby)
             }
 
         }
