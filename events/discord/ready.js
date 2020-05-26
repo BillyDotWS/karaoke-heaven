@@ -235,7 +235,7 @@ setInterval(async function() {
 
 		if(announcetime <= -300) {
 
-			if(eventinfo[0].active == true) {
+			if(`${eventinfo[0].active}` === `true`) {
 
 				if(`${eventinfo[0].category}` === "Community") {
 	
