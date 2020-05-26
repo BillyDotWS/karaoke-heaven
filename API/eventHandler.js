@@ -194,7 +194,7 @@ event.endevent = async (event) => {
             })
 
             for(channelmember of eventchannel.members) {
-                channelmember.setVoiceChannel(movelobby)
+                console.log(channelmember)
             }
 
         }
