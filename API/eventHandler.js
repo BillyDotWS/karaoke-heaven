@@ -176,6 +176,48 @@ event.delete = async (event) => {
 
 }
 
+event.endevent = async (event) => {
+
+    setTimeout(function(){
+
+        if(`${event.category}` === "Community") {
+
+            const eventchannel = main.client.channels.cache.get(`700209889691041843`)
+            const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
+            const movelobby = main.client.channels.cache.get(`700208007530676319`)
+            
+            eventchannel.updateOverwrite(memberrole, {
+                VIEW_CHANNEL: true,
+                CONNECT: false,
+                SPEAK: false,
+                STREAM: false 
+            })
+
+            for(channelmember of eventchannel.members) {
+                channelmember.setVoiceChannel(movelobby)
+            }
+
+        }
+
+        if(`${event.category}` === "Official") {
+
+            const eventchannel = main.client.channels.cache.get(`700208783674048602`)
+            const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
+            
+            eventchannel.updateOverwrite(memberrole, {
+                VIEW_CHANNEL: true,
+                CONNECT: false,
+                SPEAK: false,
+                STREAM: false 
+            })
+            
+
+        }
+
+    }, 20000);
+
+}
+
 event.modify = async (event) => {
 
     try {

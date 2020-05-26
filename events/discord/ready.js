@@ -233,11 +233,8 @@ setInterval(async function() {
 			}
 
 		}
-		console.log(eventinfo[0])
 		if(announcetime <= -300) {
 
-			console.log(eventinfo[0])
-			console.log(eventinfo[0].active)
 
 			if(`${eventinfo[0].active}` === `true`) {
 
@@ -272,6 +269,8 @@ setInterval(async function() {
 		
 						eventHandler.modify(eventinfo[0])
 						// change to false in db
+
+						eventHandler.endevent(eventinfo[0])
 		
 
 					}
@@ -311,6 +310,8 @@ setInterval(async function() {
 		
 						eventHandler.modify(eventinfo[0])
 						// change to false in db
+
+						eventHandler.endevent(eventinfo[0])
 		
 
 					}
