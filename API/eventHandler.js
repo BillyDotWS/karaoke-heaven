@@ -183,6 +183,7 @@ event.endevent = async (event) => {
         if(`${event.category}` === "Community") {
 
             const eventchannel = main.client.channels.cache.get(`700209889691041843`)
+            const eventchat = main.client.channels.cache.get(`700209837866483804`)
             const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
             const movelobby = main.client.channels.cache.get(`700208007530676319`)
             
@@ -202,7 +203,7 @@ event.endevent = async (event) => {
                 
                 setTimeout(function(){
 
-                    eventchannel.bulkDelete(100)
+                    eventchat.bulkDelete(100)
 
                 }, 5000);
 
