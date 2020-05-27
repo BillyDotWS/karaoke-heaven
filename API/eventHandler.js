@@ -214,6 +214,7 @@ event.endevent = async (event) => {
         if(`${event.category}` === "Official") {
 
             const eventchannel = main.client.channels.cache.get(`700208783674048602`)
+            const eventchat = main.client.channels.cache.get(`700208759770710067`)
             const memberrole = main.client.guilds.cache.get(`700208007530676314`).roles.cache.get(`700213602098872350`)
             const movelobby = main.client.channels.cache.get(`700208007530676319`)
 
@@ -225,14 +226,14 @@ event.endevent = async (event) => {
             })
 
             for(channelmember of eventchannel.members) {
-                main.client.guilds.cache.get(`700208007530676314`).members.cache.get(channelmember).voice.setChannel(movelobby)
+                main.client.guilds.cache.get(`700208007530676314`).members.cache.get(`${channelmember[0]}`).voice.setChannel(movelobby)
             }
 
             for (let x = 0; x < 20; x++) {
                 
                 setTimeout(function(){
 
-                    eventchannel.bulkDelete(100)
+                    eventchat.bulkDelete(100)
 
                 }, 5000);
 
