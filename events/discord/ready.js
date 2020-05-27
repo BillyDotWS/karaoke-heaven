@@ -244,6 +244,7 @@ setInterval(async function() {
 					eventEmbed.setTitle(`Event has started!`);
 					eventEmbed.setDescription(`The event has now started, we hope you enjoy this event, if you have any issues that require moderator attention, feel free to use \`-modping\`.\n\n:link: **Useful Links**\n:white_check_mark: [Signup to perform](https://karaoke-heaven.net/currentevent)\n:white_check_mark: [Manage your balance](https://karaoke-heaven.net/bank)\n:white_check_mark: [Event Information](https://karaoke-heaven.net/event/${eventinfo[0].id})`);
 					eventEmbed.setColor("#FFC0CB")
+					eventEmbed.setThumbnail(`https://i.imgur.com/Cif5Y65.png`)
 					main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700209837866483804`).send(eventEmbed)
 				
 				}
@@ -254,6 +255,7 @@ setInterval(async function() {
 					eventEmbed.setTitle(`Event has started!`);
 					eventEmbed.setDescription(`The event has now started, we hope you enjoy this event, if you have any issues that require moderator attention, feel free to use \`-modping\`.\n\n:link: **Useful Links**\n:white_check_mark: [Signup to perform](https://karaoke-heaven.net/currentevent)\n:white_check_mark: [Manage your balance](https://karaoke-heaven.net/bank)\n:white_check_mark: [Event Information](https://karaoke-heaven.net/event/${eventinfo[0].id})`);
 					eventEmbed.setColor("#FFC0CB")
+					eventEmbed.setThumbnail(`https://i.imgur.com/Cif5Y65.png`)
 					main.client.guilds.cache.get(`700208007530676314`).channels.cache.get(`700208759770710067`).send(eventEmbed)
 				
 				}
