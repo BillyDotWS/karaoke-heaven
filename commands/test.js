@@ -18,7 +18,7 @@ module.exports = {
 
 			title: `A really cool event`,
 			description: `an amazing event from billy, which has been edited using bot magic and was updated via the update function an amazing event from billy, which has been edited using bot magic and was updated via the update function`,
-			start: 1590588900,
+			start: 1590604800,
 			end: 1589232053,
 			hosts: ["281199286765748225"],
 			category: `Community`,
