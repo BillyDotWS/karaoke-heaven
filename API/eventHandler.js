@@ -208,7 +208,7 @@ event.endevent = async (event) => {
                 msg.delete()
 
             })
-            await main.client.r.db('Events').table('events').get(`${event.id}`).delete().run()
+            main.client.r.db('Events').table('events').get(`${event.id}`).delete().run()
         }
 
         if(`${event.category}` === "Official") {
