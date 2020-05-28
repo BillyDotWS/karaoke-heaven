@@ -153,12 +153,6 @@ event.create = async (event) => {
 
 event.delete = async (event) => {
 
-    const validationcheck = await event.info(event.id)
-
-    if(validationcheck[0].id == null) {
-        return response = { status: "error", reason: "No event found with that ID"}
-    }
-
     try {
         
         await main.client.r.db('Events').table('events').get(`${event.id}`).delete().run()
@@ -205,10 +199,17 @@ event.endevent = async (event) => {
 
                     eventchat.bulkDelete(100)
 
-                }, 5000);
+                }, 5000)
 
             }
 
+            main.client.channels.cache.get(`700209781859942400`).messages.fetch(event.embedid).then((msg) => {
+
+                msg.delete()
+
+            })
+
+            event.delete(event)
         }
 
         if(`${event.category}` === "Official") {
@@ -239,6 +240,11 @@ event.endevent = async (event) => {
 
             }
             
+            main.client.channels.cache.get(`700209759080546345`).messages.fetch(event.embedid).then((msg) => {
+
+                msg.delete()
+
+            })
 
         }
 
