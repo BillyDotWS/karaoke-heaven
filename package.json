@@ -18,7 +18,7 @@
     "eslint": "^7.0.0",
     "express": "*",
     "express-session": "^1.17.1",
-    "helmet": "^3.22.0",
+    "helmet": "^4.3.1",
     "marked": "^1.0.0",
     "moment": "^2.25.3",
     "moment-duration-format": "^2.3.2",
