@@ -1,3 +1,5 @@
+Note: All tokens have been reset in this repository. I'm aware there are exposed tokens in the repository. I have no plans to update this code to fix this.
+
 <p align="center">
     <a href="https://discord.gg/8XBTY5M" alt="Discord">
         <img src="https://img.shields.io/discord/700208007530676314" /></a>
